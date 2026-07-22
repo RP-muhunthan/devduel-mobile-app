@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#e9c400",
+                    "surface-container": "#1e2020",
+                    "secondary-fixed": "#ffdea6",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-surface": "#e3e2e2",
+                    "tertiary": "#fff6d2",
+                    "surface-container-highest": "#343535",
+                    "surface-container-high": "#292a2a",
+                    "on-secondary-container": "#392700",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "on-surface-variant": "#d0c6ab",
+                    "on-primary": "#3a3000",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-tertiary-container": "#6b5f00",
+                    "on-primary-fixed-variant": "#544600",
+                    "outline": "#999077",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "on-background": "#e3e2e2",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#705e00",
+                    "on-secondary": "#412d00",
+                    "primary-fixed": "#ffe16d",
+                    "primary-container": "#ffd700",
+                    "on-primary-fixed": "#221b00",
+                    "inverse-surface": "#e3e2e2",
+                    "on-tertiary": "#373100",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#ba880f",
+                    "background": "#121414",
+                    "surface-container-lowest": "#0d0e0f",
+                    "tertiary-container": "#f1db40",
+                    "secondary": "#f7bd48",
+                    "surface": "#121414",
+                    "outline-variant": "#4d4732",
+                    "surface-dim": "#121414",
+                    "error-container": "#93000a",
+                    "surface-bright": "#38393a",
+                    "tertiary-fixed": "#fae448",
+                    "primary": "#fff6df",
+                    "surface-variant": "#343535",
+                    "surface-container-low": "#1a1c1c",
+                    "on-secondary-fixed": "#271900",
+                    "inverse-primary": "#705d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "section-gap": "32px",
+                    "component-gap": "12px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Roboto"],
+                    "body-md": ["Roboto"],
+                    "body-lg": ["Roboto"],
+                    "label-caps": ["JetBrains Mono"],
+                    "code-block": ["JetBrains Mono"],
+                    "headline-md": ["Roboto"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+        .code-bg {
+            background-image: radial-gradient(circle at 2px 2px, #2A2A2A 1px, transparent 0);
+            background-size: 24px 24px;
+            opacity: 0.3;
+        }
+        .glow-accent {
+            box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar Shell -->
+<header class="bg-[#0A0A0A] border-b border-[#2A2A2A] fixed top-0 w-full z-50 h-16 flex justify-between items-center px-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="terminal">terminal</span>
+<h1 class="font-mono tracking-widest text-xl font-black text-[#FFD700] uppercase">DEV_DUEL</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 mr-6">
+<span class="font-mono text-xs uppercase font-bold text-[#FFD700] cursor-pointer">Live Battles</span>
+<span class="font-mono text-xs uppercase font-bold text-neutral-500 hover:text-[#FFD700] transition-colors cursor-pointer">Documentation</span>
+</div>
+<div class="w-8 h-8 rounded-full border border-[#2A2A2A] overflow-hidden bg-surface-container-high">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A sharp, high-contrast profile avatar for a tech-focused user, featuring a minimalist digital character silhouette against a deep black background. The lighting is dramatic, with subtle gold rim lighting that aligns with the premium hacker-elite aesthetic of the platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ3Mb91ohqCjOljS-iGxSyXst_Qz6vb0f9WdQ4JeoQx7lX1_5FpxUgkg6bnsZ9hMlCVCK1fU2iiq2a6heI9MMXyhAAqGbibVhBK329D7EZyrm8uxkReD730PIhFbxBE9EFl_I8awOIxbTvspicTTFnVhUbNYwID4roHL4q_hjJ7pidc41ymvdz_Ix65PFR6FMit6KG0-1jUR66VVinZbYqBSC37kZsi3r2e_QW_IDN2IsEW-1nE8mPhCni4VjXWvUDYCzL3gXJU_cF"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 px-6 max-w-2xl mx-auto w-full relative">
+<div class="absolute inset-0 code-bg pointer-events-none"></div>
+<!-- Timer Section -->
+<section class="text-center mb-10 relative z-10">
+<p class="font-label-caps text-label-caps text-neutral-500 mb-2 uppercase">Challenge Ends In</p>
+<div class="font-mono text-[56px] leading-none font-bold tracking-tighter text-[#FFD700] drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]">
+                23:41:09
+            </div>
+</section>
+<!-- Problem Card -->
+<article class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 glow-accent relative z-10 mb-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Matrix Path Optimizer</h2>
+<div class="flex gap-2 items-center">
+<span class="bg-surface-container-highest text-secondary font-label-caps text-[10px] px-2 py-0.5 rounded border border-outline-variant">HARD</span>
+<span class="text-neutral-500 font-label-caps text-[10px]">• 1,240 ATTEMPTS</span>
+</div>
+</div>
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-caps text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="stars" data-weight="fill">stars</span>
+                    Bonus XP: +200
+                </div>
+</div>
+<div class="space-y-4 mb-8">
+<p class="text-on-surface-variant font-body-lg">
+                    Find the lexicographically smallest path from the top-left to the bottom-right of an N x M grid, ensuring the sum of all elements along the path is a prime number.
+                </p>
+<div class="bg-[#0D0D0D] p-4 rounded border border-[#2A2A2A] font-code-block text-code-block">
+<div class="flex gap-4 mb-2 opacity-50">
+<span>Input:</span>
+<span class="text-secondary">[[1, 2], [3, 4]]</span>
+</div>
+<div class="flex gap-4">
+<span>Output:</span>
+<span class="text-surface-tint">"DR"</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-[#FFD700] hover:bg-[#E9C400] text-[#0A0A0A] font-label-caps py-4 rounded font-black tracking-widest transition-all active:scale-[0.98] uppercase">
+                    Solve Now
+                </button>
+<button class="w-full border border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700]/10 font-label-caps py-4 rounded font-bold tracking-widest transition-all active:scale-[0.98] uppercase">
+                    View Leaderboard
+                </button>
+</div>
+</article>
+<!-- Contextual Stats -->
+<section class="grid grid-cols-2 gap-4 relative z-10">
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 rounded-lg">
+<p class="font-label-caps text-[10px] text-neutral-500 uppercase mb-1">Global Success Rate</p>
+<p class="font-mono text-xl font-bold text-on-surface">14.2%</p>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 rounded-lg">
+<p class="font-label-caps text-[10px] text-neutral-500 uppercase mb-1">Top Language</p>
+<p class="font-mono text-xl font-bold text-on-surface">Rust</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe bg-[#0A0A0A] border-t border-[#2A2A2A] h-20">
+<div class="flex flex-col items-center justify-center text-[#FFD700] py-2 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="code" data-weight="fill">code</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Battles</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="leaderboard">leaderboard</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Rank</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="emoji_events">emoji_events</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Tourney</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Profile</span>
+</div>
+</nav>
+<!-- Background Decoration -->
+<div class="fixed bottom-24 right-6 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]" data-icon="terminal">terminal</span>
+</div>
+</body></html>

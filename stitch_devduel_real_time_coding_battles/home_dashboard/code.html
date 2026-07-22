@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#93000a",
+                        "outline-variant": "#4d4732",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "on-secondary-container": "#392700",
+                        "surface-tint": "#e9c400",
+                        "outline": "#999077",
+                        "on-primary-fixed": "#221b00",
+                        "on-tertiary-fixed": "#201c00",
+                        "secondary-fixed": "#ffdea6",
+                        "secondary-container": "#ba880f",
+                        "surface-variant": "#343535",
+                        "tertiary": "#fff6d2",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#f7bd48",
+                        "surface-dim": "#121414",
+                        "surface-bright": "#38393a",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "on-tertiary-container": "#6b5f00",
+                        "primary": "#fff6df",
+                        "primary-fixed": "#ffe16d",
+                        "on-primary": "#3a3000",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "on-secondary": "#412d00",
+                        "on-surface": "#e3e2e2",
+                        "primary-fixed-dim": "#e9c400",
+                        "inverse-primary": "#705d00",
+                        "on-secondary-fixed": "#271900",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e3e2e2",
+                        "on-background": "#e3e2e2",
+                        "surface-container-low": "#1a1c1c",
+                        "surface": "#121414",
+                        "on-surface-variant": "#d0c6ab",
+                        "on-tertiary": "#373100",
+                        "on-primary-fixed-variant": "#544600",
+                        "on-primary-container": "#705e00",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container-high": "#292a2a",
+                        "background": "#121414",
+                        "surface-container-lowest": "#0d0e0f",
+                        "primary-container": "#ffd700",
+                        "surface-container-highest": "#343535",
+                        "error": "#ffb4ab",
+                        "surface-container": "#1e2020",
+                        "tertiary-container": "#f1db40",
+                        "tertiary-fixed": "#fae448"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "32px",
+                        "container-margin": "24px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "component-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Roboto"],
+                        "headline-lg": ["Roboto"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-md": ["Roboto"],
+                        "body-lg": ["Roboto"],
+                        "code-block": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#0A0A0A] border-b border-zinc-800 flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-zinc-800">
+<img alt="User Profile" data-alt="A professional close-up portrait of a young South Asian male developer looking confident, set against a dark, moody background with subtle neon yellow light leaks. The style is sharp and cinematic, capturing high-detail textures and a professional tech-vibe aesthetic with high contrast and deep blacks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKcB3BNMLZe7tiDc8JIZfFsW_00ZElvSkmAGp-4tDhHaHZ5sll41udEOMWmxLKEbrjC9ohJ2hpOnTemDrNHrFyiZoySf4tM7V_Nvb_-3gZhpOO-E_2NkbkIac4gVEWfrJjqH0C2XqdhXvLzl6ppfmhYcAbBv4PDzfeRIXVk6GVLfbCzljcvjfx-M5RlTAfDTNbWaFfEFFFVvzyd0-Vpn4Vfz28dzV4tPjC6kUKzw-Wr2RY5evokYNw1YMEBUsfsCplYXt-B6PrKXn4"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Good morning, Rahul 👋</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-zinc-900 transition-colors text-zinc-500">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-20 mb-20 px-6 max-w-4xl mx-auto w-full">
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- XP Progress Card -->
+<section class="bg-[#111111] border border-zinc-800 rounded-xl p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-caps text-label-caps text-zinc-500 mb-1">CURRENT RANK</p>
+<span class="bg-secondary text-on-secondary font-label-caps text-[10px] px-3 py-1 rounded-full uppercase">Pro</span>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-secondary">2400</span>
+<span class="text-zinc-500 font-code-block">/ 3000 XP</span>
+</div>
+</div>
+<div class="w-full h-3 bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[80%] shadow-[0_0_15px_rgba(247,189,72,0.3)]"></div>
+</div>
+<p class="font-body-md text-zinc-400 mt-4">600 XP to reach <span class="text-secondary">Elite</span> rank</p>
+</section>
+<!-- Daily Streak Card -->
+<section class="bg-[#111111] border border-zinc-800 rounded-xl p-6">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">7 Day Streak!</h2>
+<p class="font-body-md text-zinc-500">You're on fire, keep it up!</p>
+</div>
+</div>
+<div class="flex justify-between items-center px-2">
+<div class="flex flex-col items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(247,189,72,0.6)]"></div>
+<span class="text-[10px] font-label-caps text-zinc-500">M</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(247,189,72,0.6)]"></div>
+<span class="text-[10px] font-label-caps text-zinc-500">T</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(247,189,72,0.6)]"></div>
+<span class="text-[10px] font-label-caps text-zinc-500">W</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(247,189,72,0.6)]"></div>
+<span class="text-[10px] font-label-caps text-zinc-500">T</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(247,189,72,0.6)]"></div>
+<span class="text-[10px] font-label-caps text-zinc-500">F</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(247,189,72,0.6)]"></div>
+<span class="text-[10px] font-label-caps text-zinc-500">S</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(247,189,72,0.6)]"></div>
+<span class="text-[10px] font-label-caps text-zinc-500">S</span>
+</div>
+</div>
+</section>
+<!-- Daily Challenge Card -->
+<section class="bg-[#111111] border border-zinc-800 rounded-xl p-6 flex flex-col md:col-span-2">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-zinc-900 rounded-xl border border-zinc-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="terminal">terminal</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-zinc-800 text-zinc-400 font-label-caps text-[10px] px-2 py-0.5 rounded uppercase">Medium</span>
+<span class="flex items-center gap-1 text-zinc-500 text-[12px] font-label-caps">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                                    14:22:05
+                                </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Matrix Diagonal Sum</h2>
+</div>
+</div>
+<button class="h-12 px-8 bg-secondary text-on-secondary font-label-caps rounded-lg hover:bg-surface-tint transition-all active:scale-95 flex items-center justify-center gap-2">
+                        SOLVE NOW
+                        <span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="p-4 bg-[#0A0A0A] rounded-lg border border-zinc-800 border-l-4 border-l-secondary">
+<p class="font-code-block text-zinc-400 text-sm leading-relaxed">
+                        Given a square matrix <span class="text-secondary">mat</span>, return the sum of the matrix diagonals. Only include the sum of all the elements on the primary diagonal and all the elements on the secondary diagonal that are not part of the primary diagonal.
+                    </p>
+</div>
+</section>
+<!-- Quick Battle Card -->
+<section class="relative group bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 p-8 flex flex-col items-center justify-center text-center gap-4 md:col-span-1 min-h-[220px]">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<img alt="Battle Background" class="w-full h-full object-cover" data-alt="A gritty, high-contrast digital illustration of two abstract code warriors facing off in a dark cyber arena. Deep black shadows are contrasted by intense neon red and golden light streaks, creating an aggressive, high-stakes competitive programming atmosphere. The visual style is edgy and minimalist, emphasizing speed and mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL_7XvRUGVR9SOjcIIVnMEvpoQCl6GfCyPrXjEYuBlKkdTNBAdI_6dulfvHMRN0zrnNtLYQQcM56u6PSUV1yTp7xPpk25TtARh8O-hCUa3SYEE6bA0sl5VwluOKNI8yZEKdVEvSRyupz1hwce3hqXD33MDLM0fKoNM-g5L_93DmtDcgzUHb96_UgvUZJe6AckALyiJIC9uLURVW3UObWwc7GAneSvXz6pn2XdaqYykuRSEceLsX81uQGSnOp1cu9sIasOvFmXX71OF"/>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface z-10">Ready for a Duel?</h3>
+<p class="font-body-md text-zinc-500 z-10 max-w-[240px]">Match with a random opponent and race to solve problems.</p>
+<button class="w-full h-14 bg-error-container text-white font-label-caps rounded-xl z-10 flex items-center justify-center gap-3 hover:bg-on-error transition-all active:scale-95 shadow-[0_4px_20px_rgba(147,0,10,0.4)]">
+<span class="material-symbols-outlined" data-icon="swords" style="font-variation-settings: 'FILL' 1;">swords</span>
+                    FIND BATTLE
+                </button>
+</section>
+<!-- Recent Activity Card -->
+<section class="bg-[#111111] border border-zinc-800 rounded-xl p-6 flex flex-col gap-4 md:col-span-1">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-label-caps text-label-caps text-zinc-400">RECENT ACTIVITY</h2>
+<button class="text-secondary font-label-caps text-[10px] hover:underline">VIEW ALL</button>
+</div>
+<!-- Activity Item 1 -->
+<div class="flex items-center justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full border border-zinc-700 overflow-hidden">
+<img alt="Opponent" data-alt="A minimalist avatar of a female developer with glowing cyan accents, rendered in a clean, professional vector style against a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACBOqJJQLTY4BsIIzP92E_tCDoIR8t_ijuxiQi2uYW-P--bJ3LURPovzh0kWw4CGutlntTaw83fRSkDCV1LiPUWrd3OF0Vsu1O4kmKefNsGY2BsdJBZqHGRHs26xDoStDMZ0BfKyaXFZaMNhL1Bi2z1-8czSstKcfBnNqTm80fl0wQrzI3GCHGpRgSo7WC3bfltDQ7vQp9rZjOhbFrR7ieQ5xRj3a04OdK57TaiQqveO3Pan1kdyIfg3xzdTCiuy5rn_dO3vM5htaY"/>
+</div>
+<div>
+<p class="font-body-md text-on-surface font-bold">AlexCode92</p>
+<p class="text-[12px] text-zinc-500">2h ago • Fast Solver</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[12px] font-label-caps text-secondary block">WIN</span>
+<span class="text-body-md font-code-block text-zinc-400">+45 XP</span>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-center justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full border border-zinc-700 overflow-hidden">
+<img alt="Opponent" data-alt="A minimalist avatar of a male developer with orange light highlights on a dark background, styled as a tech-professional profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUupa1JXAIeSjdbQUSCVw8aB4LQ_yoika5-hwUspG-IDdPT110VkpFuNcMFFmr2VF0XwXuFMxwkj5UELRHCYj-8GrspmNjg3j-O865sFy56oHH8wlYiJe7YeN7232vp5D4CStMeag3IxlapEBIJhNN-pI6GogH2Qr3pbSs-TX3RkHwiy2i9aHa0KAtJ3JbbU_E6EYDQax2aHb__AaUr6TY5jnQer8pyVr8UCjuKPfgKiiStxGKNoT4cuZ8s852goCE2l-xGj_En-70"/>
+</div>
+<div>
+<p class="font-body-md text-on-surface font-bold">KevinDev</p>
+<p class="text-[12px] text-zinc-500">5h ago • Code Warrior</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[12px] font-label-caps text-error block">LOSE</span>
+<span class="text-body-md font-code-block text-zinc-400">-12 XP</span>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-center justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full border border-zinc-700 overflow-hidden">
+<img alt="Opponent" data-alt="A minimalist avatar for a coder named Sarah, featuring soft purple lighting on a dark futuristic background in a high-tech UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy5vmLzC4fIqCUFnAcvIWsOU8u_QW2azk0Lt0wf55NnUpQgezh9R9i1E0Hj38Vo5gm2ApmbokRQkw7kX9d9zMxPAW1ZeglcEsq415hZNZuFs1N3w5ODADleFPOdtegXJ8w3RfKhalP0Hb6oOMQ5sIazFrqnseGCvmlQEJ5McxaYS-DK0k5kw60GtXiwcqRmUt-8DgCgUfpKi2oAUqsl97MEo0XOu3TourX5TQB0fchKng0CFINUOynURdONfx3Zy1kXqhvuni-4bm0"/>
+</div>
+<div>
+<p class="font-body-md text-on-surface font-bold">SarahScript</p>
+<p class="text-[12px] text-zinc-500">Yesterday • Algorithm Pro</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[12px] font-label-caps text-secondary block">WIN</span>
+<span class="text-body-md font-code-block text-zinc-400">+52 XP</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#0A0A0A] px-2 border-t border-zinc-800">
+<a class="flex flex-col items-center justify-center text-yellow-400 scale-105 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-mono font-bold uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-600 hover:bg-zinc-900/50 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="sports_esports">sports_esports</span>
+<span class="text-[10px] font-mono font-bold uppercase mt-1">Battle</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-600 hover:bg-zinc-900/50 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="text-[10px] font-mono font-bold uppercase mt-1">Problems</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-600 hover:bg-zinc-900/50 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-[10px] font-mono font-bold uppercase mt-1">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-600 hover:bg-zinc-900/50 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-mono font-bold uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#fae448",
+                        "secondary": "#f7bd48",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#373100",
+                        "on-primary-fixed-variant": "#544600",
+                        "on-background": "#e3e2e2",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "on-secondary-fixed": "#271900",
+                        "on-tertiary-container": "#6b5f00",
+                        "outline-variant": "#4d4732",
+                        "surface-container": "#1e2020",
+                        "on-secondary": "#412d00",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "on-surface-variant": "#d0c6ab",
+                        "on-secondary-container": "#392700",
+                        "primary": "#fff6df",
+                        "surface-variant": "#343535",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2f3131",
+                        "on-surface": "#e3e2e2",
+                        "secondary-fixed": "#ffdea6",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-primary-fixed": "#221b00",
+                        "primary-fixed": "#ffe16d",
+                        "on-tertiary-fixed": "#201c00",
+                        "secondary-container": "#ba880f",
+                        "outline": "#999077",
+                        "inverse-surface": "#e3e2e2",
+                        "on-primary-container": "#705e00",
+                        "tertiary-container": "#f1db40",
+                        "background": "#121414",
+                        "surface-bright": "#38393a",
+                        "surface-container-high": "#292a2a",
+                        "surface-tint": "#e9c400",
+                        "surface-container-highest": "#343535",
+                        "inverse-primary": "#705d00",
+                        "on-primary": "#3a3000",
+                        "tertiary": "#fff6d2",
+                        "error": "#ffb4ab",
+                        "primary-container": "#ffd700",
+                        "surface": "#121414",
+                        "surface-dim": "#121414",
+                        "primary-fixed-dim": "#e9c400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "32px",
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "component-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "code-block": ["JetBrains Mono"],
+                        "body-md": ["Roboto"],
+                        "headline-lg": ["Roboto"],
+                        "body-lg": ["Roboto"],
+                        "headline-md": ["Roboto"],
+                        "label-caps": ["JetBrains Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0d0e0f; /* surface-container-lowest per design system requirements for absolute dark */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-center items-center">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-surface-container-lowest dark group/design-root overflow-x-hidden" style='font-family: "Roboto", sans-serif;'>
+<!-- Splash Content Container -->
+<div class="flex flex-col items-center justify-center grow px-container-margin">
+<!-- Logo Section -->
+<div class="relative flex h-auto w-full flex-col @container p-4">
+<div class="w-full flex justify-center mb-component-gap">
+<!-- Icon Implementation -->
+<div class="flex items-center justify-center w-24 h-24 rounded-xl bg-surface-container-high border border-outline-variant shadow-[0_0_40px_-10px_rgba(255,215,0,0.3)]">
+<span class="material-symbols-outlined text-primary-container !text-7xl" data-icon="swords">swords</span>
+</div>
+</div>
+</div>
+<!-- Brand Typography -->
+<div class="text-center">
+<h1 class="text-on-surface tracking-tight text-[42px] font-bold leading-tight pb-2 font-headline-lg">
+                    DevDuel
+                </h1>
+<div class="flex items-center justify-center gap-2 mb-8">
+<div class="h-[1px] w-8 bg-outline-variant"></div>
+<p class="text-primary-container text-base font-bold tracking-widest uppercase font-label-caps">
+                        Code. Battle. Conquer.
+                    </p>
+<div class="h-[1px] w-8 bg-outline-variant"></div>
+</div>
+</div>
+<!-- Technical Detail Ornament -->
+<div class="mt-section-gap flex flex-col items-center">
+<div class="flex gap-2 mb-4">
+<span class="w-2 h-2 rounded-full bg-primary-container/20"></span>
+<span class="w-2 h-2 rounded-full bg-primary-container/40"></span>
+<span class="w-2 h-2 rounded-full bg-primary-container/60"></span>
+<span class="w-2 h-2 rounded-full bg-primary-container/40"></span>
+<span class="w-2 h-2 rounded-full bg-primary-container/20"></span>
+</div>
+<div class="text-on-surface-variant font-code-block text-[10px] tracking-[0.2em] uppercase">
+                    Initializing Environment...
+                </div>
+</div>
+</div>
+<!-- Footer / Version Info -->
+<div class="pb-12 text-center">
+<p class="text-on-surface-variant/40 font-code-block text-xs">
+                v2.4.0-STABLE // SYSTEM_READY
+            </p>
+</div>
+<!-- Background Image for depth (The Relevance Test: Minimalist focused view, no nav) -->
+<div class="fixed inset-0 pointer-events-none opacity-5 z-[-1]">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="A sophisticated digital background for a dark mode interface featuring complex geometric line patterns and abstract network nodes. The visual style is rooted in high-tech minimalism, using thin golden lines that intersect across an absolute black canvas. Subtle bokeh effects and glowing particles add a sense of depth and reactive energy. The lighting is low-key, emphasizing precision and the elite hacker aesthetic of the DevDuel brand." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfsJZbx1bx5zfaNHyQzN-s_mWYmTpi6jz-rCm47GxOT6EDomH3zLg7RoPgyFJTaOvf4vNWUH6k1eJis6sAE1rXyNtSEOYBP1rssq_9v8ysbQFbxZjKK5JpWdu2SvKGNwJYnGJ-CvYAKZ6z7i-dGEXixQbEWdixBl64IPB0pUsn_rTqqQAiPgDYLftPt_KGFHkgYU1t3u5lqdwTsp17JgjXNn2eBMbanVdJmUG8J_Sltdi5C67XVv_zbTlt02bc--If7dz1ioG33_gK");'>
+</div>
+</div>
+</div>
+</body></html>

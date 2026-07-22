@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1a1c1c",
+                    "secondary-container": "#ba880f",
+                    "tertiary": "#fff6d2",
+                    "on-secondary-container": "#392700",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "on-surface-variant": "#d0c6ab",
+                    "error-container": "#93000a",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-primary-container": "#705e00",
+                    "on-error": "#690005",
+                    "secondary": "#f7bd48",
+                    "on-surface": "#e3e2e2",
+                    "primary-container": "#ffd700",
+                    "on-primary-fixed": "#221b00",
+                    "on-primary": "#3a3000",
+                    "surface-variant": "#343535",
+                    "tertiary-container": "#f1db40",
+                    "surface-bright": "#38393a",
+                    "outline": "#999077",
+                    "inverse-surface": "#e3e2e2",
+                    "inverse-primary": "#705d00",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "surface-dim": "#121414",
+                    "inverse-on-surface": "#2f3131",
+                    "surface-container-high": "#292a2a",
+                    "background": "#121414",
+                    "secondary-fixed": "#ffdea6",
+                    "on-tertiary": "#373100",
+                    "tertiary-fixed": "#fae448",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "outline-variant": "#4d4732",
+                    "surface-tint": "#e9c400",
+                    "surface-container-lowest": "#0d0e0f",
+                    "on-tertiary-container": "#6b5f00",
+                    "surface-container": "#1e2020",
+                    "surface-container-highest": "#343535",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "on-secondary-fixed": "#271900",
+                    "primary-fixed": "#ffe16d",
+                    "primary": "#fff6df",
+                    "error": "#ffb4ab",
+                    "on-secondary": "#412d00",
+                    "on-background": "#e3e2e2",
+                    "on-primary-fixed-variant": "#544600",
+                    "surface": "#121414"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "component-gap": "12px",
+                    "container-margin": "24px",
+                    "section-gap": "32px",
+                    "gutter": "16px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-md": ["Roboto"],
+                    "code-block": ["JetBrains Mono"],
+                    "body-lg": ["Roboto"],
+                    "headline-lg": ["Roboto"],
+                    "body-md": ["Roboto"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+        .custom-glow {
+            box-shadow: 0px 4px 20px rgba(233, 196, 0, 0.15);
+        }
+        .online-indicator {
+            background-color: #4ade80;
+            box-shadow: 0 0 8px #4ade80;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen pb-24 font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-black border-b border-zinc-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-yellow-500" data-icon="terminal">terminal</span>
+<h1 class="text-xl font-black italic text-yellow-500 tracking-widest font-mono uppercase">DEVDUEL</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-zinc-400 hover:text-yellow-500 transition-colors">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</button>
+<div class="w-8 h-8 rounded-full border-2 border-yellow-500 overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a skilled developer with sharp features, illuminated by the golden glow of computer monitors in a dark, high-tech studio environment. The aesthetic is clean and professional, using a restricted palette of deep blacks and intense yellow highlights to convey a sense of technical mastery and elite status." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrux7f5sCmmq9NPxc-GTsSWNfLEuP1PrEVDtUV9NzyatZwZo6YQlBSp5_HF9HAZ1EWxgj3jhXi3NvL1wKYCPEnwG2SCBzVdS4ULlUM89FXgWjeIl9JtMaAeQplU9u4PHIyHblpcdqVhPrMSSNTw6kIPgHG-VhPFoWAMl03qfRvt7mFdb-Gf1FD8aAnvup06rPBkruP6Qj1cpMgY7khHhhkFWjNNKLP7F4WxL2rNwJCAJLct9208d0lwoSLmUmKoH3-z54tMDLLHJ-m"/>
+</div>
+</div>
+</header>
+<main class="mt-20 px-6 max-w-2xl mx-auto">
+<!-- Search Section -->
+<section class="mb-8">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Friends</h2>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 group-focus-within:text-yellow-500 transition-colors" data-icon="search">search</span>
+<input class="w-full bg-zinc-900 border border-zinc-800 rounded-lg py-3 pl-12 pr-4 text-on-surface focus:outline-none focus:border-yellow-500 transition-all font-body-md" placeholder="Find a coder to duel..." type="text"/>
+</div>
+</section>
+<!-- Online Friends Section -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-label-caps text-label-caps text-zinc-500 uppercase tracking-widest">Online Friends</h3>
+<span class="bg-zinc-800 text-yellow-500 px-2 py-0.5 rounded text-[10px] font-bold">3 ACTIVE</span>
+</div>
+<div class="space-y-4">
+<!-- Friend 1 -->
+<div class="bg-zinc-900/50 border border-zinc-800 p-4 rounded-xl flex items-center justify-between group hover:border-yellow-500/50 transition-all">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Alex Rivera" class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A professional headshot of a software engineer against a dark background, featuring subtle yellow backlighting. The subject exudes confidence and technical expertise. The image is crisp, high-contrast, and fits perfectly within a minimalist dark-themed user interface, emphasizing a hacker-elite aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnNP8NB77Brt7Yl1x0gjpTezDQMOZe8GTfMN8TutsJ3dTElBlSMy9BmL3fKpXQlefZZu7CwpjGOyVVaoqqmXWUycg06zvs6qYyKxKsdR7OBZtUsNFcoRbua2mjiuYXTCnRT2IZfIM8qF0zcjaZo8CS8XeI9ofQGlYBLtusc7-R32qq8TP-jjuZPq9kg0tJd0burOmPMWYzkcsVh1qWVdM5wVxzzTUYs5Wn-seV5NI5OCNBvG2i-Tyk5n1E8RBoOieMgoN2EKDQR4a7"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-black online-indicator"></div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-bold text-on-surface">Alex Rivera</h4>
+<span class="bg-yellow-500/10 text-yellow-500 text-[10px] px-1.5 py-0.5 rounded border border-yellow-500/20 font-mono">LVL 42</span>
+</div>
+<p class="text-zinc-500 text-xs font-body-md">MIT • Computer Science</p>
+</div>
+</div>
+<button class="h-10 px-4 bg-yellow-500 text-black font-label-caps text-xs rounded uppercase hover:bg-yellow-400 active:scale-95 transition-all custom-glow">
+                        Challenge
+                    </button>
+</div>
+<!-- Friend 2 -->
+<div class="bg-zinc-900/50 border border-zinc-800 p-4 rounded-xl flex items-center justify-between group hover:border-yellow-500/50 transition-all">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Sarah Chen" class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A cinematic portrait of a young female developer working in a dimly lit tech workspace. Warm golden light spills across her face from an unseen screen. The composition is clean, centered, and high-contrast, utilizing deep shadows and vibrant yellow accents to create a premium, high-stakes atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7qy_rqsWa6IUosM6pd3bK0WtLfVvx8bvu-5D8BQ2Cq0LjSjSmNpbtivTdem-SxEiG4WyB5WE3uiRKmntHupuAC7FxRR_RhWeIZ2DOk6LZdh7-9XY-2zM7skUDC9WPtj7pVrVQuzLiCtf4PX8Kp77p9yGJZEFSdSdxiANUeqEfZ55VwcaqZsjBc9ImfHEMWhPSQvvieyqo3HRolpuukyiim9MapVZ2KexiAyo0SRDhIoEPkvFAOKzrQfgLqU9n5WIZdsSmfM-FDJhC"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-black online-indicator"></div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-bold text-on-surface">Sarah Chen</h4>
+<span class="bg-yellow-500/10 text-yellow-500 text-[10px] px-1.5 py-0.5 rounded border border-yellow-500/20 font-mono">LVL 68</span>
+</div>
+<p class="text-zinc-500 text-xs font-body-md">Stanford • AI Systems</p>
+</div>
+</div>
+<button class="h-10 px-4 bg-yellow-500 text-black font-label-caps text-xs rounded uppercase hover:bg-yellow-400 active:scale-95 transition-all custom-glow">
+                        Challenge
+                    </button>
+</div>
+<!-- Friend 3 -->
+<div class="bg-zinc-900/50 border border-zinc-800 p-4 rounded-xl flex items-center justify-between group hover:border-yellow-500/50 transition-all">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Marcus Thorne" class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A portrait of a male programmer with a focused expression, wearing a dark hoodie. The lighting is low-key with sharp yellow rim lights that define his silhouette. The background is a dark, tech-infused void, maintaining a consistent professional and aggressive hacker aesthetic for an elite developer platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwqjJniL6sXLdeTsR7GWy3XYxnOyUV1hRKnq0GkSzZAdXbivAYeM4lQWkS-QzJlK3AkhHIFWogc2NQDHuvMblaw_iL0EZ0ADAlu6Aniyb6vTxKiv-QFT0X79LJlvuNUN8yoEVemGIsu1swPwyJtLCW47wTtgl06aC16sOhlKi4bvGAS2D6HHcZ2fh8eWKckeX2Gu_Fob4choQPRSvOWGe0WLn5DGUKtMUwJv_rpO6QtyGkDQsbFXbJ-FhFEmXJAQh8pokOMJSWggm5"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-black online-indicator"></div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-bold text-on-surface">Marcus Thorne</h4>
+<span class="bg-yellow-500/10 text-yellow-500 text-[10px] px-1.5 py-0.5 rounded border border-yellow-500/20 font-mono">LVL 31</span>
+</div>
+<p class="text-zinc-500 text-xs font-body-md">Carnegie Mellon • Backend Eng</p>
+</div>
+</div>
+<button class="h-10 px-4 bg-yellow-500 text-black font-label-caps text-xs rounded uppercase hover:bg-yellow-400 active:scale-95 transition-all custom-glow">
+                        Challenge
+                    </button>
+</div>
+</div>
+</section>
+<!-- All Friends Section -->
+<section class="mb-12">
+<h3 class="font-label-caps text-label-caps text-zinc-500 uppercase tracking-widest mb-4">All Friends</h3>
+<div class="space-y-4 opacity-70">
+<div class="bg-zinc-900/30 border border-zinc-800 p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<img alt="Jordan Lee" class="w-12 h-12 rounded-full object-cover grayscale" data-alt="A minimalist headshot of a software engineer against a pure black background. Soft golden light touches one side of the face. The overall mood is mysterious and highly professional, utilizing a high-contrast dark-mode aesthetic to emphasize achievement and focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6djnlbcnYstnU4pVUGB6ORJsFTHW41CCbNfY0_r2qVDotlI9zaiiL9ZZ-Pis4IIXu5X6nDPNfD4RjxBoJ1CWy12ASSz2LC_HBwpnOcC6ss_Ux-P0YVGaKb9CZPG34Wj-xiKutnk8am_9806INCBzILBSkQPPuEF_utLem0L70XAAdstHtbo7fZoPtJem2tQVGI_FawNBTl52xWUjSMyysSpxKjpuwn9SmwwO7WbmhTlZzvqCnfWaXriPsDiGIcfwKsy3h0xfZPMFs"/>
+<div>
+<h4 class="font-bold text-zinc-400">Jordan Lee</h4>
+<p class="text-zinc-600 text-xs">Georgia Tech • Cybersec</p>
+</div>
+</div>
+<span class="text-zinc-600 font-label-caps text-[10px]">OFFLINE</span>
+</div>
+</div>
+</section>
+<!-- Empty State Example (Hidden by default unless list is empty) -->
+<section class="hidden flex-col items-center justify-center py-20 text-center">
+<div class="w-20 h-20 bg-zinc-900 rounded-full flex items-center justify-center mb-6 border border-zinc-800">
+<span class="material-symbols-outlined text-zinc-600 text-4xl" data-icon="person_search">person_search</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Solo Dueler?</h3>
+<p class="text-zinc-500 max-w-xs mx-auto mb-8 font-body-md">Connect with friends to compare rankings, share solutions, and engage in high-stakes code battles.</p>
+<button class="bg-yellow-500 text-black px-8 py-3 rounded font-label-caps uppercase hover:bg-yellow-400 transition-all custom-glow">Find Friends</button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-black border-t border-zinc-800">
+<button class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 px-4 py-2 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Feed</span>
+</button>
+<button class="flex flex-col items-center justify-center text-yellow-500 transition-all duration-300 scale-110">
+<span class="material-symbols-outlined" data-icon="group" data-weight="fill">group</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Friends</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 px-4 py-2 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Duel</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 px-4 py-2 rounded-lg transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Alerts</span>
+<div class="absolute top-2 right-4 w-2 h-2 bg-yellow-500 rounded-full border border-black"></div>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 px-4 py-2 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Settings</span>
+</button>
+</nav>
+<!-- FAB for adding friends (Contextual) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-yellow-500 text-black rounded-full flex items-center justify-center shadow-2xl active:scale-95 transition-transform z-40 custom-glow">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</body></html>

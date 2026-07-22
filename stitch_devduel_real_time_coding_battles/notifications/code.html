@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DevDuel | Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1a1c1c",
+                      "secondary-container": "#ba880f",
+                      "tertiary": "#fff6d2",
+                      "on-secondary-container": "#392700",
+                      "secondary-fixed-dim": "#f7bd48",
+                      "on-surface-variant": "#d0c6ab",
+                      "error-container": "#93000a",
+                      "primary-fixed-dim": "#e9c400",
+                      "on-tertiary-fixed": "#201c00",
+                      "on-primary-container": "#705e00",
+                      "on-error": "#690005",
+                      "secondary": "#f7bd48",
+                      "on-surface": "#e3e2e2",
+                      "primary-container": "#ffd700",
+                      "on-primary-fixed": "#221b00",
+                      "on-primary": "#3a3000",
+                      "surface-variant": "#343535",
+                      "tertiary-container": "#f1db40",
+                      "surface-bright": "#38393a",
+                      "outline": "#999077",
+                      "inverse-surface": "#e3e2e2",
+                      "inverse-primary": "#705d00",
+                      "on-secondary-fixed-variant": "#5d4200",
+                      "surface-dim": "#121414",
+                      "inverse-on-surface": "#2f3131",
+                      "surface-container-high": "#292a2a",
+                      "background": "#121414",
+                      "secondary-fixed": "#ffdea6",
+                      "on-tertiary": "#373100",
+                      "tertiary-fixed": "#fae448",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#dcc82c",
+                      "outline-variant": "#4d4732",
+                      "surface-tint": "#e9c400",
+                      "surface-container-lowest": "#0d0e0f",
+                      "on-tertiary-container": "#6b5f00",
+                      "surface-container": "#1e2020",
+                      "surface-container-highest": "#343535",
+                      "on-tertiary-fixed-variant": "#504700",
+                      "on-secondary-fixed": "#271900",
+                      "primary-fixed": "#ffe16d",
+                      "primary": "#fff6df",
+                      "error": "#ffb4ab",
+                      "on-secondary": "#412d00",
+                      "on-background": "#e3e2e2",
+                      "on-primary-fixed-variant": "#544600",
+                      "surface": "#121414"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "component-gap": "12px",
+                      "container-margin": "24px",
+                      "section-gap": "32px",
+                      "gutter": "16px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "label-caps": ["JetBrains Mono"],
+                      "headline-md": ["Roboto"],
+                      "code-block": ["JetBrains Mono"],
+                      "body-lg": ["Roboto"],
+                      "headline-lg": ["Roboto"],
+                      "body-md": ["Roboto"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-pure-black { background-color: #000000; }
+        .border-hacker { border-color: #2A2A2A; }
+        .gold-glow { box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.15); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-pure-black text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-black border-b border-zinc-800">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-500" data-icon="terminal">terminal</span>
+<span class="text-xl font-black italic text-yellow-500 tracking-widest font-mono uppercase">DEVDUEL</span>
+</div>
+<div class="w-8 h-8 rounded-full border border-yellow-500 overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a software developer with a focused expression, set against a dark, tech-oriented background with subtle golden rim lighting. The style is sharp and cinematic, emphasizing a high-performance hacker elite aesthetic with deep blacks and high-contrast yellow highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGDkU5fGmX9rMbb1_HGucrOmtiSyEKtsMo8na1RrppXl2iNT0p96jRDE-eRXgTjAQdAIkcRgNXtAlCvZQfhBSjaW5dSPGPUMY5r2Uz19OoE1Idge4Ar-qkkkdHdTkwwKA1GLSw_5fnTtqqEnUKN-UgoSUAVWaglzm5gsIZNPt5md2ffY6Kx-8QlFzaiIpG1F1VBNflzjEio4JyMPnOLr9Gs9wUXTGkkhhZtqbEgFvl3LwLEfXIUvUvhB7x2Ed4J_p6TJbHZPpzNwSJ"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-container-margin max-w-2xl mx-auto">
+<!-- Header Actions -->
+<div class="flex justify-between items-end mb-section-gap">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tighter">Activity</h2>
+<p class="font-label-caps text-label-caps text-zinc-500">System Logs &amp; Combat Intel</p>
+</div>
+<button class="font-label-caps text-label-caps text-yellow-500 hover:text-yellow-400 border border-yellow-500/30 px-4 py-2 rounded-lg transition-colors active:scale-95">
+                Mark all as read
+            </button>
+</div>
+<!-- Section: Today -->
+<section class="mb-section-gap">
+<h3 class="font-label-caps text-label-caps text-zinc-500 mb-gutter flex items-center gap-2">
+<span class="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                TODAY
+            </h3>
+<div class="space-y-component-gap">
+<!-- Battle Invite -->
+<div class="bg-surface-container-low border border-hacker p-4 rounded-xl flex gap-4 gold-glow items-start">
+<div class="p-3 bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-yellow-500" data-icon="swords" style="font-variation-settings: 'FILL' 1;">swords</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-body-lg text-on-surface font-bold">Battle Invite</h4>
+<span class="font-label-caps text-[10px] text-zinc-500">2m ago</span>
+</div>
+<p class="font-body-md text-zinc-400 mt-1"><span class="text-yellow-500 font-mono">@root_kernel</span> challenged you to a Python Regex Duel.</p>
+<div class="flex gap-2 mt-3">
+<button class="bg-yellow-500 text-black font-label-caps text-[10px] px-4 py-1.5 rounded uppercase font-bold hover:bg-yellow-400 transition-colors">Accept</button>
+<button class="border border-zinc-700 text-zinc-400 font-label-caps text-[10px] px-4 py-1.5 rounded uppercase font-bold hover:bg-zinc-800 transition-colors">Decline</button>
+</div>
+</div>
+</div>
+<!-- Rank Change -->
+<div class="bg-surface-container-low border border-hacker p-4 rounded-xl flex gap-4 items-start">
+<div class="p-3 bg-zinc-800 rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-body-lg text-on-surface font-bold">Rank Promoted</h4>
+<span class="font-label-caps text-[10px] text-zinc-500">4h ago</span>
+</div>
+<p class="font-body-md text-zinc-400 mt-1">You've ascended to <span class="text-secondary font-bold">Platinum Tier</span>. New challenges unlocked.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Earlier -->
+<section>
+<h3 class="font-label-caps text-label-caps text-zinc-500 mb-gutter">EARLIER</h3>
+<div class="space-y-component-gap opacity-80">
+<!-- Streak Reminder -->
+<div class="bg-surface-container-low border border-hacker p-4 rounded-xl flex gap-4 items-start">
+<div class="p-3 bg-zinc-900 rounded-lg">
+<span class="material-symbols-outlined text-zinc-500" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-body-lg text-on-surface font-bold">Streak at Risk</h4>
+<span class="font-label-caps text-[10px] text-zinc-500">Yesterday</span>
+</div>
+<p class="font-body-md text-zinc-400 mt-1">Your 14-day code streak ends in 3 hours. Complete a duel to maintain rank.</p>
+</div>
+</div>
+<!-- Tournament Alert -->
+<div class="bg-surface-container-low border border-hacker p-4 rounded-xl flex gap-4 items-start">
+<div class="p-3 bg-zinc-900 rounded-lg">
+<span class="material-symbols-outlined text-zinc-500" data-icon="trophy">trophy</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-body-lg text-on-surface font-bold">Tournament Entry</h4>
+<span class="font-label-caps text-[10px] text-zinc-500">Oct 24</span>
+</div>
+<p class="font-body-md text-zinc-400 mt-1">Registrations for the <span class="text-on-surface font-bold italic">"Recursive Nightmare"</span> Global Open are now active.</p>
+</div>
+</div>
+<!-- General Notification -->
+<div class="bg-surface-container-low border border-hacker p-4 rounded-xl flex gap-4 items-start">
+<div class="p-3 bg-zinc-900 rounded-lg">
+<span class="material-symbols-outlined text-zinc-500" data-icon="notifications">notifications</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-body-lg text-on-surface font-bold">Patch Notes v2.4</h4>
+<span class="font-label-caps text-[10px] text-zinc-500">Oct 22</span>
+</div>
+<p class="font-body-md text-zinc-400 mt-1">New syntax highlighting themes and Rust support added to the IDE environment.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-black border-t border-zinc-800">
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Friends</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Duel</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-500 transition-all duration-300 scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

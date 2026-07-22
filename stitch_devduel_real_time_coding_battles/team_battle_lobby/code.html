@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;family=Roboto:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1e2020",
+                    "tertiary-container": "#f1db40",
+                    "primary-fixed": "#ffe16d",
+                    "secondary-container": "#ba880f",
+                    "on-tertiary": "#373100",
+                    "on-surface": "#e3e2e2",
+                    "on-error": "#690005",
+                    "outline-variant": "#4d4732",
+                    "secondary": "#f7bd48",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#292a2a",
+                    "on-background": "#e3e2e2",
+                    "on-surface-variant": "#d0c6ab",
+                    "surface": "#121414",
+                    "surface-tint": "#e9c400",
+                    "primary-container": "#ffd700",
+                    "surface-variant": "#343535",
+                    "surface-container-lowest": "#0d0e0f",
+                    "surface-dim": "#121414",
+                    "inverse-primary": "#705d00",
+                    "surface-container-highest": "#343535",
+                    "on-tertiary-fixed": "#201c00",
+                    "surface-container-low": "#1a1c1c",
+                    "on-primary-container": "#705e00",
+                    "on-primary": "#3a3000",
+                    "on-primary-fixed-variant": "#544600",
+                    "inverse-on-surface": "#2f3131",
+                    "error": "#ffb4ab",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "primary": "#fff6df",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "on-tertiary-container": "#6b5f00",
+                    "outline": "#999077",
+                    "tertiary": "#fff6d2",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-secondary-container": "#392700",
+                    "surface-bright": "#38393a",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "on-primary-fixed": "#221b00",
+                    "inverse-surface": "#e3e2e2",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#fae448",
+                    "on-secondary": "#412d00",
+                    "secondary-fixed": "#ffdea6",
+                    "on-secondary-fixed": "#271900",
+                    "background": "#121414"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "component-gap": "12px",
+                    "section-gap": "32px",
+                    "gutter": "16px",
+                    "unit": "8px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Roboto"],
+                    "body-lg": ["Roboto"],
+                    "code-block": ["JetBrains Mono"],
+                    "headline-md": ["Roboto"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-md": ["Roboto"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#0A0A0A] font-['JetBrains_Mono'] antialiased border-b border-[#2A2A2A] fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#FFD700] cursor-pointer" data-icon="arrow_back">arrow_back</span>
+<h1 class="text-xl font-black tracking-tighter text-[#FFD700] uppercase">Create Team</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-500 hover:text-[#FFD700] transition-colors cursor-pointer" data-icon="terminal">terminal</span>
+<div class="w-8 h-8 rounded-full border border-[#2A2A2A] overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A high-fidelity digital close-up of a futuristic user profile avatar. The character is a sleek, cybernetic human with golden glowing circuit patterns etched into their dark obsidian skin. The setting is a dark, tech-infused environment with soft amber rim lighting, emphasizing a professional hacker elite aesthetic. The overall mood is intense, mysterious, and highly technical, matching a premium competitive programming platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT7myImUt-O7lYuEYX_59sE7HRVziF-cT-rLVt9YZbkPi2VGy7UVqBxmPWHa1l15VodAQSsfM2Ak1ytbdkDCV70PiLGQ7_qfobGkJvYIcPNRLT0_CU1pMQsc7qdM4_yojtZWEbWW-wL1fi0DYU8-mawgViscB-V5tDyNXE5rFOIKeauKGUFqYpTER_1TqD43GEQvIhnCg1uHfsrhYssqCUuMvB61dpXfyy2ojs6br3AZiRc3fachGjsRtSWX5Vv-iBRFG4dl2vJUkA"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-container-margin max-w-2xl mx-auto space-y-section-gap">
+<!-- Team Slots Section -->
+<section>
+<h2 class="font-label-caps text-label-caps text-outline mb-4 uppercase tracking-widest">Your Squad</h2>
+<div class="grid grid-cols-3 gap-gutter">
+<!-- Leader Slot -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-4 flex flex-col items-center justify-center space-y-3 aspect-square relative group">
+<div class="absolute top-2 left-2 bg-[#FFD700] text-[#0A0A0A] text-[8px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-tighter">Leader</div>
+<div class="w-16 h-16 rounded-full border-2 border-[#FFD700] p-1 overflow-hidden">
+<img alt="Leader" class="w-full h-full rounded-full object-cover" data-alt="A stylized portrait of a competitive programmer leader, depicted with sharp, clean lines and a high-contrast aesthetic. The character wears high-tech eyewear reflecting lines of code in a vibrant gold hue. The background is a pitch-black digital void with subtle particle effects. The lighting is dramatic and focused, highlighting the determination and expertise of an elite developer ready for a high-stakes battle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdS70W5kZqkSNLjJ18TTYO_srAWcx3LdpLea5z3CdYBUWzLwJDqzHoJO3fUudEqxOM-E5gAu5n16qVf90KiNgEQ_dAd_gI7ftBtC4FyziFZ0AUPPjQwld9w1Qyde_68neGy0Sf8t-TCXK2wCVNOyH3MThshUFkfLSir5Di6wd2bGmCkQf8-px92sctR3I6IvumfEcyQvGIf7Wu7mOUq0BS5WyyFEn5ecsd5hThTZSuVwBz1157LNZYfqaqtNl6ctjFs8642PbnChHX"/>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface uppercase truncate w-full text-center">RootUser</span>
+</div>
+<!-- Add Slot 1 -->
+<button class="bg-[#111111] border border-dashed border-[#2A2A2A] rounded-xl p-4 flex flex-col items-center justify-center space-y-3 aspect-square hover:bg-[#1A1A1A] transition-all group active:scale-95">
+<div class="w-12 h-12 rounded-full border border-[#2A2A2A] flex items-center justify-center group-hover:border-[#FFD700] transition-colors">
+<span class="material-symbols-outlined text-outline group-hover:text-[#FFD700]" data-icon="add">add</span>
+</div>
+<span class="font-label-caps text-[10px] text-outline group-hover:text-on-surface transition-colors">Add Teammate</span>
+</button>
+<!-- Add Slot 2 -->
+<button class="bg-[#111111] border border-dashed border-[#2A2A2A] rounded-xl p-4 flex flex-col items-center justify-center space-y-3 aspect-square hover:bg-[#1A1A1A] transition-all group active:scale-95">
+<div class="w-12 h-12 rounded-full border border-[#2A2A2A] flex items-center justify-center group-hover:border-[#FFD700] transition-colors">
+<span class="material-symbols-outlined text-outline group-hover:text-[#FFD700]" data-icon="add">add</span>
+</div>
+<span class="font-label-caps text-[10px] text-outline group-hover:text-on-surface transition-colors">Add Teammate</span>
+</button>
+</div>
+</section>
+<!-- Matchmaking Toggle -->
+<section class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-gutter flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="groups">groups</span>
+<div>
+<h3 class="font-headline-md text-body-lg text-on-surface font-bold">Find Random Team</h3>
+<p class="text-outline text-body-md">Fill empty slots with active duelists</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-[#2A2A2A] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary-container"></div>
+</label>
+</section>
+<!-- Difficulty Selector -->
+<section>
+<h2 class="font-label-caps text-label-caps text-outline mb-4 uppercase tracking-widest">Challenge Level</h2>
+<div class="flex flex-wrap gap-2">
+<button class="px-5 py-2 rounded-full border border-[#2A2A2A] bg-[#111111] text-on-surface font-label-caps text-[12px] hover:border-[#FFD700] transition-all active:scale-95">Easy</button>
+<button class="px-5 py-2 rounded-full border-2 border-[#FFD700] bg-[#1A1A1A] text-[#FFD700] font-label-caps text-[12px] shadow-[0_4px_20px_rgba(255,215,0,0.1)]">Medium</button>
+<button class="px-5 py-2 rounded-full border border-[#2A2A2A] bg-[#111111] text-on-surface font-label-caps text-[12px] hover:border-[#FFD700] transition-all active:scale-95">Hard</button>
+<button class="px-5 py-2 rounded-full border border-[#2A2A2A] bg-[#111111] text-on-surface font-label-caps text-[12px] hover:border-[#FFD700] transition-all active:scale-95">Random</button>
+</div>
+</section>
+<!-- Topic Selector -->
+<section>
+<h2 class="font-label-caps text-label-caps text-outline mb-4 uppercase tracking-widest">Algorithm Domains</h2>
+<div class="grid grid-cols-3 gap-2">
+<button class="bg-[#111111] border border-[#2A2A2A] rounded-lg py-3 px-2 flex items-center justify-center gap-2 hover:bg-[#1A1A1A] transition-all border-b-2 border-b-[#FFD700]">
+<span class="material-symbols-outlined text-[18px] text-[#FFD700]" data-icon="data_object">data_object</span>
+<span class="font-code-block text-[12px]">Arrays</span>
+</button>
+<button class="bg-[#111111] border border-[#2A2A2A] rounded-lg py-3 px-2 flex items-center justify-center gap-2 hover:bg-[#1A1A1A] transition-all opacity-60">
+<span class="material-symbols-outlined text-[18px]" data-icon="account_tree">account_tree</span>
+<span class="font-code-block text-[12px]">Trees</span>
+</button>
+<button class="bg-[#111111] border border-[#2A2A2A] rounded-lg py-3 px-2 flex items-center justify-center gap-2 hover:bg-[#1A1A1A] transition-all opacity-60">
+<span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
+<span class="font-code-block text-[12px]">DP</span>
+</button>
+<button class="bg-[#111111] border border-[#2A2A2A] rounded-lg py-3 px-2 flex items-center justify-center gap-2 hover:bg-[#1A1A1A] transition-all opacity-60">
+<span class="material-symbols-outlined text-[18px]" data-icon="hub">hub</span>
+<span class="font-code-block text-[12px]">Graphs</span>
+</button>
+<button class="bg-[#111111] border border-[#2A2A2A] rounded-lg py-3 px-2 flex items-center justify-center gap-2 hover:bg-[#1A1A1A] transition-all opacity-60">
+<span class="material-symbols-outlined text-[18px]" data-icon="abc">abc</span>
+<span class="font-code-block text-[12px]">Strings</span>
+</button>
+<button class="bg-[#111111] border border-[#2A2A2A] rounded-lg py-3 px-2 flex items-center justify-center gap-2 hover:bg-[#1A1A1A] transition-all opacity-60">
+<span class="material-symbols-outlined text-[18px]" data-icon="category">category</span>
+<span class="font-code-block text-[12px]">All</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full p-container-margin bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A] to-transparent">
+<button class="w-full h-14 bg-[#555555] text-[#0A0A0A] font-label-caps text-sm uppercase tracking-widest rounded-xl cursor-not-allowed flex items-center justify-center gap-3" disabled="">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+            Start Team Battle
+        </button>
+<p class="text-center text-[10px] text-outline mt-3 font-code-block uppercase">Full squad required to enter the arena</p>
+</div>
+<!-- Navigation Bar Logic Fallback (if top-level) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center bg-[#0A0A0A] px-4 hidden">
+<div class="flex flex-col items-center justify-center text-[#FFD700] border-t-2 border-[#FFD700] pt-2 pb-3">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-['JetBrains_Mono'] text-[10px] font-bold uppercase tracking-widest">Arena</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#555555] pt-2 pb-3">
+<span class="material-symbols-outlined" data-icon="swords">swords</span>
+<span class="font-['JetBrains_Mono'] text-[10px] font-bold uppercase tracking-widest">Battles</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#555555] pt-2 pb-3">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-['JetBrains_Mono'] text-[10px] font-bold uppercase tracking-widest">Squads</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#555555] pt-2 pb-3">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="font-['JetBrains_Mono'] text-[10px] font-bold uppercase tracking-widest">Rank</span>
+</div>
+</nav>
+</body></html>

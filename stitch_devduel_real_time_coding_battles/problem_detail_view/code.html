@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#1e2020",
+                        "tertiary-container": "#f1db40",
+                        "primary-fixed": "#ffe16d",
+                        "secondary-container": "#ba880f",
+                        "on-tertiary": "#373100",
+                        "on-surface": "#e3e2e2",
+                        "on-error": "#690005",
+                        "outline-variant": "#4d4732",
+                        "secondary": "#f7bd48",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#292a2a",
+                        "on-background": "#e3e2e2",
+                        "on-surface-variant": "#d0c6ab",
+                        "surface": "#121414",
+                        "surface-tint": "#e9c400",
+                        "primary-container": "#ffd700",
+                        "surface-variant": "#343535",
+                        "surface-container-lowest": "#0d0e0f",
+                        "surface-dim": "#121414",
+                        "inverse-primary": "#705d00",
+                        "surface-container-highest": "#343535",
+                        "on-tertiary-fixed": "#201c00",
+                        "surface-container-low": "#1a1c1c",
+                        "on-primary-container": "#705e00",
+                        "on-primary": "#3a3000",
+                        "on-primary-fixed-variant": "#544600",
+                        "inverse-on-surface": "#2f3131",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "primary": "#fff6df",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "on-tertiary-container": "#6b5f00",
+                        "outline": "#999077",
+                        "tertiary": "#fff6d2",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-secondary-container": "#392700",
+                        "surface-bright": "#38393a",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "on-primary-fixed": "#221b00",
+                        "inverse-surface": "#e3e2e2",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#fae448",
+                        "on-secondary": "#412d00",
+                        "secondary-fixed": "#ffdea6",
+                        "on-secondary-fixed": "#271900",
+                        "background": "#121414"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "component-gap": "12px",
+                        "section-gap": "32px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Roboto"],
+                        "body-lg": ["Roboto"],
+                        "code-block": ["JetBrains Mono"],
+                        "headline-md": ["Roboto"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-md": ["Roboto"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+        .bento-card {
+            background-color: #111111;
+            border: 1px solid #2A2A2A;
+            border-radius: 0.75rem;
+        }
+        .glow-gold {
+            box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.15);
+        }
+        .tab-active {
+            border-bottom: 2px solid #FFD700;
+            color: #FFD700;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="bg-[#0A0A0A] font-['JetBrains_Mono'] antialiased border-b border-[#2A2A2A] fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#FFD700]">arrow_back</span>
+<h1 class="text-xl font-black tracking-tighter text-[#FFD700] uppercase">Median of Two Sorted Arrays</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="bookmark">bookmark</span>
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="terminal">terminal</span>
+</div>
+</header>
+<main class="pt-20 pb-32 px-container-margin max-w-4xl mx-auto">
+<!-- Tags & Meta Info -->
+<div class="flex flex-wrap gap-2 mb-gutter">
+<span class="bg-[#111111] border border-green-500/50 text-green-400 font-label-caps text-[10px] px-3 py-1 rounded-full uppercase tracking-widest">Easy</span>
+<span class="bg-[#111111] border border-[#2A2A2A] text-on-surface-variant font-label-caps text-[10px] px-3 py-1 rounded-full uppercase tracking-widest">Arrays</span>
+<span class="bg-[#111111] border border-[#2A2A2A] text-on-surface-variant font-label-caps text-[10px] px-3 py-1 rounded-full uppercase tracking-widest">Binary Search</span>
+</div>
+<!-- Tab Bar -->
+<nav class="flex border-b border-[#2A2A2A] mb-section-gap">
+<button class="flex-1 py-4 text-center font-label-caps text-on-surface border-b-2 border-[#FFD700]">Problem</button>
+<button class="flex-1 py-4 text-center font-label-caps text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity">Editorial</button>
+<button class="flex-1 py-4 text-center font-label-caps text-on-surface-variant opacity-60 hover:opacity-100 transition-opacity">Submissions</button>
+</nav>
+<!-- Problem Description -->
+<section class="space-y-section-gap">
+<div class="space-y-component-gap">
+<p class="font-body-lg text-on-surface leading-relaxed">
+                    Given two sorted arrays <code class="font-code-block text-primary-fixed bg-surface-container-high px-1 rounded">nums1</code> and <code class="font-code-block text-primary-fixed bg-surface-container-high px-1 rounded">nums2</code> of size <code class="font-code-block text-primary-fixed">m</code> and <code class="font-code-block text-primary-fixed">n</code> respectively, return <strong class="text-primary-container">the median</strong> of the two sorted arrays.
+                </p>
+<p class="font-body-lg text-on-surface leading-relaxed">
+                    The overall run time complexity should be <code class="font-code-block text-tertiary-container bg-surface-container-high px-1 rounded">O(log (m+n))</code>.
+                </p>
+</div>
+<!-- Bento Examples -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bento-card p-gutter glow-gold">
+<h3 class="font-label-caps text-primary-container mb-unit">Example 1</h3>
+<div class="bg-[#0A0A0A] p-unit rounded-lg border border-[#2A2A2A] space-y-unit">
+<div>
+<span class="text-on-surface-variant font-code-block text-[12px] uppercase">Input:</span>
+<pre class="font-code-block text-on-surface text-[13px]">nums1 = [1,3], nums2 = [2]</pre>
+</div>
+<div>
+<span class="text-on-surface-variant font-code-block text-[12px] uppercase">Output:</span>
+<pre class="font-code-block text-on-surface text-[13px]">2.00000</pre>
+</div>
+<div class="pt-unit border-t border-[#2A2A2A]">
+<span class="text-on-surface-variant font-code-block text-[12px] uppercase">Explanation:</span>
+<p class="font-body-md text-on-surface-variant mt-1 italic">Merged array = [1,2,3] and median is 2.</p>
+</div>
+</div>
+</div>
+<div class="bento-card p-gutter">
+<h3 class="font-label-caps text-primary-container mb-unit">Example 2</h3>
+<div class="bg-[#0A0A0A] p-unit rounded-lg border border-[#2A2A2A] space-y-unit">
+<div>
+<span class="text-on-surface-variant font-code-block text-[12px] uppercase">Input:</span>
+<pre class="font-code-block text-on-surface text-[13px]">nums1 = [1,2], nums2 = [3,4]</pre>
+</div>
+<div>
+<span class="text-on-surface-variant font-code-block text-[12px] uppercase">Output:</span>
+<pre class="font-code-block text-on-surface text-[13px]">2.50000</pre>
+</div>
+<div class="pt-unit border-t border-[#2A2A2A]">
+<span class="text-on-surface-variant font-code-block text-[12px] uppercase">Explanation:</span>
+<p class="font-body-md text-on-surface-variant mt-1 italic">Merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Constraints -->
+<div class="space-y-component-gap">
+<h3 class="font-headline-md text-on-surface">Constraints</h3>
+<ul class="space-y-2 list-none">
+<li class="flex items-start gap-2">
+<span class="text-primary-container font-black mt-1">/</span>
+<code class="font-code-block text-on-surface">nums1.length == m</code>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary-container font-black mt-1">/</span>
+<code class="font-code-block text-on-surface">nums2.length == n</code>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary-container font-black mt-1">/</span>
+<code class="font-code-block text-on-surface">0 &lt;= m, n &lt;= 1000</code>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary-container font-black mt-1">/</span>
+<code class="font-code-block text-on-surface">1 &lt;= m + n &lt;= 2000</code>
+</li>
+</ul>
+</div>
+</section>
+</main>
+<!-- Bottom Actions -->
+<div class="fixed bottom-0 left-0 w-full bg-[#0A0A0A]/90 backdrop-blur-md border-t border-[#2A2A2A] px-container-margin py-4 z-50">
+<div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-gutter">
+<button class="flex-1 h-12 bg-gradient-to-r from-[#93000a] to-[#ffd700] text-on-surface font-label-caps text-center flex items-center justify-center rounded-lg active:scale-95 transition-all shadow-[0_0_15px_rgba(255,215,0,0.2)]">
+                Solve in Battle
+            </button>
+<button class="flex-1 h-12 border border-[#FFD700] text-[#FFD700] font-label-caps text-center flex items-center justify-center rounded-lg active:scale-95 transition-all">
+                Practice Solo
+            </button>
+</div>
+</div>
+<!-- Background Accent Decoration -->
+<div class="fixed top-0 right-0 -z-10 w-full h-full pointer-events-none opacity-10">
+<div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary-container rounded-full blur-[160px]"></div>
+</div>
+</body></html>

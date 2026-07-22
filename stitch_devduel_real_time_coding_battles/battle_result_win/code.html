@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;family=Roboto:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1e2020",
+                    "tertiary-container": "#f1db40",
+                    "primary-fixed": "#ffe16d",
+                    "secondary-container": "#ba880f",
+                    "on-tertiary": "#373100",
+                    "on-surface": "#e3e2e2",
+                    "on-error": "#690005",
+                    "outline-variant": "#4d4732",
+                    "secondary": "#f7bd48",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#292a2a",
+                    "on-background": "#e3e2e2",
+                    "on-surface-variant": "#d0c6ab",
+                    "surface": "#121414",
+                    "surface-tint": "#e9c400",
+                    "primary-container": "#ffd700",
+                    "surface-variant": "#343535",
+                    "surface-container-lowest": "#0d0e0f",
+                    "surface-dim": "#121414",
+                    "inverse-primary": "#705d00",
+                    "surface-container-highest": "#343535",
+                    "on-tertiary-fixed": "#201c00",
+                    "surface-container-low": "#1a1c1c",
+                    "on-primary-container": "#705e00",
+                    "on-primary": "#3a3000",
+                    "on-primary-fixed-variant": "#544600",
+                    "inverse-on-surface": "#2f3131",
+                    "error": "#ffb4ab",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "primary": "#fff6df",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "on-tertiary-container": "#6b5f00",
+                    "outline": "#999077",
+                    "tertiary": "#fff6d2",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-secondary-container": "#392700",
+                    "surface-bright": "#38393a",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "on-primary-fixed": "#221b00",
+                    "inverse-surface": "#e3e2e2",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#fae448",
+                    "on-secondary": "#412d00",
+                    "secondary-fixed": "#ffdea6",
+                    "on-secondary-fixed": "#271900",
+                    "background": "#121414"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "component-gap": "12px",
+                    "section-gap": "32px",
+                    "gutter": "16px",
+                    "unit": "8px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Roboto"],
+                    "body-lg": ["Roboto"],
+                    "code-block": ["JetBrains Mono"],
+                    "headline-md": ["Roboto"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-md": ["Roboto"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+            display: inline-block;
+        }
+        .bg-confetti {
+            background-image: 
+                radial-gradient(circle at 20% 30%, #ffd700 1px, transparent 1px),
+                radial-gradient(circle at 70% 10%, #ffd700 2px, transparent 2px),
+                radial-gradient(circle at 40% 80%, #ffd700 1.5px, transparent 1.5px),
+                radial-gradient(circle at 80% 60%, #ffd700 1px, transparent 1px),
+                radial-gradient(circle at 10% 90%, #ffd700 2px, transparent 2px),
+                radial-gradient(circle at 90% 20%, #ffd700 1px, transparent 1px);
+            background-size: 200px 200px;
+        }
+        .gold-glow {
+            box-shadow: 0px 4px 40px rgba(255, 215, 0, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Shell suppressed for Transactional Activity, but UI branding remains) -->
+<header class="bg-[#0A0A0A] font-['JetBrains_Mono'] antialiased fixed top-0 w-full z-50 border-b border-[#2A2A2A] flex justify-between items-center px-6 h-16 w-full">
+<div class="text-xl font-black tracking-tighter text-[#FFD700] uppercase">DevDuel</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#FFD700]">terminal</span>
+</div>
+</header>
+<main class="min-h-screen pt-16 pb-24 relative overflow-hidden">
+<!-- Confetti Background Overlay -->
+<div class="absolute inset-0 bg-confetti opacity-20 pointer-events-none"></div>
+<div class="relative z-10 px-container-margin flex flex-col items-center">
+<!-- Victory Header Section -->
+<div class="mt-section-gap text-center space-y-4">
+<div class="relative inline-block">
+<!-- Gold Glow Effect -->
+<div class="absolute inset-0 bg-primary-container blur-3xl opacity-20 rounded-full"></div>
+<span class="material-symbols-outlined text-[120px] text-primary-container drop-shadow-[0_0_15px_rgba(255,215,0,0.5)]" style="font-variation-settings: 'FILL' 1;">trophy</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary-container uppercase tracking-tight">Victory!</h1>
+<p class="font-code-block text-body-lg text-on-surface-variant">You solved it in 4:23!</p>
+</div>
+<!-- Main Results Bento Grid -->
+<div class="w-full max-w-md mt-section-gap space-y-gutter">
+<!-- Primary Stats Card -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 gold-glow">
+<div class="grid grid-cols-2 gap-gutter">
+<div class="space-y-unit">
+<p class="font-label-caps text-label-caps text-[#555555]">XP Gained</p>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary-container">+150</span>
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</div>
+<div class="space-y-unit">
+<p class="font-label-caps text-label-caps text-[#555555]">New Rank</p>
+<p class="font-headline-md text-headline-md text-on-surface">#23 <span class="text-xs font-normal text-on-surface-variant uppercase">College</span></p>
+</div>
+<div class="col-span-2 border-t border-[#2A2A2A] pt-4 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Total Career Wins</span>
+<span class="font-code-block text-body-lg text-primary-container font-bold">47</span>
+</div>
+</div>
+</div>
+<!-- Opponent Card -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Opponent profile avatar" class="w-12 h-12 rounded-full border border-[#2A2A2A] object-cover" data-alt="A cinematic, high-contrast close-up portrait of a professional e-sports competitor in a dark, atmospheric gaming room. The lighting is dominated by a sharp cyan rim light that carves out their silhouette against the deep black background. Their expression is focused and stoic, embodying the elite developer persona. The overall aesthetic is gritty, tech-focused, and premium, consistent with a high-stakes competitive coding platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAResIRsd1oIjT9gmL_mVjO3aOcurAuWznmVVcvw35RqmmeYSeXY0ZvXqDiZT1T7HLXn8QEfRyEkk3L-clp5LzGDu8bFb-5GG4ItYbXwhUGr6EF6hIFQ8hYmL-V7o44hBPOXPeLh7OECCy8wDXC03SUlocShq3QRh2hEHf3yVZHPHFtTVTcSZ-_rgY9wx8BXgjQbbDkJyaA33QkeMXpWKvxgY9TbhWvbtDKKOqamIVqRkQBwWTzHWcRDVL7TZQiKFGeYVnn9vRuGrbM"/>
+<div class="absolute -bottom-1 -right-1 bg-error w-4 h-4 rounded-full border-2 border-[#111111] flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-error font-bold">close</span>
+</div>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface">CodeSlayer_99</p>
+<p class="font-body-md text-on-surface-variant text-xs">Final Time: 5:45</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-[10px] text-error uppercase">Defeated</p>
+</div>
+</div>
+<!-- Performance Breakdown -->
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-surface-container-low p-3 rounded-lg border border-[#2A2A2A] text-center">
+<p class="text-[10px] font-label-caps text-[#555555] mb-1">Accuracy</p>
+<p class="font-code-block text-on-surface font-bold">100%</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-[#2A2A2A] text-center">
+<p class="text-[10px] font-label-caps text-[#555555] mb-1">Speed</p>
+<p class="font-code-block text-on-surface font-bold">Top 5%</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-[#2A2A2A] text-center">
+<p class="text-[10px] font-label-caps text-[#555555] mb-1">Memory</p>
+<p class="font-code-block text-on-surface font-bold">12.4MB</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Action Buttons Fixed Bottom -->
+<footer class="fixed bottom-0 left-0 w-full p-container-margin bg-[#0A0A0A]/80 backdrop-blur-md z-50">
+<div class="max-w-md mx-auto flex flex-col gap-3">
+<button class="w-full h-12 bg-primary-container text-on-primary-container font-label-caps rounded-lg uppercase tracking-widest active:scale-95 transition-transform flex items-center justify-center gap-2">
+                Play Again
+                <span class="material-symbols-outlined text-lg">swords</span>
+</button>
+<button class="w-full h-12 bg-transparent border border-primary-container text-primary-container font-label-caps rounded-lg uppercase tracking-widest active:bg-primary-container/10 transition-colors">
+                View Solution
+            </button>
+</div>
+</footer>
+</body></html>

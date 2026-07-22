@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DevDuel | Problems Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#1e2020",
+                        "tertiary-container": "#f1db40",
+                        "primary-fixed": "#ffe16d",
+                        "secondary-container": "#ba880f",
+                        "on-tertiary": "#373100",
+                        "on-surface": "#e3e2e2",
+                        "on-error": "#690005",
+                        "outline-variant": "#4d4732",
+                        "secondary": "#f7bd48",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#292a2a",
+                        "on-background": "#e3e2e2",
+                        "on-surface-variant": "#d0c6ab",
+                        "surface": "#121414",
+                        "surface-tint": "#e9c400",
+                        "primary-container": "#ffd700",
+                        "surface-variant": "#343535",
+                        "surface-container-lowest": "#0d0e0f",
+                        "surface-dim": "#121414",
+                        "inverse-primary": "#705d00",
+                        "surface-container-highest": "#343535",
+                        "on-tertiary-fixed": "#201c00",
+                        "surface-container-low": "#1a1c1c",
+                        "on-primary-container": "#705e00",
+                        "on-primary": "#3a3000",
+                        "on-primary-fixed-variant": "#544600",
+                        "inverse-on-surface": "#2f3131",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "primary": "#fff6df",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "on-tertiary-container": "#6b5f00",
+                        "outline": "#999077",
+                        "tertiary": "#fff6d2",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-secondary-container": "#392700",
+                        "surface-bright": "#38393a",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "on-primary-fixed": "#221b00",
+                        "inverse-surface": "#e3e2e2",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#fae448",
+                        "on-secondary": "#412d00",
+                        "secondary-fixed": "#ffdea6",
+                        "on-secondary-fixed": "#271900",
+                        "background": "#121414"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "component-gap": "12px",
+                        "section-gap": "32px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Roboto"],
+                        "body-lg": ["Roboto"],
+                        "code-block": ["JetBrains Mono"],
+                        "headline-md": ["Roboto"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-md": ["Roboto"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0A0A0A] text-[#FFD700] font-['JetBrains_Mono'] antialiased border-b border-[#2A2A2A] flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container border border-outline-variant flex items-center justify-center overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A sharp, high-contrast close-up portrait of a professional developer in a dark studio. The lighting is dramatic, with golden highlights catching the edges of his face against a deep black background, reflecting a high-tech, elite hacker aesthetic. The style is minimalist and premium, utilizing rich blacks and metallic gold tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAybT16r9k1J877yXRoWJzbpabGNqHp9erqOp2rn3u6Fm5bZzU9NUX-1bcrS8FVqUYbWjmikmOIUgo8fbanzIb15gvhrX6flDudVTRtMK3x1OCmBgY1YcejsC4S4fs8khx7XlqrF5fnsmEVaJmVAH0KmtjjWvxMy9Cyb8bDJBZ6Bb_HtvB3z_HLj5TXZ7oBQ-GdBeTSDK5wsjfKSHhNveeMt40Fv4AWYPw63EvkfTXyRpFYI8R9kU9z7V4AJ4V6NmXOaTppS-b3sjv2"/>
+</div>
+<span class="text-xl font-black tracking-tighter text-[#FFD700] uppercase">DevDuel</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl hover:text-[#FFD700] transition-colors cursor-pointer" data-icon="terminal">terminal</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-20 pb-24 px-container-margin">
+<!-- Search Section -->
+<div class="relative mb-6">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full h-12 pl-12 pr-4 bg-surface-container-low border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-all font-body-md placeholder-outline" placeholder="Search problems..." type="text"/>
+</div>
+<!-- Horizontal Filter Chips -->
+<div class="flex gap-3 overflow-x-auto pb-4 mb-6">
+<button class="flex-shrink-0 px-5 py-2 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase border border-primary-container">
+                All
+            </button>
+<button class="flex-shrink-0 px-5 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant hover:border-primary-container transition-colors">
+                Easy
+            </button>
+<button class="flex-shrink-0 px-5 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant hover:border-primary-container transition-colors">
+                Medium
+            </button>
+<button class="flex-shrink-0 px-5 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant hover:border-primary-container transition-colors">
+                Hard
+            </button>
+<button class="flex-shrink-0 px-5 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant hover:border-primary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="bookmark">bookmark</span>
+                Bookmarked
+            </button>
+</div>
+<!-- Problem List (RecyclerView style) -->
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="p-4 bg-surface-container-low border border-outline-variant rounded-xl flex items-center justify-between group hover:border-primary-container hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-headline-md text-body-lg">#101. Matrix Diagonal Sum</span>
+<span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-emerald-900/30 text-emerald-400 font-label-caps text-[10px] uppercase tracking-wider">Easy</span>
+<span class="text-outline text-[11px] font-code-block">Arrays, Math</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Item 2 -->
+<div class="p-4 bg-surface-container-low border border-outline-variant rounded-xl flex items-center justify-between group hover:border-primary-container hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-headline-md text-body-lg">#42. Trapping Rain Water</span>
+<span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-rose-900/30 text-rose-400 font-label-caps text-[10px] uppercase tracking-wider">Hard</span>
+<span class="text-outline text-[11px] font-code-block">Arrays, Two Pointers</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Item 3 -->
+<div class="p-4 bg-surface-container-low border border-outline-variant rounded-xl flex items-center justify-between group hover:border-primary-container hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-headline-md text-body-lg">#1. Two Sum</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-emerald-900/30 text-emerald-400 font-label-caps text-[10px] uppercase tracking-wider">Easy</span>
+<span class="text-outline text-[11px] font-code-block">Hash Table, Arrays</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Item 4 -->
+<div class="p-4 bg-surface-container-low border border-outline-variant rounded-xl flex items-center justify-between group hover:border-primary-container hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-headline-md text-body-lg">#146. LRU Cache</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-amber-900/30 text-amber-400 font-label-caps text-[10px] uppercase tracking-wider">Medium</span>
+<span class="text-outline text-[11px] font-code-block">Design, Linked List</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Item 5 -->
+<div class="p-4 bg-surface-container-low border border-outline-variant rounded-xl flex items-center justify-between group hover:border-primary-container hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-headline-md text-body-lg">#23. Merge k Sorted Lists</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-rose-900/30 text-rose-400 font-label-caps text-[10px] uppercase tracking-wider">Hard</span>
+<span class="text-outline text-[11px] font-code-block">Heap, Merge Sort</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed right-6 bottom-24 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center bg-[#0A0A0A] px-4 z-50 border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(255,215,0,0.05)]">
+<!-- Arena (Problems Tab - Active) -->
+<a class="flex flex-col items-center justify-center text-[#FFD700] border-t-2 border-[#FFD700] pt-2 pb-3 flex-1 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="code" style="font-variation-settings: 'FILL' 1;">code</span>
+<span class="font-['JetBrains_Mono'] text-[10px] font-bold uppercase tracking-widest">Arena</span>
+</a>
+<!-- Battles -->
+<a class="flex flex-col items-center justify-center text-[#555555] pt-2 pb-3 flex-1 hover:bg-[#111111] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="swords">swords</span>
+<span class="font-['JetBrains_Mono'] text-[10px] font-bold uppercase tracking-widest">Battles</span>
+</a>
+<!-- Squads -->
+<a class="flex flex-col items-center justify-center text-[#555555] pt-2 pb-3 flex-1 hover:bg-[#111111] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="groups">groups</span>
+<span class="font-['JetBrains_Mono'] text-[10px] font-bold uppercase tracking-widest">Squads</span>
+</a>
+<!-- Rank -->
+<a class="flex flex-col items-center justify-center text-[#555555] pt-2 pb-3 flex-1 hover:bg-[#111111] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="military_tech">military_tech</span>
+<span class="font-['JetBrains_Mono'] text-[10px] font-bold uppercase tracking-widest">Rank</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.idea/
+node_modules/
+build/
+.dart_tool/
+.packages
+.pub/
+.env
+*.log

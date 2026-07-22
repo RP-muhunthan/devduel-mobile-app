@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-container-high": "#292a2a",
+                  "inverse-surface": "#e3e2e2",
+                  "on-secondary-container": "#392700",
+                  "on-tertiary": "#373100",
+                  "surface": "#121414",
+                  "on-secondary": "#412d00",
+                  "on-surface-variant": "#d0c6ab",
+                  "on-surface": "#e3e2e2",
+                  "surface-tint": "#e9c400",
+                  "outline": "#999077",
+                  "outline-variant": "#4d4732",
+                  "on-error": "#690005",
+                  "on-tertiary-fixed-variant": "#504700",
+                  "on-tertiary-fixed": "#201c00",
+                  "secondary-fixed": "#ffdea6",
+                  "surface-container-low": "#1a1c1c",
+                  "on-primary-fixed": "#221b00",
+                  "primary-fixed-dim": "#e9c400",
+                  "surface-dim": "#121414",
+                  "secondary-container": "#ba880f",
+                  "on-primary-fixed-variant": "#544600",
+                  "inverse-primary": "#705d00",
+                  "error-container": "#93000a",
+                  "on-error-container": "#ffdad6",
+                  "tertiary": "#fff6d2",
+                  "primary": "#fff6df",
+                  "primary-container": "#ffd700",
+                  "error": "#ffb4ab",
+                  "inverse-on-surface": "#2f3131",
+                  "surface-variant": "#343535",
+                  "surface-container-lowest": "#0d0e0f",
+                  "surface-container-highest": "#343535",
+                  "secondary-fixed-dim": "#f7bd48",
+                  "on-primary-container": "#705e00",
+                  "background": "#121414",
+                  "on-primary": "#3a3000",
+                  "on-tertiary-container": "#6b5f00",
+                  "on-secondary-fixed": "#271900",
+                  "primary-fixed": "#ffe16d",
+                  "tertiary-fixed": "#fae448",
+                  "on-background": "#e3e2e2",
+                  "surface-container": "#1e2020",
+                  "secondary": "#f7bd48",
+                  "on-secondary-fixed-variant": "#5d4200",
+                  "tertiary-container": "#f1db40",
+                  "tertiary-fixed-dim": "#dcc82c",
+                  "surface-bright": "#38393a"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "gutter": "16px",
+                  "component-gap": "12px",
+                  "unit": "8px",
+                  "section-gap": "32px",
+                  "container-margin": "24px"
+          },
+          "fontFamily": {
+                  "code-block": ["JetBrains Mono"],
+                  "headline-md": ["Roboto"],
+                  "label-caps": ["JetBrains Mono"],
+                  "body-md": ["Roboto"],
+                  "headline-lg": ["Roboto"],
+                  "body-lg": ["Roboto"]
+          },
+          "fontSize": {
+                  "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                  "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                  "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                  "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                  "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { background-color: #0A0A0A; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #111111; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 2px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md min-h-screen flex flex-col">
+<header class="bg-[#0A0A0A] border-b border-[#2A2A2A] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-yellow-500" data-icon="terminal">terminal</span>
+<h1 class="text-xl font-black italic tracking-tighter text-yellow-500 font-mono uppercase tracking-widest text-sm">DevDuel</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-4">
+<button class="font-mono uppercase tracking-widest text-sm text-yellow-500 hover:text-yellow-400 transition-colors">Battle</button>
+<button class="font-mono uppercase tracking-widest text-sm text-[#666666] hover:text-yellow-400 transition-colors">Practice</button>
+</div>
+<div class="w-10 h-10 rounded-full border border-[#2A2A2A] overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a software engineer in a high-tech studio environment. The lighting is dramatic and cinematic, featuring sharp golden rim lights against a deep obsidian background. The individual has a focused, intense expression, capturing the high-stakes competitive atmosphere of the DevDuel platform. The overall aesthetic is sleek, minimalist, and ultra-modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtRAME9BNHWXm_6ArOfV9pihTWPelt7gtYUql2Vhfaqhc9cXllTRrEeJkbaLwHCKJNMm3duuUWjZRiZ-FV4a1ZRlKSR9CFfGMD0oEubmHY6rJVXaNAYgix2xwlUmrBR6zhlkD-JGjfWawT-Lxkz66XM_CGcqAkrCK3r2bbx-mzn4S4Lo1MQlTR7pHVIV4ZzE2DVOX2xGtMNir2caz-Q7N797JytzJuoEtCZdPBQ3OwRFDxY_eNtUzBBFSwxAN6iazHRNStcr0ue283"/>
+</div>
+</div>
+</header>
+<main class="mt-20 flex-1 flex flex-col overflow-hidden pb-16 md:pb-0">
+<section class="px-container-margin py-unit bg-[#0A0A0A] border-b border-[#2A2A2A]">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-unit">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-label-caps text-yellow-500">YOUR TEAM</span>
+<span class="font-label-caps text-label-caps text-[#666666]">82% COMPLETE</span>
+</div>
+<div class="flex gap-4 items-center bg-[#111111] p-3 border border-[#2A2A2A] rounded-lg">
+<div class="flex -space-x-3 overflow-hidden">
+<img class="inline-block h-10 w-10 rounded-full ring-2 ring-[#0A0A0A]" data-alt="Close-up portrait of a competitive coder, lit with aggressive amber and gold light in a dark, tech-focused environment. The style is sharp, cinematic, and high-contrast, fitting the hacker elite aesthetic of a professional coding battle arena. Deep shadows and vibrant gold accents define the facial features." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPa5Ew2J7Q2EnGouYnjcgF0BzMar7irrB41Su9cn3H1k6AG5B_MzQzhYhsqmddNbzh5dPMQYIW_SGB8DgK5PuUNTHppeafNUJbrGLkpekw2lfkpF_ax7oJ8PciqoG-z5BG0OhkRgCErJ5DBwaCfC7jGNkwDR3xJUgXVBP32NNz57cmLhwqKww2P_0ceckcEFnsSmE63-DHJo5eWtGpXronBozSW78wF0nvwFuiwZALxZ8RH2pUNdRfyrmCjh4-QVXQmvNdUNY7bdde"/>
+<img class="inline-block h-10 w-10 rounded-full ring-2 ring-[#0A0A0A]" data-alt="Stylized portrait of an elite developer with a calm but determined look. The lighting uses warm gold tones reflecting off a dark surface, creating a sense of technical mastery and prestige. The background is a clean, minimal black, highlighting the character's focus and intensity during a high-stakes team competition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0AZm_3YVb_vpU7RM9_x-za4pJHglq9MHHH4xZrqpyyJtxmKxQ1hMSlFTjIeGhOU1ukdXvZo2AVt9GoDZ7qvzBnvHipgIkRFDgP04tuwNXVxilmY__04bT9ZPAPWISHgtPwQqfFSZpc1bZyM0JzEFuyw_vHgN4Ddl3z41A3NPewMoJ6ThsrW_I1BFVmlUG9uY-uNTlQgVcaXC-i6OFvoUcFyPo31SqRgI6ma8h0YeHJP244C9SVMN113yEap3rRinRvR6dN5cfwCDW"/>
+<img class="inline-block h-10 w-10 rounded-full ring-2 ring-[#0A0A0A]" data-alt="Avatar of a master programmer, featuring high-contrast studio lighting with signature gold highlights. The background is a void-like black, emphasizing the sharp, professional aesthetic of the DevDuel brand. The mood is energetic and high-stakes, suggestive of a live e-sports coding event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwnLtsfUSO1_vBT0A_8t7IU9ZVei7R2vZwrEUFEruoGw3xi_LnUCIstsG137Vo5v5KCVAQMlCPZDbTGUBm0lT6Zz2C116CTrdL6OAXbDKJxWkT44S1-EzNiw_ac5p6rtVE55MIsrX2cbyXyFlFOiWSQfc5zrVMFXPDDhhzDq3bnQD4ym8QupBKflj90OLIeICAbArhI8CizDEAigKYcOFkcJig249mH5LNYTAsaJXe3y2y8c4Wzs8DwzxhJdqelwdSRUljP29SO3Cv"/>
+</div>
+<div class="flex-1 space-y-2">
+<div class="w-full bg-[#2A2A2A] h-1.5 rounded-full overflow-hidden">
+<div class="bg-yellow-500 h-full w-[82%] shadow-[0_0_10px_rgba(255,215,0,0.3)]"></div>
+</div>
+<div class="flex justify-between font-label-caps text-[10px] text-[#666666]">
+<span>SYNC: 12ms</span>
+<span class="text-yellow-500">ACTIVE: ALPHA_DEV</span>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center border border-yellow-500 text-yellow-500 rounded-lg hover:bg-yellow-500/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+<div class="space-y-unit">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-label-caps text-error">OPPONENT TEAM</span>
+<span class="font-label-caps text-label-caps text-[#666666]">74% COMPLETE</span>
+</div>
+<div class="flex gap-4 items-center bg-[#111111] p-3 border border-[#2A2A2A] rounded-lg">
+<div class="flex -space-x-3 overflow-hidden">
+<img class="inline-block h-10 w-10 rounded-full ring-2 ring-[#0A0A0A]" data-alt="An avatar of a rival coder, depicted in high-contrast digital art style. The character is illuminated by sharp, cold metallic light with subtle gold highlights. Set against a pure black canvas, the portrait exudes a professional, competitive aura, fitting the intensity of an elite programming duel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL637rNh8ybO4W8Gax1EtTeqL8bhIALbCsBIMdSF69bqm-BSzzGJJHorZBUUvvjIPrfheEVQH_lPU_wwf5qjXxE3xsTl_cV-1ixPOglb-arvopA9uOEytlMZ2kXvBYNHkU1ET_A4oAFsUTVZtspqsNCtAVXEC2dl8YkQHuS2R9QatlYUt-0Iz9olp7s5NS8zRL-ad-kLiRHO1Lf3cFt3VqPfAfbyL5HRQPsut_x-LKKF8jr91b_936-g-vQx4H1CcmcvAn9xBJvuCq"/>
+<img class="inline-block h-10 w-10 rounded-full ring-2 ring-[#0A0A0A]" data-alt="Dramatic portrait of a software engineer, using a minimalist color palette of deep black and brilliant gold. The lighting is cinematic, focusing on the character's intense eyes. This visual representation of a team member in a competitive battle room communicates speed, precision, and technical mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnYFLoSUlWDAj-IzZ0BQ4U9rzkH4_aoowCeRx4u0QNSKHnw4ZnmXFphPDMI4hjgW6zeiGDekHja9kwPoAyTCKFEJ_hLAXHHstwrzbsfJzsP7b66yi-ZscbqBmzjOXDNYWS1b5_hN543H6E-5ZPvBRDKhRrhFW0iqCr35elVtMVweu4waMKu4rerMamBAnhyslg8gQ-XhnFxli8hetcgBt-5KflkE3uij3AEMCLdXzdTRuthMYVbZxPL3umTwKhVQ48clXfjKUin5Rm"/>
+<img class="inline-block h-10 w-10 rounded-full ring-2 ring-[#0A0A0A]" data-alt="Headshot of a competitive programmer in a dark, atmospheric setting. The aesthetic is defined by sleek, high-tech details and a sophisticated gold-and-black color scheme. The lighting is high-key and soft but directed, creating a premium feel that aligns with the professional rigor of high-end IDEs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9OBX9fNIrshvxD_dKy9HTJ3ktR8aLlsKhG0d0y49h8AK1Cqw5xYhmuj6i_XZ7CPzMHL2eK5oE_bjHdAKDx2E4sUTp1LjI5QfyCmkuZ70uh4YVdLxDLhbVRvT8CyygtqbCP483XXShD9FjXLHKW1wmYpJMNrN647OchKWS_VxIxM32qyviYX4ihHMPW5A7iAUUsAC6kXUlIlrlB1Y8jl5g2Q6nn4jUMuQvygFdYdFQp7YhQeHZAipbmlZXvaIVVMmrZ75mYIwK4ihL"/>
+</div>
+<div class="flex-1 space-y-2">
+<div class="w-full bg-[#2A2A2A] h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full w-[74%]"></div>
+</div>
+<div class="flex justify-between font-label-caps text-[10px] text-[#666666]">
+<span>SYNC: 48ms</span>
+<span>IDLE: NULL_POINTER</span>
+</div>
+</div>
+<div class="w-10 h-10 flex items-center justify-center border border-[#2A2A2A] text-[#666666] rounded-lg">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="flex-1 flex flex-col md:flex-row overflow-hidden">
+<div class="w-full md:w-1/3 flex flex-col border-r border-[#2A2A2A] bg-[#0A0A0A]">
+<div class="p-6 overflow-y-auto custom-scrollbar">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-yellow-500 text-[#0A0A0A] font-label-caps text-[10px] px-2 py-0.5 rounded">HARD</span>
+<span class="text-[#666666] font-label-caps text-[10px]">#402 BATTLE</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-yellow-500 mb-4">OPTIMAL SUBARRAY X-FACTOR</h2>
+<div class="space-y-4 font-body-md text-on-surface-variant leading-relaxed">
+<p>Given an array of integers <code class="font-code-block text-yellow-500 bg-[#111111] px-1 rounded">nums</code> and an integer <code class="font-code-block text-yellow-500 bg-[#111111] px-1 rounded">k</code>, find the maximum "X-Factor" of any subarray of length at least <code class="font-code-block text-yellow-500 bg-[#111111] px-1 rounded">k</code>.</p>
+<p>The X-Factor is defined as the product of the bitwise XOR sum of the subarray and its length.</p>
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 rounded-xl font-code-block text-code-block">
+<p class="text-[#666666] mb-2 uppercase text-[10px] tracking-widest font-bold">Example 1:</p>
+<p><span class="text-secondary">Input:</span> nums = [1, 2, 3], k = 2</p>
+<p><span class="text-secondary">Output:</span> 6</p>
+<p><span class="text-secondary">Explanation:</span> Subarray [2, 3] has XOR sum (2 ^ 3) = 1. Length is 2. Product = 2. Subarray [1, 2, 3] has XOR sum (1 ^ 2 ^ 3) = 0. Length is 3. Product = 0. Max is 6.</p>
+</div>
+<div class="pt-4 border-t border-[#2A2A2A]">
+<h3 class="font-label-caps text-label-caps text-on-surface mb-2">CONSTRAINTS:</h3>
+<ul class="list-disc list-inside space-y-1 text-sm">
+<li>1 ≤ nums.length ≤ 10^5</li>
+<li>0 ≤ nums[i] ≤ 10^9</li>
+<li>1 ≤ k ≤ nums.length</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col bg-surface-container-lowest relative">
+<div class="bg-[#111111] border-b border-[#2A2A2A] px-6 py-3 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="code">code</span>
+<span class="font-label-caps text-[11px] text-on-surface">SOLUTION.CPP</span>
+</div>
+<div class="h-4 w-[1px] bg-[#2A2A2A]"></div>
+<span class="text-[#666666] font-label-caps text-[11px]">C++ 20</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-[#666666] hover:text-yellow-500 transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+<div class="flex-1 bg-[#0D0D0D] font-code-block text-code-block p-6 overflow-auto custom-scrollbar">
+<div class="flex gap-4">
+<div class="text-[#2A2A2A] text-right select-none space-y-0">
+<div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
+</div>
+<div class="flex-1 text-[#e3e2e2]">
+<p><span class="text-secondary">class</span> <span class="text-tertiary">Solution</span> {</p>
+<p><span class="text-secondary">public</span>:</p>
+<p>    <span class="text-tertiary">long long</span> <span class="text-primary-fixed">findMaxXFactor</span>(vector&lt;<span class="text-tertiary">int</span>&gt;&amp; <span class="text-on-surface-variant">nums</span>, <span class="text-tertiary">int</span> <span class="text-on-surface-variant">k</span>) {</p>
+<p>        <span class="text-secondary">int</span> n = nums.size();</p>
+<p>        <span class="text-secondary">long long</span> max_factor = 0;</p>
+<p>        <span class="text-on-tertiary-container">// TODO: Implement optimized sliding window XOR</span></p>
+<p>        <span class="text-secondary">for</span> (<span class="text-secondary">int</span> i = 0; i &lt; n; ++i) {</p>
+<p>            <span class="text-secondary">int</span> current_xor = 0;</p>
+<p>            <span class="text-secondary">for</span> (<span class="text-secondary">int</span> j = i; j &lt; n; ++j) {</p>
+<p>                current_xor ^= nums[j];</p>
+<p>                <span class="text-secondary">if</span> (j - i + 1 &gt;= k) {</p>
+<p>                    max_factor = max(max_factor, (<span class="text-secondary">long long</span>)current_xor * (j - i + 1));</p>
+</div>
+</div>
+<div class="h-4 w-1 bg-yellow-500 animate-pulse inline-block ml-[115px]"></div>
+</div>
+<div class="p-6 bg-[#0A0A0A] border-t border-[#2A2A2A] flex justify-between items-center">
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-6 py-3 border border-[#2A2A2A] bg-[#111111] text-on-surface font-label-caps hover:bg-[#1A1A1A] transition-colors rounded">
+<span class="material-symbols-outlined text-sm" data-icon="play_arrow">play_arrow</span>
+              RUN TESTS
+            </button>
+<button class="flex items-center gap-2 px-6 py-3 border border-[#2A2A2A] bg-[#111111] text-on-surface font-label-caps hover:bg-[#1A1A1A] transition-colors rounded">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span>
+              DEBUG
+            </button>
+</div>
+<button class="bg-yellow-500 text-[#0A0A0A] px-10 py-3 font-label-caps font-black tracking-widest hover:bg-yellow-400 transition-colors shadow-[0_4px_20px_rgba(255,215,0,0.15)] rounded">
+            SUBMIT SOLUTION
+          </button>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 w-full z-50 bg-[#0A0A0A] border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(255,215,0,0.05)] h-16 px-4 pb-safe flex justify-around items-center md:hidden">
+<div class="flex flex-col items-center justify-center text-yellow-500 scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="swords">swords</span>
+<span class="font-mono text-[10px] font-bold uppercase">Battle</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#666666]">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-mono text-[10px] font-bold uppercase">Practice</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#666666]">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-mono text-[10px] font-bold uppercase">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#666666]">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-mono text-[10px] font-bold uppercase">Search</span>
+</div>
+</nav>
+</body></html>

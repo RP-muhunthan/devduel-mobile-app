@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "209736625153",
+    "project_id": "dev-duel-2-ce5e4",
+    "storage_bucket": "dev-duel-2-ce5e4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209736625153:android:5ada0406d94a1e416ee400",
+        "android_client_info": {
+          "package_name": "com.example.devduel_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUmBQZSLIGYy98r4t0TidU_VFTFDKRj4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

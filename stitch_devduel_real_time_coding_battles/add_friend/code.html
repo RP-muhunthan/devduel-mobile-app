@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #121414;
+            color: #e3e2e2;
+        }
+        .accent-glow {
+            box-shadow: 0px 4px 20px rgba(186, 136, 15, 0.15);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1a1c1c",
+                        "secondary-container": "#ba880f",
+                        "tertiary": "#fff6d2",
+                        "on-secondary-container": "#392700",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "on-surface-variant": "#d0c6ab",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-tertiary-fixed": "#201c00",
+                        "on-primary-container": "#705e00",
+                        "on-error": "#690005",
+                        "secondary": "#f7bd48",
+                        "on-surface": "#e3e2e2",
+                        "primary-container": "#ffd700",
+                        "on-primary-fixed": "#221b00",
+                        "on-primary": "#3a3000",
+                        "surface-variant": "#343535",
+                        "tertiary-container": "#f1db40",
+                        "surface-bright": "#38393a",
+                        "outline": "#999077",
+                        "inverse-surface": "#e3e2e2",
+                        "inverse-primary": "#705d00",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "surface-dim": "#121414",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container-high": "#292a2a",
+                        "background": "#121414",
+                        "secondary-fixed": "#ffdea6",
+                        "on-tertiary": "#373100",
+                        "tertiary-fixed": "#fae448",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "outline-variant": "#4d4732",
+                        "surface-tint": "#e9c400",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-tertiary-container": "#6b5f00",
+                        "surface-container": "#1e2020",
+                        "surface-container-highest": "#343535",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "on-secondary-fixed": "#271900",
+                        "primary-fixed": "#ffe16d",
+                        "primary": "#fff6df",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#412d00",
+                        "on-background": "#e3e2e2",
+                        "on-primary-fixed-variant": "#544600",
+                        "surface": "#121414"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "component-gap": "12px",
+                        "container-margin": "24px",
+                        "section-gap": "32px",
+                        "gutter": "16px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Roboto"],
+                        "code-block": ["JetBrains Mono"],
+                        "body-lg": ["Roboto"],
+                        "headline-lg": ["Roboto"],
+                        "body-md": ["Roboto"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-black border-b border-zinc-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-yellow-500" data-icon="terminal">terminal</span>
+<h1 class="font-mono tracking-widest uppercase font-black italic text-xl text-yellow-500">DEVDUEL</h1>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full border border-yellow-500 overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A high-quality digital avatar of a professional software engineer with a minimalist gold circular border. The background is a deep, matte black with subtle technical grid overlays. The character has a sharp, modern appearance, fitting the elite competitive programming aesthetic of the DevDuel platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVdjwldvtYulwXOxiCMYKkUDWU33INSMj3TT6V2ZwTRD3PhKn61iHaWXlJhnVtA6tuDOMtgO7OpjefQOzu3XwTRbU08ROFC4gtm0BjKNY_cV-udxqTT8NuN2Fvo-L_ZEPV0OTP65jea7pXvYqO0ucD33M0oHHtRA_GzbFMp6DKdkAemH0ieZxUNXV9D8-yhSz2r2bvdxlbt_25Jk-enz7Q9ZNUbN6kWLmq5K2OVmXzK3rK-RYTSOpYS0rtzDOMNh18b2fGAz49mHpk"/>
+</div>
+</div>
+</header>
+<main class="mt-20 px-container-margin">
+<!-- Search Section -->
+<section class="mb-section-gap">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container h-14 pl-12 pr-4 rounded-xl border border-outline-variant focus:border-primary-container focus:ring-0 font-body-md text-on-surface transition-all placeholder:text-on-surface-variant" placeholder="Search by username or college" type="text"/>
+</div>
+</section>
+<!-- Pending Requests Section -->
+<section class="mb-section-gap">
+<div class="flex items-center justify-between mb-component-gap">
+<h2 class="font-headline-md text-headline-md text-on-surface">Pending Requests</h2>
+<span class="font-label-caps text-label-caps bg-secondary-container/20 text-secondary px-2 py-1 rounded">2 NEW</span>
+</div>
+<div class="grid gap-gutter">
+<!-- Request Card 1 -->
+<div class="bg-surface-container border border-outline-variant p-4 rounded-xl flex items-center gap-4 accent-glow">
+<img class="w-12 h-12 rounded-lg bg-surface-variant" data-alt="A portrait of a young male developer with glasses, styled in a high-contrast cinematic lighting setup. The background features blurred neon gold code lines against a deep black void. This is a profile image for a competitive coder on a premium tech platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_GcewkGy1FcVMIVWJw3h4Itulf4c9r2qWxhfccxwDIx2m-DsUW_R_RFI46_I2HIq7I25wUF4RCLNKYhCJ5cJT3ydwvpnnYsd6weMlhnNSrTJSfSXmCqgzxR6CZLvFWHmxuQ6Yzs8ZJ6v6ej6fyXWSuHpyptwi-qN8d7M-cZin8JHIBFa8mhvnMyUen3KSvnpm_esnjcQ-ZMzUHv8gQCJYidPOnEQdYit6XGRql-ga5TW4xhCWHCFO3gCVWcCTz94jfY2RW8TVv5dS"/>
+<div class="flex-grow min-w-0">
+<p class="font-headline-md text-body-lg text-on-surface truncate">null_pointer_ex</p>
+<p class="font-body-md text-on-surface-variant truncate">Stanford University</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-secondary-container text-on-secondary-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="check">check</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-variant text-on-surface active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Request Card 2 -->
+<div class="bg-surface-container border border-outline-variant p-4 rounded-xl flex items-center gap-4">
+<img class="w-12 h-12 rounded-lg bg-surface-variant" data-alt="A digital profile photo of a female software architect, sharp features, with a futuristic headgear detail. Lighting is dramatic gold and shadows. Background is dark and professional, matching a high-stakes competitive programming environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHgmz195uNj96veOqVHyT5cl-Iwjg7oenZunYWMNjoyF295tabZK-N0KivP-bgz5x-lZUukcIVLRyHkp4RapKvs7Pq59wHHpvgtt4L8Ax8G0u6-HDyZPJT7gRUCmfPH4ORlc3-ix_yDh7-uZZoCF8RHipX9ieYFLXQHkxb5En-2QgVlOvmFLoRWXkbNfF-SPU2ilNwfe96PSqYPsZpeT7h__1vMa09BSBdvj1ltMMYjlRdQx6jR6NoFxgRbcSjH2CjGISF2oXRgscJ"/>
+<div class="flex-grow min-w-0">
+<p class="font-headline-md text-body-lg text-on-surface truncate">byte_queen_01</p>
+<p class="font-body-md text-on-surface-variant truncate">MIT</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-secondary-container text-on-secondary-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="check">check</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-variant text-on-surface active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Suggested Friends / Search Results -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-component-gap">Global Developers</h2>
+<div class="grid gap-gutter">
+<!-- Result 1 -->
+<div class="bg-surface-container border border-outline-variant p-4 rounded-xl flex items-center gap-4 group hover:border-secondary transition-colors">
+<div class="relative">
+<img class="w-14 h-14 rounded-full border-2 border-surface-variant" data-alt="An artistic rendering of a male programmer profile, high-tech aesthetic, subtle lens flares in gold. The setting is a darkened command center atmosphere with sleek minimalist design. The image represents an elite tier member of a programming community." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl0k_59IoXvPijxgDFyc4_G2QPsSARGJidCFCkQBbdfw7Tv-lFfmRSGcQVPxP94Ka2zOG53y7aormil0Hh5j8lXPzVaHlUqdSg1SsRISEsnpkPTIehyG4Vr2mdOLvn9qyTL4huraEr4YxcR9rQvhQ4ZTfhwmLeyTWK_p3_do3YgRIWqnmfNjCtZMGCWTHYYRBvW5o37SU_p1TfjbYUQKCk1DWbObLDBuzYvbGDge67NwSYfqi7voGaKB0aQRZhHC3eQNKNv1f_qOAE"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-surface-container rounded-full"></div>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex items-center gap-2">
+<p class="font-headline-md text-body-lg text-on-surface truncate">kernel_panic</p>
+<span class="font-label-caps text-[10px] bg-primary-container text-on-primary-container px-1.5 rounded">Lvl 42</span>
+</div>
+<p class="font-body-md text-on-surface-variant truncate">Carnegie Mellon University</p>
+</div>
+<button class="h-10 px-4 rounded-lg border border-secondary text-secondary font-label-caps text-label-caps hover:bg-secondary/10 active:scale-95 transition-all">
+                        ADD FRIEND
+                    </button>
+</div>
+<!-- Result 2 -->
+<div class="bg-surface-container border border-outline-variant p-4 rounded-xl flex items-center gap-4 group hover:border-secondary transition-colors">
+<img class="w-14 h-14 rounded-full border-2 border-surface-variant" data-alt="A stylized portrait of a female developer, wearing tech-wear inspired clothing. Soft warm lighting contrasting against a deep charcoal and black background. The mood is focused and professional, emphasizing expertise in software engineering and competitive coding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjN5sqCOxMEnZIlRXFisNw5-VHdm07oh8H9OQolReaN1I7pGyT0Nh09c-mN6rB2hPJfea1uBPUc8jglZb6GaioXhHKI1d91FJakp_t00TYIUpWcPKffgsMdrxZZKFiVeT-1vSjixjFgJTZEOUMf8yrT_MicItZxRiQe3aU41DXa9oZ3NiU9hqJLHrQ-7tkrQ7CcwJGQVpfu9TdqPS_GRoj_k48MZsBvSiUSvCqFeImKI0Ewfa48xn-N-Yw7U-rCYNEBCCuMwt0u5hN"/>
+<div class="flex-grow min-w-0">
+<div class="flex items-center gap-2">
+<p class="font-headline-md text-body-lg text-on-surface truncate">stack_overflowed</p>
+</div>
+<p class="font-body-md text-on-surface-variant truncate">IIT Bombay</p>
+</div>
+<button class="h-10 px-4 rounded-lg border border-secondary text-secondary font-label-caps text-label-caps hover:bg-secondary/10 active:scale-95 transition-all">
+                        ADD FRIEND
+                    </button>
+</div>
+<!-- Result 3 -->
+<div class="bg-surface-container border border-outline-variant p-4 rounded-xl flex items-center gap-4 group hover:border-secondary transition-colors">
+<img class="w-14 h-14 rounded-full border-2 border-surface-variant" data-alt="A high-end character illustration for a digital coding platform. A male figure with sharp features in a dark room illuminated by glowing golden data streams. The overall look is elite, professional, and mysterious, consistent with the hacker-elite design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhnopIkm4ZYP16u09_daIGvzj6It5rgLTSOG_cZqKxZrGedyMusjYf92flM09SU7EJN0C0nxLnNsgGcnRat3I_yRs2axFKxCgDaqbRPJxAVIRBjkdASULxzoTbUKzZ9SoOXRqBwBNJbhSqB3ah2rD5FuZaKlJGUiHlhAhfBe4Q64vCrHmzkrmpwpnouqxtDRrhd7CYgUsTbGMkZSUeHkKT_lrMkJA50bCKKETmlUWUqUdXVItz8xceam9OcVRs2KC_M-61OmFrWkC9"/>
+<div class="flex-grow min-w-0">
+<div class="flex items-center gap-2">
+<p class="font-headline-md text-body-lg text-on-surface truncate">git_gud_kid</p>
+</div>
+<p class="font-body-md text-on-surface-variant truncate">University of Toronto</p>
+</div>
+<button class="h-10 px-4 rounded-lg border border-secondary text-secondary font-label-caps text-label-caps hover:bg-secondary/10 active:scale-95 transition-all">
+                        ADD FRIEND
+                    </button>
+</div>
+<!-- Result 4 -->
+<div class="bg-surface-container border border-outline-variant p-4 rounded-xl flex items-center gap-4 group hover:border-secondary transition-colors">
+<img class="w-14 h-14 rounded-full border-2 border-surface-variant" data-alt="A modern profile avatar of a developer. Deep black background with sharp gold highlights on facial features. Clean minimalist aesthetic suitable for a high-performance software engineering dashboard and social network." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXRQBNewTEdFYHnjPBddJjlT-m7OjBQ5y3tA-w9jqIByFoczQEX0319zPkSCW48hLGsPy8w6UZ8X7tRBR8FLq0B6HZlmMeB2mMy4jyj5ysKkcj2JpxlpfbMfEEswX66bT7336Xqp9ObFrRpl9jHI6rXPTwFBeMgQ6HWKPhvg1ZkktxG1-PoHHCb2yuOdUEqZh0zjkVcrsejCULX5fxfdmzA6qdqoGHmOGkPOxHlCLFo8xSjhG16sSI_EVI7pxG9qxMV9_pBK9v0upA"/>
+<div class="flex-grow min-w-0">
+<div class="flex items-center gap-2">
+<p class="font-headline-md text-body-lg text-on-surface truncate">lambda_warrior</p>
+</div>
+<p class="font-body-md text-on-surface-variant truncate">ETH Zurich</p>
+</div>
+<button class="h-10 px-4 rounded-lg border border-secondary text-secondary font-label-caps text-label-caps hover:bg-secondary/10 active:scale-95 transition-all">
+                        ADD FRIEND
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-black border-t border-zinc-800">
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-yellow-500 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Friends</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Duel</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Alerts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Settings</span>
+</div>
+</nav>
+</body></html>

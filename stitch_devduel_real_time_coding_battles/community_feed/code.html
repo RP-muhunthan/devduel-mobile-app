@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-container-low": "#1a1c1c",
+                  "secondary-container": "#ba880f",
+                  "tertiary": "#fff6d2",
+                  "on-secondary-container": "#392700",
+                  "secondary-fixed-dim": "#f7bd48",
+                  "on-surface-variant": "#d0c6ab",
+                  "error-container": "#93000a",
+                  "primary-fixed-dim": "#e9c400",
+                  "on-tertiary-fixed": "#201c00",
+                  "on-primary-container": "#705e00",
+                  "on-error": "#690005",
+                  "secondary": "#f7bd48",
+                  "on-surface": "#e3e2e2",
+                  "primary-container": "#ffd700",
+                  "on-primary-fixed": "#221b00",
+                  "on-primary": "#3a3000",
+                  "surface-variant": "#343535",
+                  "tertiary-container": "#f1db40",
+                  "surface-bright": "#38393a",
+                  "outline": "#999077",
+                  "inverse-surface": "#e3e2e2",
+                  "inverse-primary": "#705d00",
+                  "on-secondary-fixed-variant": "#5d4200",
+                  "surface-dim": "#121414",
+                  "inverse-on-surface": "#2f3131",
+                  "surface-container-high": "#292a2a",
+                  "background": "#121414",
+                  "secondary-fixed": "#ffdea6",
+                  "on-tertiary": "#373100",
+                  "tertiary-fixed": "#fae448",
+                  "on-error-container": "#ffdad6",
+                  "tertiary-fixed-dim": "#dcc82c",
+                  "outline-variant": "#4d4732",
+                  "surface-tint": "#e9c400",
+                  "surface-container-lowest": "#0d0e0f",
+                  "on-tertiary-container": "#6b5f00",
+                  "surface-container": "#1e2020",
+                  "surface-container-highest": "#343535",
+                  "on-tertiary-fixed-variant": "#504700",
+                  "on-secondary-fixed": "#271900",
+                  "primary-fixed": "#ffe16d",
+                  "primary": "#fff6df",
+                  "error": "#ffb4ab",
+                  "on-secondary": "#412d00",
+                  "on-background": "#e3e2e2",
+                  "on-primary-fixed-variant": "#544600",
+                  "surface": "#121414"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "component-gap": "12px",
+                  "container-margin": "24px",
+                  "section-gap": "32px",
+                  "gutter": "16px",
+                  "unit": "8px"
+          },
+          "fontFamily": {
+                  "label-caps": ["JetBrains Mono"],
+                  "headline-md": ["Roboto"],
+                  "code-block": ["JetBrains Mono"],
+                  "body-lg": ["Roboto"],
+                  "headline-lg": ["Roboto"],
+                  "body-md": ["Roboto"]
+          },
+          "fontSize": {
+                  "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                  "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                  "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                  "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-black border-b border-zinc-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-yellow-500" data-icon="terminal">terminal</span>
+<h1 class="text-xl font-black italic text-yellow-500 tracking-widest font-mono uppercase">DEVDUEL</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-500 hover:text-yellow-400 transition-colors cursor-pointer" data-icon="search">search</span>
+<div class="w-8 h-8 rounded-full border-2 border-yellow-500 overflow-hidden">
+<img alt="Profile" data-alt="A professional close-up avatar of a tech-focused developer with a sleek, gold-bordered circular frame. The lighting is cinematic and high-contrast, fitting the dark mode aesthetic of the hacker elite brand. The background is a deep, textured black that emphasizes the sharp, gold metallic rim of the profile photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-j6znjXA3p4bJwiUg5LAsQzttgWz1tu0V_zYK0kCOcebFu7xBA1keXULvPO6ijv23T8ZOtcqY84uoWiulo0qqDOp4jsRSsgrf0x9uYWdXefmLod40uQMjitbmck_0n3T17qTNM_RJJ2_xqC1jP04gHH1qmRz_7_71jYnyUWGP3EHoiDD15e6_sKpNpK6vW50hLYtarsNf9q4J0IvrgBQy-92nakb10H--T6io1JFKd7dSpPqH7MkL6XMHXzuPZofxGVa4oBsZi3Dd"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-6 max-w-2xl mx-auto">
+<!-- Feed Header / Trending Section -->
+<section class="mb-section-gap">
+<div class="flex items-center justify-between mb-gutter">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tighter">Activity Feed</h2>
+<div class="flex gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-caps text-label-caps text-secondary">LIVE</span>
+<span class="bg-zinc-900 px-3 py-1 rounded-full font-label-caps text-label-caps text-zinc-500">GLOBAL</span>
+</div>
+</div>
+<!-- Asymmetric Highlight Card -->
+<div class="bg-surface-container-low border border-outline-variant p-gutter rounded-xl mb-component-gap relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-label-caps text-label-caps text-primary-container mb-1">CURRENT TOURNAMENT</p>
+<h3 class="font-headline-md text-headline-md mb-2">Winter Hack-Off 2024</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-4">Elite developers are clashing for the title. Watch the live stream of the finals.</p>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded font-label-caps text-label-caps active:scale-95 transition-transform">WATCH BATTLE</button>
+</div>
+<div class="absolute right-0 top-0 h-full w-1/3 opacity-20 pointer-events-none">
+<div class="h-full w-full bg-gradient-to-l from-primary-container to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Activity Items -->
+<section class="flex flex-col gap-component-gap">
+<!-- Item 1: Duel Win -->
+<div class="bg-surface-container border border-zinc-800 p-4 rounded-xl flex items-start gap-4 hover:border-yellow-500/50 transition-all">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="A gritty, high-contrast digital portrait of a young competitive coder named Rahul. The image uses a cinematic low-key lighting setup with gold accent highlights on his features. The background is a minimal, dark studio environment that matches the elite hacker brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0dIhrmI7sLz9RmAgPdP5BsAFW_UcwU8J8g55zXCFXgYB4R-0uVpLfdHz-aTAe6HmsCuTmZ-Q5O54xWlaGPlguE6yJ6ateneiL7IOPie5Nz9NUI8tGSAP8BuMIW0U9Zd4NY8z7H7KMa7i1zkPf9SpeaooINhFj5IMxF7XtFs9zes73uj9KnKfwrv-FcijWOja6EPFvM6lAETMyF1i-hV5quUd6jifhTG9yPil7SnsENl0wdSewpVbF448RCCliTDtH0SAedLDC3FXi"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-body-lg text-body-lg text-on-surface">
+<span class="font-bold text-secondary">Rahul</span> just won a battle vs <span class="font-bold text-secondary">Priya</span>
+</p>
+<span class="font-label-caps text-[10px] text-zinc-600">2m ago</span>
+</div>
+<p class="font-label-caps text-label-caps text-primary-container mt-1">+120 XP</p>
+<div class="mt-4 flex gap-2">
+<button class="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-lg hover:border-yellow-500 transition-colors">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-label-caps text-label-caps text-on-surface">Cheer</span>
+</button>
+<button class="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-lg hover:border-yellow-500 transition-colors">
+<span class="material-symbols-outlined text-zinc-500 text-sm" data-icon="comment">comment</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2: Daily Challenge -->
+<div class="bg-surface-container border border-zinc-800 p-4 rounded-xl flex items-start gap-4 hover:border-yellow-500/50 transition-all">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="A portrait of Ankit, a software engineer with a focused expression. The visual style is modern, using a monochrome palette with sharp yellow light trails reflecting off his glasses. The atmosphere is professional and high-tech, emphasizing speed and precision in a dark-mode UI environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUI_t3ydF8qVlni1tIrVj3-FiF8N2YsHb-XQA442gYxpDdfdvYZxylsxmQ7zxMQgGJLmZq4nzK7nl8V_LJotA9Vg_8A1zD0C8Jp22NwZTARZhAD53u3P2PNaiJi2cFq4EpbCBF6PFjOi-xMZBxgA2Nyax6s1tXaq9DoBQ2ZwTL9oEB8bqkhr8oftoHRwKjWAF__BR_dP4FLmW0uBrsJpicVjT7VV8ZaMptygiQhusYfe8Q0NZgaEkpNY3F7cCqbYpGArtr7_9jdiF7"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-body-lg text-body-lg text-on-surface">
+<span class="font-bold text-secondary">Ankit</span> solved <span class="text-tertiary">Daily Challenge</span>
+</p>
+<span class="font-label-caps text-[10px] text-zinc-600">15m ago</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-zinc-800 px-2 py-0.5 rounded text-[10px] font-mono text-zinc-400">#leetcode</span>
+<p class="font-label-caps text-label-caps text-primary-container">+200 XP</p>
+</div>
+<div class="mt-4 flex gap-2">
+<button class="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-lg hover:border-yellow-500 transition-colors">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="celebration">celebration</span>
+<span class="font-label-caps text-label-caps text-on-surface">Cheer</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3: Level Up -->
+<div class="bg-zinc-900/40 border border-yellow-500/20 p-4 rounded-xl flex items-start gap-4 relative overflow-hidden group hover:border-yellow-500/50 transition-all shadow-[0_0_20px_rgba(255,215,0,0.05)]">
+<div class="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-transparent pointer-events-none"></div>
+<img class="w-12 h-12 rounded-lg object-cover border border-yellow-500/30" data-alt="A high-energy digital artwork representing Meera, an elite-level programmer. She is surrounded by a subtle golden aura and glowing floating code snippets. The lighting is dramatic and focused, utilizing the brand's core black and gold color scheme to signal achievement and high-rank status." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPVLPaziR4K1fy34siPKsZbBe1z3n5q2AWGQjYDXPIKa0Q4EUWKhI8FsTpegWBixkphH9H31LrKfzPFWEkcIHOYxsFoAPdDWaElrhvG1egYM4PaobIyxZahEJE4Bw6idjwT5Q3BMVPImz38Htyilv9G1LpMBay9A9psRc8rbx8UV4Fs2g5t6Ix3IGxcSSg0ZL1nRcaeL-9BEcbHZTRuWv8RMzScDPeHrEMtmY-9L6sjgyZfXt6kbaAbPkLJeYd3kiCI6K2s3v3Y1he"/>
+<div class="flex-1 relative z-10">
+<div class="flex justify-between items-start">
+<p class="font-body-lg text-body-lg text-on-surface">
+<span class="font-bold text-secondary">Meera</span> reached <span class="text-primary-container font-black italic tracking-wider">Level Elite!</span>
+</p>
+<span class="font-label-caps text-[10px] text-zinc-600">1h ago</span>
+</div>
+<p class="font-body-md text-body-md text-zinc-500 mt-1 italic">Welcome to the inner circle of master architects.</p>
+<div class="mt-4 flex gap-2">
+<button class="flex items-center gap-2 bg-yellow-500 px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-black text-sm" data-icon="bolt">bolt</span>
+<span class="font-label-caps text-label-caps text-black">Applaud</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 4: Regular Activity -->
+<div class="bg-surface-container border border-zinc-800 p-4 rounded-xl flex items-start gap-4 hover:border-yellow-500/50 transition-all">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="A minimalist digital illustration of a developer's silhouette against a backdrop of complex terminal windows and data streams. The color palette is strictly deep blacks and neon gold. The mood is focused and solitary, representing the intense concentration of a deep-work coding session." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv9brhBmpukk2tnMzpyQ7O6UK9BaScATEJDOp2R_n2RY4NDEgBv-Iv4CEpmZEZLnOMOWgUdbQ1uCw_5AljtV7rcHktqdVf5GAfP5n1zT6c6y3_klKtjTprW6GjFp-EwGTZB72qX5_wwVdxQukSsMMHWy12X4ThCK1wT4VAaE6CXPuAbRHvU7OCHhu0TiUOnZu98ne54k-bpnHLGgnBaJChhkIg7mIh9hMmscwemW52bvmbgiTNTBG3pdKGHgycLXJH7AIEtQYM2S2a"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-body-lg text-body-lg text-on-surface">
+<span class="font-bold text-secondary">JohnDoe</span> pushed 4 commits to <span class="text-tertiary">kernel-reboot</span>
+</p>
+<span class="font-label-caps text-[10px] text-zinc-600">3h ago</span>
+</div>
+<div class="mt-4 flex gap-2">
+<button class="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-lg hover:border-yellow-500 transition-colors">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="thumb_up">thumb_up</span>
+<span class="font-label-caps text-label-caps text-on-surface">Cheer</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-black border-t border-zinc-800">
+<a class="flex flex-col items-center justify-center text-yellow-500 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Friends</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all" href="#">
+<div class="bg-yellow-500 text-black p-2 rounded-full mb-1">
+<span class="material-symbols-outlined font-bold" data-icon="code">code</span>
+</div>
+<span class="font-mono text-[10px] uppercase font-medium">Duel</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all relative" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Alerts</span>
+<div class="absolute top-0 right-3 w-2 h-2 bg-yellow-500 rounded-full"></div>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-900/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

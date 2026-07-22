@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#292a2a",
+                    "inverse-surface": "#e3e2e2",
+                    "on-secondary-container": "#392700",
+                    "on-tertiary": "#373100",
+                    "surface": "#121414",
+                    "on-secondary": "#412d00",
+                    "on-surface-variant": "#d0c6ab",
+                    "on-surface": "#e3e2e2",
+                    "surface-tint": "#e9c400",
+                    "outline": "#999077",
+                    "outline-variant": "#4d4732",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "on-tertiary-fixed": "#201c00",
+                    "secondary-fixed": "#ffdea6",
+                    "surface-container-low": "#1a1c1c",
+                    "on-primary-fixed": "#221b00",
+                    "primary-fixed-dim": "#e9c400",
+                    "surface-dim": "#121414",
+                    "secondary-container": "#ba880f",
+                    "on-primary-fixed-variant": "#544600",
+                    "inverse-primary": "#705d00",
+                    "error-container": "#93000a",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#fff6d2",
+                    "primary": "#fff6df",
+                    "primary-container": "#ffd700",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#2f3131",
+                    "surface-variant": "#343535",
+                    "surface-container-lowest": "#0d0e0f",
+                    "surface-container-highest": "#343535",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "on-primary-container": "#705e00",
+                    "background": "#121414",
+                    "on-primary": "#3a3000",
+                    "on-tertiary-container": "#6b5f00",
+                    "on-secondary-fixed": "#271900",
+                    "primary-fixed": "#ffe16d",
+                    "tertiary-fixed": "#fae448",
+                    "on-background": "#e3e2e2",
+                    "surface-container": "#1e2020",
+                    "secondary": "#f7bd48",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "tertiary-container": "#f1db40",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "surface-bright": "#38393a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "component-gap": "12px",
+                    "unit": "8px",
+                    "section-gap": "32px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "code-block": ["JetBrains Mono"],
+                    "headline-md": ["Roboto"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-md": ["Roboto"],
+                    "headline-lg": ["Roboto"],
+                    "body-lg": ["Roboto"]
+            },
+            "fontSize": {
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0A0A0A; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .code-glow {
+            box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#0A0A0A] border-b border-[#2A2A2A] fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-yellow-500" data-icon="terminal">terminal</span>
+<h1 class="text-xl font-black italic tracking-tighter text-yellow-500 font-mono uppercase tracking-widest text-sm">DevDuel</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-6">
+<a class="text-yellow-500 font-mono text-[10px] font-bold uppercase hover:text-yellow-400 transition-colors" href="#">Practice</a>
+<a class="text-[#666666] font-mono text-[10px] font-bold uppercase hover:text-yellow-400 transition-colors" href="#">Battle</a>
+<a class="text-[#666666] font-mono text-[10px] font-bold uppercase hover:text-yellow-400 transition-colors" href="#">Leaderboard</a>
+</nav>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#2A2A2A]">
+<img alt="User Profile" data-alt="A professional headshot of a software engineer in a high-tech, dark studio environment. The lighting is dramatic with subtle gold rim lights highlighting the silhouette against a deep black background. The overall aesthetic is clean, modern, and aligned with a premium hacker-elite brand identity using a palette of blacks and deep ambers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2hKfsjnu9z-rFxMi89LfD4AP3Gq4dsCdwgKaPBZF7l7YPbjlo4VzGbNeQ9kfaBQBDKO9enl0M-9mE6hkgQdy9CUNM-W63u8wqCBZIaskCs4k16gWy7Xrkcgd2KdMreZQSJ4xnApIWQO9hkopU6-1LXeD4zAYZVikQhSZ_eJIBT4fPtfELEogH2qIb4WhOBS-gJaRDteAXw4kbSDq18HvuUomT_XxruH1dUBczsJ_ihKxKSD6EKHiTtdg1jCWhNSPbw1BxXOgh17Bb"/>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-24 px-container-margin max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter min-h-screen">
+<!-- Problem Description Panel -->
+<section class="lg:col-span-4 flex flex-col gap-component-gap">
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-on-surface">Valid Anagram</h2>
+<span class="px-3 py-1 bg-surface-container-high border border-[#2A2A2A] rounded-full text-[10px] font-bold text-yellow-500 uppercase tracking-wider">Medium</span>
+</div>
+<div class="space-y-4">
+<p class="font-body-md text-on-surface-variant">
+                        Given two strings <code class="bg-[#1A1A1A] px-1 text-yellow-500">s</code> and <code class="bg-[#1A1A1A] px-1 text-yellow-500">t</code>, return <code class="bg-[#1A1A1A] px-1 text-yellow-500">true</code> if <code class="bg-[#1A1A1A] px-1 text-yellow-500">t</code> is an anagram of <code class="bg-[#1A1A1A] px-1 text-yellow-500">s</code>, and <code class="bg-[#1A1A1A] px-1 text-yellow-500">false</code> otherwise.
+                    </p>
+<div class="bg-[#0A0A0A] p-4 rounded-lg border border-[#2A2A2A] font-code-block text-code-block">
+<p class="text-[#666666] mb-2">// Example 1</p>
+<p class="text-on-surface">Input: s = "anagram", t = "nagaram"</p>
+<p class="text-secondary">Output: true</p>
+</div>
+</div>
+<div class="pt-4 border-t border-[#2A2A2A] mt-auto">
+<div class="flex items-center gap-2 text-[#666666]">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+<span class="font-label-caps text-label-caps">Last attempted 2h ago</span>
+</div>
+</div>
+</div>
+<!-- Result Panel -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 code-glow">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-yellow-500">STATUS</h3>
+<p class="font-headline-md text-headline-md text-on-surface">Accepted</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-[#1A1A1A] p-3 rounded border border-[#2A2A2A]">
+<span class="text-[10px] text-[#666666] uppercase block">Runtime</span>
+<span class="text-on-surface font-code-block">42 ms</span>
+</div>
+<div class="bg-[#1A1A1A] p-3 rounded border border-[#2A2A2A]">
+<span class="text-[10px] text-[#666666] uppercase block">Memory</span>
+<span class="text-on-surface font-code-block">14.5 MB</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Code Editor Section -->
+<section class="lg:col-span-8 flex flex-col gap-component-gap">
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl flex flex-col h-full min-h-[500px]">
+<!-- Editor Header -->
+<div class="flex justify-between items-center px-4 py-3 border-b border-[#2A2A2A]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-500" data-icon="code">code</span>
+<span class="font-label-caps text-label-caps text-on-surface">SOLUTION.PY</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-[#1A1A1A] px-3 py-1 rounded border border-[#2A2A2A] cursor-pointer hover:border-yellow-500 transition-colors">
+<span class="font-code-block text-[12px] text-on-surface">Python 3</span>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+<span class="material-symbols-outlined text-[#666666] hover:text-yellow-500 cursor-pointer" data-icon="settings">settings</span>
+</div>
+</div>
+<!-- Editor Body -->
+<div class="flex-grow bg-[#0D0D0D] font-code-block text-code-block p-6 overflow-auto relative">
+<div class="absolute left-0 top-0 bottom-0 w-12 bg-[#080808] border-r border-[#1A1A1A] flex flex-col items-center pt-6 text-[#333333] select-none">
+<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+</div>
+<div class="ml-10 space-y-1">
+<p><span class="text-secondary">class</span> <span class="text-primary-container">Solution</span>:</p>
+<p class="pl-4"><span class="text-secondary">def</span> <span class="text-primary-container">isAnagram</span>(self, s: str, t: str) -&gt; bool:</p>
+<p class="pl-8 text-[#666666]"># Check lengths first</p>
+<p class="pl-8"><span class="text-secondary">if</span> len(s) != len(t):</p>
+<p class="pl-12"><span class="text-secondary">return False</span></p>
+<p class="pl-8 mt-2 text-[#666666]"># Create frequency maps</p>
+<p class="pl-8">countS, countT = {}, {}</p>
+<p class="pl-8 mt-2"><span class="text-secondary">for</span> i <span class="text-secondary">in</span> range(len(s)):</p>
+<p class="pl-12">countS[s[i]] = <span class="text-primary-container">1 + countS.get(s[i], 0)</span></p>
+<p class="pl-12">countT[t[i]] = <span class="text-primary-container">1 + countT.get(t[i], 0)</span></p>
+<p class="pl-8 mt-2"><span class="text-secondary">return</span> countS == countT</p>
+<span class="inline-block w-2 h-5 bg-yellow-500 animate-pulse ml-1 align-middle"></span>
+</div>
+</div>
+<!-- Editor Footer / Actions -->
+<div class="p-4 bg-[#111111] border-t border-[#2A2A2A] flex justify-between items-center">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-[#666666] hover:text-on-surface transition-colors font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-sm" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+                            Console
+                        </button>
+</div>
+<div class="flex gap-3">
+<button class="px-6 h-10 border border-yellow-500 text-yellow-500 font-label-caps text-label-caps rounded hover:bg-yellow-500/10 transition-all active:scale-95 duration-150">
+                            RUN
+                        </button>
+<button class="px-8 h-10 bg-yellow-500 text-[#0A0A0A] font-label-caps text-label-caps rounded hover:bg-yellow-400 transition-all active:scale-95 duration-150 font-bold">
+                            SUBMIT
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-[#0A0A0A] border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(255,215,0,0.05)] flex justify-around items-center h-16 px-4 pb-safe">
+<div class="flex flex-col items-center justify-center text-yellow-500 scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="swords">swords</span>
+<span class="font-mono text-[10px] font-bold uppercase">Battle</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#666666]">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-mono text-[10px] font-bold uppercase">Practice</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#666666]">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-mono text-[10px] font-bold uppercase">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#666666]">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-mono text-[10px] font-bold uppercase">Search</span>
+</div>
+</nav>
+</body></html>

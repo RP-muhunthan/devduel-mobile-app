@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#e9c400",
+                    "surface-container": "#1e2020",
+                    "secondary-fixed": "#ffdea6",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-surface": "#e3e2e2",
+                    "tertiary": "#fff6d2",
+                    "surface-container-highest": "#343535",
+                    "surface-container-high": "#292a2a",
+                    "on-secondary-container": "#392700",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "on-surface-variant": "#d0c6ab",
+                    "on-primary": "#3a3000",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-tertiary-container": "#6b5f00",
+                    "on-primary-fixed-variant": "#544600",
+                    "outline": "#999077",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "on-background": "#e3e2e2",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#705e00",
+                    "on-secondary": "#412d00",
+                    "primary-fixed": "#ffe16d",
+                    "primary-container": "#ffd700",
+                    "on-primary-fixed": "#221b00",
+                    "inverse-surface": "#e3e2e2",
+                    "on-tertiary": "#373100",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#ba880f",
+                    "background": "#121414",
+                    "surface-container-lowest": "#0d0e0f",
+                    "tertiary-container": "#f1db40",
+                    "secondary": "#f7bd48",
+                    "surface": "#121414",
+                    "outline-variant": "#4d4732",
+                    "surface-dim": "#121414",
+                    "error-container": "#93000a",
+                    "surface-bright": "#38393a",
+                    "tertiary-fixed": "#fae448",
+                    "primary": "#fff6df",
+                    "surface-variant": "#343535",
+                    "surface-container-low": "#1a1c1c",
+                    "on-secondary-fixed": "#271900",
+                    "inverse-primary": "#705d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "section-gap": "32px",
+                    "component-gap": "12px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Roboto"],
+                    "body-md": ["Roboto"],
+                    "body-lg": ["Roboto"],
+                    "label-caps": ["JetBrains Mono"],
+                    "code-block": ["JetBrains Mono"],
+                    "headline-md": ["Roboto"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .bracket-connector {
+            position: absolute;
+            border-color: #2A2A2A;
+            border-width: 2px;
+        }
+        .active-glow {
+            box-shadow: 0px 4px 20px rgba(233, 196, 0, 0.15);
+        }
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scroll-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0A0A0A] text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#0A0A0A] border-b border-[#2A2A2A] docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 h-16">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="terminal">terminal</span>
+<h1 class="font-mono tracking-tighter uppercase text-sm font-bold text-[#FFD700] text-xl font-black tracking-widest">DEV_DUEL</h1>
+</div>
+<div class="h-10 w-10 rounded-full border border-[#2A2A2A] overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A close-up professional headshot of a software engineer wearing a dark hoodie, illuminated by the golden glow of a computer screen. The background is a dimly lit, high-tech workspace with subtle bokeh of server lights. The aesthetic is clean, sharp, and focused, reflecting a premium developer identity in a high-stakes environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUNjlhnaQ38WjjeVrFHW1ubsZG-sbyYB5Iwsb2EmvXi5rG0iiQZrAOgx-RZ8xNnFCojFXQK5-8OYm0fQ4oVPywHeIIbAHAYedhpjhjUiuUiOEBpIMO-m3Ybmyk3KliU2mgRD4dcA2_MsjXQti5smEk5n03p8irXmTK5-BXZYPjjptvlgs0C1x3NRuPjHE34VcQV5N1gn9R7AjZ6_37oRnCdfGf1QDCVY6VbdI5GoJsdqtBcOIGCfO1tTEHkyEHJOY0cRO3KWcjmmsb"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 w-full overflow-hidden flex flex-col relative">
+<!-- Header Info -->
+<div class="px-container-margin pt-gutter">
+<div class="flex justify-between items-end mb-section-gap">
+<div>
+<span class="font-label-caps text-label-caps text-primary-container mb-1 block">LIVE TOURNAMENT</span>
+<h2 class="font-headline-lg text-headline-lg text-white">Binary Blitz Masters</h2>
+</div>
+<div class="bg-surface-container-high border border-[#2A2A2A] px-4 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm" data-icon="groups">groups</span>
+<span class="font-label-caps text-label-caps">64 SLOTS</span>
+</div>
+</div>
+</div>
+<!-- Bracket Visualization -->
+<div class="flex-1 overflow-x-auto scroll-hide px-container-margin pb-40">
+<div class="min-w-[1000px] flex items-start gap-16 py-8">
+<!-- Round of 8 (Quarter Finals) -->
+<div class="flex flex-col gap-12 justify-around min-h-[500px]">
+<div class="font-label-caps text-label-caps text-neutral-500 mb-4 px-2">QUARTER-FINALS</div>
+<!-- Match 1 -->
+<div class="relative">
+<div class="w-64 bg-[#111111] border border-[#2A2A2A] rounded-lg overflow-hidden">
+<div class="p-3 border-b border-[#2A2A2A] flex justify-between items-center bg-[#1A1A1A]">
+<span class="font-label-caps text-label-caps text-neutral-400">MATCH #24</span>
+<span class="text-[10px] text-green-500 font-bold">COMPLETED</span>
+</div>
+<div class="p-3 flex items-center justify-between opacity-50">
+<span class="font-code-block text-code-block">_null_pointer</span>
+<span class="text-neutral-500">42</span>
+</div>
+<div class="p-3 flex items-center justify-between border-t border-[#2A2A2A] bg-primary-container/10">
+<span class="font-code-block text-code-block text-primary-container">stack_overflow</span>
+<span class="text-primary-container font-bold">89</span>
+</div>
+</div>
+<!-- Connector -->
+<div class="bracket-connector w-8 h-1/2 right-[-32px] top-1/2 border-t border-r rounded-tr-xl"></div>
+</div>
+<!-- Match 2 -->
+<div class="relative">
+<div class="w-64 bg-[#111111] border border-[#2A2A2A] rounded-lg overflow-hidden">
+<div class="p-3 border-b border-[#2A2A2A] flex justify-between items-center bg-[#1A1A1A]">
+<span class="font-label-caps text-label-caps text-neutral-400">MATCH #25</span>
+<span class="text-[10px] text-green-500 font-bold">COMPLETED</span>
+</div>
+<div class="p-3 flex items-center justify-between bg-primary-container/10">
+<span class="font-code-block text-code-block text-primary-container">lambda_king</span>
+<span class="text-primary-container font-bold">102</span>
+</div>
+<div class="p-3 flex items-center justify-between border-t border-[#2A2A2A] opacity-50">
+<span class="font-code-block text-code-block">byte_warrior</span>
+<span class="text-neutral-500">76</span>
+</div>
+</div>
+<!-- Connector -->
+<div class="bracket-connector w-8 h-1/2 right-[-32px] bottom-1/2 border-b border-r rounded-br-xl"></div>
+</div>
+</div>
+<!-- Round of 4 (Semi Finals) -->
+<div class="flex flex-col gap-12 justify-center min-h-[500px]">
+<div class="font-label-caps text-label-caps text-primary-container mb-4 px-2">SEMI-FINALS</div>
+<!-- Match 3: USER MATCH -->
+<div class="relative">
+<div class="w-64 bg-[#111111] border-2 border-primary-container rounded-lg overflow-hidden active-glow">
+<div class="p-3 border-b border-[#2A2A2A] flex justify-between items-center bg-primary-container/20">
+<span class="font-label-caps text-label-caps text-primary-container font-bold">YOUR MATCH</span>
+<span class="text-[10px] text-primary-container font-bold">LIVE SOON</span>
+</div>
+<div class="p-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" data-icon="person">person</span>
+</div>
+<span class="font-code-block text-code-block text-white">stack_overflow</span>
+</div>
+<span class="text-neutral-500">--</span>
+</div>
+<div class="p-3 flex items-center justify-between border-t border-[#2A2A2A]">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-neutral-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" data-icon="person">person</span>
+</div>
+<span class="font-code-block text-code-block text-white">lambda_king</span>
+</div>
+<span class="text-neutral-500">--</span>
+</div>
+</div>
+<!-- Forward Connector -->
+<div class="bracket-connector w-16 h-0 right-[-64px] top-1/2 border-t"></div>
+</div>
+</div>
+<!-- Final -->
+<div class="flex flex-col gap-12 justify-center min-h-[500px]">
+<div class="font-label-caps text-label-caps text-neutral-500 mb-4 px-2">GRAND FINAL</div>
+<div class="w-64 bg-[#0D0E0F] border border-[#2A2A2A] border-dashed rounded-lg overflow-hidden flex flex-col items-center justify-center h-48 gap-4">
+<span class="material-symbols-outlined text-neutral-700 text-4xl" data-icon="emoji_events">emoji_events</span>
+<div class="text-center">
+<p class="font-label-caps text-label-caps text-neutral-600">PENDING RESULTS</p>
+<p class="text-[10px] text-neutral-700 mt-1">WINNERS OF MATCH #30 &amp; #31</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Next Match Card (Bottom) -->
+<div class="fixed bottom-20 left-0 right-0 px-container-margin z-40">
+<div class="bg-surface-container-high border border-primary-container/30 rounded-xl p-4 flex flex-col md:flex-row items-center gap-gutter shadow-2xl backdrop-blur-md">
+<div class="flex-1 flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-on-primary-container text-2xl" data-icon="bolt" data-weight="fill">bolt</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary-container uppercase">Next Match: Semi-Final</h4>
+<p class="font-code-block text-body-md text-on-surface">Against <span class="font-bold">lambda_king</span></p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-center">
+<p class="font-label-caps text-[10px] text-neutral-500">STARTS IN</p>
+<div class="font-code-block text-headline-md text-primary-container tabular-nums">04:12</div>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-caps px-8 h-12 rounded-lg hover:bg-surface-tint transition-colors active:scale-95 flex items-center gap-2">
+<span>ENTER ARENA</span>
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe bg-[#0A0A0A] border-t border-[#2A2A2A]">
+<div class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Battles</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Rank</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#FFD700] py-2 hover:bg-neutral-900/50 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Tourney</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Profile</span>
+</div>
+</nav>
+</body></html>

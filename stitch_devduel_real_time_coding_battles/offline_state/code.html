@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffe16d",
+                    "on-tertiary-fixed": "#201c00",
+                    "surface-container-lowest": "#0d0e0f",
+                    "surface-container": "#1e2020",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#544600",
+                    "tertiary": "#fff6d2",
+                    "surface-bright": "#38393a",
+                    "on-secondary-container": "#392700",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "surface-variant": "#343535",
+                    "primary-container": "#ffd700",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#fae448",
+                    "primary": "#fff6df",
+                    "on-primary": "#3a3000",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#e9c400",
+                    "surface-container-high": "#292a2a",
+                    "secondary-container": "#ba880f",
+                    "on-tertiary-container": "#6b5f00",
+                    "surface-container-highest": "#343535",
+                    "on-surface-variant": "#d0c6ab",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-surface": "#e3e2e2",
+                    "secondary": "#f7bd48",
+                    "on-tertiary": "#373100",
+                    "on-secondary": "#412d00",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#705d00",
+                    "surface-dim": "#121414",
+                    "inverse-surface": "#e3e2e2",
+                    "secondary-fixed": "#ffdea6",
+                    "surface-container-low": "#1a1c1c",
+                    "surface": "#121414",
+                    "on-secondary-fixed": "#271900",
+                    "on-primary-fixed": "#221b00",
+                    "background": "#121414",
+                    "outline-variant": "#4d4732",
+                    "outline": "#999077",
+                    "on-primary-container": "#705e00",
+                    "on-background": "#e3e2e2",
+                    "tertiary-container": "#f1db40"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "container-margin": "24px",
+                    "section-gap": "32px",
+                    "gutter": "16px",
+                    "component-gap": "12px"
+            },
+            "fontFamily": {
+                    "code-block": ["JetBrains Mono"],
+                    "body-md": ["Roboto"],
+                    "body-lg": ["Roboto"],
+                    "headline-md": ["Roboto"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Roboto"]
+            },
+            "fontSize": {
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-[#0A0A0A] border-b border-[#2A2A2A]">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-[#FFD700]">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-mono uppercase tracking-widest font-bold text-[#FFD700]">DEV_DUEL</h1>
+</div>
+<div class="flex items-center">
+<button class="active:scale-95 transition-transform text-[#FFD700]">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-container-margin pt-16 pb-16">
+<div class="max-w-md w-full text-center space-y-section-gap">
+<!-- Visual Identity / Hero Area -->
+<div class="relative flex flex-col items-center justify-center">
+<!-- Background Glow Effect -->
+<div class="absolute w-48 h-48 bg-[#FFD700] opacity-[0.03] rounded-full blur-3xl"></div>
+<!-- Icon Container -->
+<div class="relative z-10 p-8 rounded-full border border-[#2A2A2A] bg-[#111111] shadow-[0_4px_20px_rgba(255,215,0,0.05)]">
+<span class="material-symbols-outlined text-8xl text-[#FFD700] block" data-icon="wifi_off">wifi_off</span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="space-y-component-gap">
+<h2 class="font-headline-lg text-on-background">No Internet Connection</h2>
+<p class="font-body-lg text-outline max-w-xs mx-auto">
+                    Check your connection and try again to rejoin the arena.
+                </p>
+</div>
+<!-- Action Area -->
+<div class="pt-unit flex flex-col gap-gutter">
+<button class="h-[48px] w-full bg-primary-container text-on-primary font-label-caps uppercase flex items-center justify-center gap-2 rounded-lg active:bg-[#CCAC00] transition-all shadow-[0_4px_12px_rgba(255,215,0,0.2)]">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+                    Retry
+                </button>
+<button class="h-[48px] w-full border border-primary-container text-primary-container font-label-caps uppercase flex items-center justify-center rounded-lg active:bg-[#1A1A1A] transition-all">
+                    Offline Settings
+                </button>
+</div>
+<!-- Asymmetric Background Detail (Bento Style Subtext) -->
+<div class="grid grid-cols-2 gap-gutter mt-section-gap text-left">
+<div class="p-gutter bg-[#111111] border border-[#2A2A2A] rounded-xl flex flex-col gap-unit">
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="terminal">terminal</span>
+<span class="font-label-caps text-[10px] text-outline">STATUS</span>
+<span class="font-code-block text-on-surface">DISCONNECTED</span>
+</div>
+<div class="p-gutter bg-[#111111] border border-[#2A2A2A] rounded-xl flex flex-col gap-unit">
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="timer">timer</span>
+<span class="font-label-caps text-[10px] text-outline">UPTIME</span>
+<span class="font-code-block text-on-surface">00:00:00</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Hidden on Mobile Search/Error focus per Shell Visibility rule, but included for structure) -->
+<!-- Note: Suppression logic might hide this on a pure error splash, but shown here for layout completeness -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 pb-safe bg-[#0A0A0A] border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(255,215,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="text-[10px] font-mono font-medium uppercase">Battles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-[10px] font-mono font-medium uppercase">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="text-[10px] font-mono font-medium uppercase">Editor</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#FFD700] border-t-2 border-[#FFD700] pt-2 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-mono font-medium uppercase">Settings</span>
+</a>
+</nav>
+<!-- Illustrative Image for background branding (Transparent layer) -->
+<div class="fixed inset-0 -z-10 pointer-events-none opacity-[0.02]">
+<img class="w-full h-full object-cover" data-alt="A futuristic dark cyberpunk room filled with high-tech computer servers and glowing golden circuit patterns across the walls. The scene is bathed in a deep midnight black atmosphere with sharp golden highlights reflecting off polished metallic surfaces. The aesthetic is clean, minimalist, and focuses on technological sophistication with a premium high-contrast finish. Digital data particles float subtly in the air, creating a sense of depth and motion in a still environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKi1X8bF_b8cxiXjwwzpeh3f5Cq4xIOQWkYmeFVp12keZHcpp9Ys8JsoXdzUVEk-zXyYUCxxogf-a0Ketr4O5tuqh0zCUy1SR-XUD9zLVw8IVF0s6yfn1zYZI_jNPPixczmH_nIMOtHc_tnLz71K1uoo35_nK9zPoF8sXNQsqlQIkI5SDaWYKuIts2cbPFhC0YFDUWoBzT1gZsnT8_uLDddeZ2UFbTnun5UFCsVLj3UlumGA6aDHmXMi-oeD6MeGqRBsu0E3ergobQ"/>
+</div>
+</body></html>

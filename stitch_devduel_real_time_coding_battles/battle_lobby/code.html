@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#4d4732",
+                        "surface-container-lowest": "#0d0e0f",
+                        "surface-container-low": "#1a1c1c",
+                        "on-tertiary": "#373100",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "primary-container": "#ffd700",
+                        "surface-bright": "#38393a",
+                        "on-secondary-fixed": "#271900",
+                        "on-error": "#690005",
+                        "surface-tint": "#e9c400",
+                        "secondary-fixed": "#ffdea6",
+                        "surface-container-high": "#292a2a",
+                        "primary": "#fff6df",
+                        "outline": "#999077",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "tertiary": "#fff6d2",
+                        "surface-container-highest": "#343535",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "on-tertiary-container": "#6b5f00",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-primary-container": "#705e00",
+                        "on-background": "#e3e2e2",
+                        "surface-container": "#1e2020",
+                        "on-surface": "#e3e2e2",
+                        "primary-fixed": "#ffe16d",
+                        "on-primary": "#3a3000",
+                        "on-secondary-container": "#392700",
+                        "surface-variant": "#343535",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "background": "#121414",
+                        "error-container": "#93000a",
+                        "surface": "#121414",
+                        "on-primary-fixed-variant": "#544600",
+                        "surface-dim": "#121414",
+                        "tertiary-container": "#f1db40",
+                        "inverse-primary": "#705d00",
+                        "inverse-on-surface": "#2f3131",
+                        "tertiary-fixed": "#fae448",
+                        "on-tertiary-fixed": "#201c00",
+                        "inverse-surface": "#e3e2e2",
+                        "secondary": "#f7bd48",
+                        "on-secondary": "#412d00",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#d0c6ab",
+                        "on-primary-fixed": "#221b00",
+                        "secondary-container": "#ba880f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "component-gap": "12px",
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "section-gap": "32px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "code-block": ["JetBrains Mono"],
+                        "body-md": ["Roboto"],
+                        "body-lg": ["Roboto"],
+                        "headline-lg": ["Roboto"],
+                        "headline-md": ["Roboto"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+        .glow-gold {
+            box-shadow: 0px 4px 20px rgba(233, 196, 0, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="bg-[#0A0A0A] border-b border-zinc-800 flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-yellow-400 cursor-pointer active:opacity-70 transition-opacity" data-icon="arrow_back">arrow_back</span>
+<h1 class="text-xl font-black italic tracking-tighter text-yellow-500 font-mono uppercase">DevDuel</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-400 cursor-pointer active:opacity-70 transition-opacity" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="flex-1 px-container-margin py-section-gap max-w-4xl mx-auto w-full">
+<!-- Page Title -->
+<div class="mb-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Choose Battle Mode</h2>
+<p class="font-body-md text-on-surface-variant">Select your arena and prove your technical superiority.</p>
+</div>
+<!-- Battle Modes Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-section-gap">
+<!-- Card 1: 1v1 Battle -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-gutter flex flex-col justify-between transition-all hover:bg-[#1A1A1A] group">
+<div>
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" data-icon="person">person</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-secondary mb-2">1v1 Battle</h3>
+<p class="font-body-md text-on-surface-variant mb-6 leading-relaxed">Face one opponent, same problem, fastest wins. High intensity, pure skill.</p>
+</div>
+<button class="w-full h-[48px] bg-secondary text-on-secondary font-label-caps text-label-caps rounded-lg hover:bg-secondary-fixed-dim active:bg-secondary-container transition-all uppercase tracking-widest">
+                    Start
+                </button>
+</div>
+<!-- Card 2: 3v3 Team Battle -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-gutter flex flex-col justify-between transition-all hover:bg-[#1A1A1A] group glow-gold">
+<div>
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" data-icon="groups">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary-fixed-dim mb-2">3v3 Team Battle</h3>
+<p class="font-body-md text-on-surface-variant mb-6 leading-relaxed">Team of 3 vs 3, collaborate and conquer. Coordinate strategy to solve complex algorithms.</p>
+</div>
+<button class="w-full h-[48px] border border-secondary text-secondary font-label-caps text-label-caps rounded-lg hover:bg-secondary/10 active:bg-secondary/20 transition-all uppercase tracking-widest">
+                    Start
+                </button>
+</div>
+</div>
+<!-- Selectors Section -->
+<div class="space-y-section-gap">
+<!-- Difficulty Selector -->
+<div>
+<h4 class="font-label-caps text-label-caps text-outline mb-4 uppercase">Difficulty</h4>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 bg-surface-container-high border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface hover:border-secondary transition-colors">Easy</button>
+<button class="px-4 py-2 bg-secondary text-on-secondary border border-secondary rounded-full font-label-caps text-label-caps">Medium</button>
+<button class="px-4 py-2 bg-surface-container-high border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface hover:border-secondary transition-colors">Hard</button>
+<button class="px-4 py-2 bg-surface-container-high border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface hover:border-secondary transition-colors">Random</button>
+</div>
+</div>
+<!-- Topic Selector -->
+<div>
+<h4 class="font-label-caps text-label-caps text-outline mb-4 uppercase">Topic Selector</h4>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 bg-secondary text-on-secondary rounded-full font-label-caps text-label-caps">All</button>
+<button class="px-4 py-2 bg-surface-container-highest border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors">Arrays</button>
+<button class="px-4 py-2 bg-surface-container-highest border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors">Trees</button>
+<button class="px-4 py-2 bg-surface-container-highest border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors">DP</button>
+<button class="px-4 py-2 bg-surface-container-highest border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors">Graphs</button>
+<button class="px-4 py-2 bg-surface-container-highest border border-outline-variant rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors">Strings</button>
+</div>
+</div>
+</div>
+<!-- Visual Anchor: Ambient Image -->
+<div class="mt-section-gap rounded-xl overflow-hidden border border-zinc-800 h-48 relative">
+<img class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" data-alt="A high-tech digital environment representing a competitive programming arena. The scene features glowing circuit-like patterns across a dark obsidian surface, illuminated by sharp golden neon light streaks that represent data flow and achievement. The atmosphere is intense and professional, with a shallow depth of field focusing on technical geometric structures in the foreground. The aesthetic is ultra-modern, echoing a hacker-elite workspace with high-contrast minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArhS1Mujn38ETJHNhcW3ZoL0JReFjNT6-obUPC_KrqUY0MNd2lqRxEmBfzdefa44Sa_KLDRdn3efWmA5xiA0LrujrNgj0x1YjAZQltnuwZPE_O-gAhrPhPP-xcvAdOeFuJciScWIy1jXnWvaMvJQyV_VjtcM6Z2wdcJXaQdaCPUeOj36TcH71Jp9iX7DSO_YoOJtKceVxTU-lQVyLy4T05xrTMpx4LxGsls5QYrMLntMW-v9Ml3Dbzm-6UPR3aIfqLkofqKlz-_69O"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<p class="font-mono text-secondary text-xs uppercase tracking-[0.2em]">Live Arena: 1,248 Coders Active</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#0A0A0A] px-2 border-t border-zinc-800">
+<div class="flex flex-col items-center justify-center text-zinc-600 hover:bg-zinc-900/50 transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-mono font-bold uppercase">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-yellow-400 scale-105 hover:bg-zinc-900/50 transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="sports_esports" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+<span class="text-[10px] font-mono font-bold uppercase">Battle</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-600 hover:bg-zinc-900/50 transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="text-[10px] font-mono font-bold uppercase">Problems</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-600 hover:bg-zinc-900/50 transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-[10px] font-mono font-bold uppercase">Leaderboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-600 hover:bg-zinc-900/50 transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-mono font-bold uppercase">Profile</span>
+</div>
+</nav>
+<!-- Spacer for Bottom Nav -->
+<div class="h-16"></div>
+</body></html>

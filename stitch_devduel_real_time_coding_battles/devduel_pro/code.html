@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffe16d",
+                    "on-tertiary-fixed": "#201c00",
+                    "surface-container-lowest": "#0d0e0f",
+                    "surface-container": "#1e2020",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#544600",
+                    "tertiary": "#fff6d2",
+                    "surface-bright": "#38393a",
+                    "on-secondary-container": "#392700",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "surface-variant": "#343535",
+                    "primary-container": "#ffd700",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#fae448",
+                    "primary": "#fff6df",
+                    "on-primary": "#3a3000",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#e9c400",
+                    "surface-container-high": "#292a2a",
+                    "secondary-container": "#ba880f",
+                    "on-tertiary-container": "#6b5f00",
+                    "surface-container-highest": "#343535",
+                    "on-surface-variant": "#d0c6ab",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-surface": "#e3e2e2",
+                    "secondary": "#f7bd48",
+                    "on-tertiary": "#373100",
+                    "on-secondary": "#412d00",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#705d00",
+                    "surface-dim": "#121414",
+                    "inverse-surface": "#e3e2e2",
+                    "secondary-fixed": "#ffdea6",
+                    "surface-container-low": "#1a1c1c",
+                    "surface": "#121414",
+                    "on-secondary-fixed": "#271900",
+                    "on-primary-fixed": "#221b00",
+                    "background": "#121414",
+                    "outline-variant": "#4d4732",
+                    "outline": "#999077",
+                    "on-primary-container": "#705e00",
+                    "on-background": "#e3e2e2",
+                    "tertiary-container": "#f1db40"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "container-margin": "24px",
+                    "section-gap": "32px",
+                    "gutter": "16px",
+                    "component-gap": "12px"
+            },
+            "fontFamily": {
+                    "code-block": ["JetBrains Mono"],
+                    "body-md": ["Roboto"],
+                    "body-lg": ["Roboto"],
+                    "headline-md": ["Roboto"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Roboto"]
+            },
+            "fontSize": {
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pro-glow {
+            box-shadow: 0px 4px 24px rgba(255, 215, 0, 0.15);
+        }
+        .mesh-bg {
+            background-image: radial-gradient(at 0% 0%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen pb-24">
+<!-- Top App Bar (From JSON) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-[#0A0A0A] border-b border-[#2A2A2A]">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-[#FFD700]">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-mono uppercase tracking-widest font-bold text-[#FFD700]">DEV_DUEL</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-500 hover:bg-[#1A1A1A] rounded-full p-2 cursor-pointer">account_circle</span>
+</div>
+</header>
+<main class="mt-20 px-container-margin mesh-bg">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center mb-section-gap">
+<div class="relative inline-block mb-4">
+<span class="material-symbols-outlined text-[64px] text-primary-container" style="font-variation-settings: 'FILL' 1;">stars</span>
+<div class="absolute -top-2 -right-2 bg-error text-[10px] font-bold px-2 py-0.5 rounded-full text-on-error uppercase">Elite</div>
+</div>
+<h2 class="font-headline-lg text-primary-container mb-2">DevDuel Pro</h2>
+<p class="font-body-lg text-on-surface-variant max-w-xs mx-auto">Master the arena with unlimited access and elite developer tools.</p>
+</section>
+<!-- Feature Comparison (High-End Asymmetric Layout) -->
+<section class="grid grid-cols-1 gap-gutter mb-section-gap">
+<div class="bg-surface-container border border-outline-variant p-gutter rounded-xl">
+<h3 class="font-label-caps text-on-surface-variant mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">offline_bolt</span>
+                    PRO BENEFITS
+                </h3>
+<div class="space-y-4">
+<!-- Feature Row -->
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+<div class="flex flex-col">
+<span class="font-body-lg font-bold text-on-surface">Unlimited Battles</span>
+<span class="text-[12px] text-on-surface-variant">No cooldowns between matches.</span>
+</div>
+<div class="flex gap-4">
+<span class="text-gray-500 font-mono text-[12px]">FREE: 3/day</span>
+<span class="text-primary-container font-mono text-[12px]">PRO: ∞</span>
+</div>
+</div>
+<!-- Feature Row -->
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+<div class="flex flex-col">
+<span class="font-body-lg font-bold text-on-surface">1000+ Problems</span>
+<span class="text-[12px] text-on-surface-variant">Exclusive LeetCode-Hard scenarios.</span>
+</div>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Feature Row -->
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+<div class="flex flex-col">
+<span class="font-body-lg font-bold text-on-surface">Advanced Analytics</span>
+<span class="text-[12px] text-on-surface-variant">Time complexity &amp; memory profiling.</span>
+</div>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Feature Row -->
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+<div class="flex flex-col">
+<span class="font-body-lg font-bold text-on-surface">Ad-Free Experience</span>
+<span class="text-[12px] text-on-surface-variant">Zero interruptions while coding.</span>
+</div>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Feature Row -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-lg font-bold text-on-surface">Certificates</span>
+<span class="text-[12px] text-on-surface-variant">Verified rank for your resume.</span>
+</div>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Options -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-section-gap">
+<!-- Monthly -->
+<div class="bg-surface-container-high border border-outline-variant p-6 rounded-xl flex flex-col justify-between cursor-pointer active:scale-[0.98] transition-all">
+<div>
+<span class="font-label-caps text-on-surface-variant">MONTHLY</span>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="font-headline-lg text-on-surface">₹99</span>
+<span class="font-body-md text-on-surface-variant">/mo</span>
+</div>
+</div>
+<div class="mt-6 flex items-center text-primary-container gap-2">
+<span class="font-label-caps">SELECT PLAN</span>
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<!-- Annual -->
+<div class="bg-surface-container-highest border-2 border-primary-container p-6 rounded-xl relative pro-glow cursor-pointer active:scale-[0.98] transition-all">
+<div class="absolute -top-3 right-4 bg-primary-container text-on-primary-container font-label-caps px-3 py-1 rounded-full text-[10px]">BEST VALUE</div>
+<div>
+<span class="font-label-caps text-primary-container">ANNUAL</span>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="font-headline-lg text-on-surface">₹799</span>
+<span class="font-body-md text-on-surface-variant">/year</span>
+</div>
+<p class="text-[12px] text-on-primary-fixed-variant mt-2">Save ₹389 per year (33% off)</p>
+</div>
+<div class="mt-6 flex items-center text-primary-container gap-2">
+<span class="font-label-caps">SELECT PLAN</span>
+<span class="material-symbols-outlined">check</span>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="flex flex-col gap-4">
+<button class="w-full bg-primary-container text-on-primary-container font-label-caps py-4 rounded-lg flex items-center justify-center gap-2 active:bg-secondary-container transition-colors shadow-lg uppercase">
+                Upgrade to Pro
+                <span class="material-symbols-outlined">rocket_launch</span>
+</button>
+<p class="text-center text-[11px] text-on-surface-variant px-8">
+                By upgrading, you agree to our Terms of Service. Cancel anytime. Subscription auto-renews unless turned off 24h before period ends.
+            </p>
+</section>
+<!-- Social Proof -->
+<section class="mt-12 text-center">
+<div class="flex justify-center -space-x-2 mb-4">
+<img class="w-8 h-8 rounded-full border-2 border-surface" data-alt="A portrait-style close up of a diverse group of professional software developers, high-resolution and sharp focus, with a cinematic dark lighting setup and subtle golden highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-HXMY8Zta40wjC_UHOmS0o8jdAL409TTQ4NMzFN_VRZm9rJ17zkheIbLLiWvTDrYZSbPs96HG2edbLzV926YIy018NX6mnMEyUs6QcRaiAyToTcEaBWeY0xxdQ_O5EyrpbyY-5weTEBTzDLLoyz4I3z66cvX0LdlWBA7LmASAp7bt8WYmqN7-xHscNvd_l5KBFnQSrHROaVo6FUOBECazF6ZcPOHXNnrJZMgqTzwdkFVDd_j0R2mSLaguYq6k5K_z2hhd8QXght1f"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface" data-alt="A portrait-style close up of a diverse group of professional software developers, high-resolution and sharp focus, with a cinematic dark lighting setup and subtle golden highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeqWrYqAAlZ7zK8yNTsu-SjtzIwY22UyvVDBNuXLbhIaYAGcFoIkqUzTnnSHDUH37jTnTxpjVsjw0Hg0mbqFeD09IvvFjMOzh8RIDg-fM22phjIWga3eZe_kad3dNx90ec0m6-o1FTO_0RisMCaulUOgDi0oRy0Vo_qyMYxIGer_GHnOo0LRhj-YQUF85d9oc4EEon8ClG0q-2eJAfZkxJ4QkZp-CJTWDvvm64oyzFn_ifytPoRBoiY1KfcRDWFyVlQfdNBL4P72dh"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface" data-alt="A portrait-style close up of a diverse group of professional software developers, high-resolution and sharp focus, with a cinematic dark lighting setup and subtle golden highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY2Qwv0_8hI2MN5Tgq5I48_Z_f_E5Y-8zB6lBHf5B7J3AJ0tJQ80se-C1mMDYMTwq7s0QVuKS41IAynMpvP0OmFDVZc364jh5C_ii1gtnmI7T-gdPP7WhaEf78CD7N6k5J3Igd0qdCFBoQXFySfg5A3VXgKqvZK98lW0aye5LhwZFoPnKrU9EX6MxWV__UB0ZaFxLp1jpHBbGOHAhux76Sezv4EYpexBmHaPz4U2QNNA4zeMmdrzyZxpZeDBXmy4n-0xKhA-DgNP59"/>
+</div>
+<p class="font-body-md text-on-surface-variant">Joined by 12,000+ elite engineers globally.</p>
+</section>
+</main>
+<!-- Bottom Nav Bar (From JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 pb-safe bg-[#0A0A0A] border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(255,215,0,0.05)]">
+<button class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80">
+<span class="material-symbols-outlined">terminal</span>
+<span class="text-[10px] font-mono font-medium uppercase">Battles</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-[10px] font-mono font-medium uppercase">Leaderboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80">
+<span class="material-symbols-outlined">code</span>
+<span class="text-[10px] font-mono font-medium uppercase">Editor</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#FFD700] border-t-2 border-[#FFD700] pt-2 active:opacity-80">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-mono font-medium uppercase">Settings</span>
+</button>
+</nav>
+</body></html>

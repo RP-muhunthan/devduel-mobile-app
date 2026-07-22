@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #000000;
+      color: #e3e2e2;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#0d0e0f",
+            "secondary-fixed-dim": "#f7bd48",
+            "inverse-surface": "#e3e2e2",
+            "primary-fixed-dim": "#e9c400",
+            "tertiary-fixed-dim": "#dcc82c",
+            "tertiary-container": "#f1db40",
+            "surface-variant": "#343535",
+            "on-error-container": "#ffdad6",
+            "on-secondary-container": "#392700",
+            "on-primary-fixed-variant": "#544600",
+            "on-secondary": "#412d00",
+            "surface-container": "#1e2020",
+            "primary": "#fff6df",
+            "on-primary-container": "#705e00",
+            "error-container": "#93000a",
+            "surface-container-highest": "#343535",
+            "on-tertiary-container": "#6b5f00",
+            "on-primary-fixed": "#221b00",
+            "error": "#ffb4ab",
+            "on-error": "#690005",
+            "surface-dim": "#121414",
+            "on-surface": "#e3e2e2",
+            "surface-container-high": "#292a2a",
+            "secondary-container": "#ba880f",
+            "primary-fixed": "#ffe16d",
+            "on-background": "#e3e2e2",
+            "on-secondary-fixed": "#271900",
+            "on-primary": "#3a3000",
+            "surface-bright": "#38393a",
+            "surface": "#121414",
+            "surface-container-low": "#1a1c1c",
+            "on-secondary-fixed-variant": "#5d4200",
+            "tertiary": "#fff6d2",
+            "secondary-fixed": "#ffdea6",
+            "primary-container": "#ffd700",
+            "background": "#121414",
+            "outline-variant": "#4d4732",
+            "outline": "#999077",
+            "inverse-primary": "#705d00",
+            "on-tertiary-fixed-variant": "#504700",
+            "tertiary-fixed": "#fae448",
+            "on-tertiary": "#373100",
+            "on-surface-variant": "#d0c6ab",
+            "surface-tint": "#e9c400",
+            "inverse-on-surface": "#2f3131",
+            "secondary": "#f7bd48"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "component-gap": "12px",
+            "section-gap": "32px",
+            "gutter": "16px",
+            "unit": "8px",
+            "container-margin": "24px"
+          },
+          "fontFamily": {
+            "headline-md": ["Roboto"],
+            "code-block": ["JetBrains Mono"],
+            "headline-lg": ["Roboto"],
+            "body-md": ["Roboto"],
+            "label-caps": ["JetBrains Mono"],
+            "body-lg": ["Roboto"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-black border-b border-zinc-800">
+<div class="flex items-center gap-4">
+<button class="text-yellow-500 hover:text-yellow-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-mono uppercase tracking-widest text-sm text-yellow-500 font-black italic tracking-tighter">Skill Analytics</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-500" data-icon="terminal">terminal</span>
+<span class="material-symbols-outlined text-zinc-500" data-icon="settings">settings</span>
+</div>
+</header>
+<main class="pt-20 px-6 max-w-4xl mx-auto space-y-8">
+<!-- Radar Chart Section -->
+<section class="flex flex-col items-center justify-center p-8 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<div class="relative w-full aspect-square max-w-[320px] flex items-center justify-center">
+<!-- Background Hexagon Polygons (Mockup) -->
+<svg class="absolute inset-0 w-full h-full text-zinc-800 fill-none stroke-current stroke-[0.5]" viewbox="0 0 100 100">
+<polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"></polygon>
+<polygon points="50,20 80,35 80,65 50,80 20,65 20,35"></polygon>
+<polygon points="50,35 65,42.5 65,57.5 50,65 35,57.5 35,42.5"></polygon>
+<line x1="50" x2="50" y1="5" y2="95"></line>
+<line x1="5" x2="95" y1="27.5" y2="72.5"></line>
+<line x1="95" x2="5" y1="27.5" y2="72.5"></line>
+</svg>
+<!-- Skill Data Polygon (The Chart) -->
+<svg class="absolute inset-0 w-full h-full fill-secondary-fixed-dim/20 stroke-secondary-fixed-dim stroke-[1.5]" viewbox="0 0 100 100">
+<!-- DP (low), Graphs (med), Math (high), Arrays (high), Trees (med), Strings (med) -->
+<polygon points="50,15 85,35 90,65 50,85 15,65 20,35"></polygon>
+<circle class="fill-secondary-fixed-dim" cx="50" cy="15" r="1.5"></circle>
+<circle class="fill-secondary-fixed-dim" cx="85" cy="35" r="1.5"></circle>
+<circle class="fill-secondary-fixed-dim" cx="90" cy="65" r="1.5"></circle>
+<circle class="fill-secondary-fixed-dim" cx="50" cy="85" r="1.5"></circle>
+<circle class="fill-secondary-fixed-dim" cx="15" cy="65" r="1.5"></circle>
+<circle class="fill-secondary-fixed-dim" cx="20" cy="35" r="1.5"></circle>
+</svg>
+<!-- Labels -->
+<div class="absolute -top-4 font-label-caps text-label-caps text-secondary-fixed-dim">MATH</div>
+<div class="absolute top-[22%] -right-10 font-label-caps text-label-caps text-zinc-500">ARRAYS</div>
+<div class="absolute bottom-[22%] -right-10 font-label-caps text-label-caps text-zinc-500">TREES</div>
+<div class="absolute -bottom-4 font-label-caps text-label-caps text-zinc-500">STRINGS</div>
+<div class="absolute bottom-[22%] -left-10 font-label-caps text-label-caps text-zinc-500">GRAPHS</div>
+<div class="absolute top-[22%] -left-8 font-label-caps text-label-caps text-zinc-500">DP</div>
+</div>
+<div class="mt-8 flex gap-8 justify-center">
+<div class="text-center">
+<div class="text-headline-md font-headline-md text-secondary-fixed-dim">2,450</div>
+<div class="text-label-caps font-label-caps text-zinc-500">ELO RATING</div>
+</div>
+<div class="text-center">
+<div class="text-headline-md font-headline-md text-secondary-fixed-dim">Top 2%</div>
+<div class="text-label-caps font-label-caps text-zinc-500">GLOBAL RANK</div>
+</div>
+</div>
+</section>
+<!-- Progress Bars List -->
+<section class="space-y-4">
+<h2 class="font-label-caps text-label-caps text-zinc-500 tracking-widest uppercase">Proficiency Breakdown</h2>
+<div class="grid gap-3">
+<!-- Progress Row -->
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/20">
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-body-md text-on-surface">Arrays</span>
+<span class="font-code-block text-body-md text-secondary-fixed-dim">85% solved</span>
+</div>
+<div class="h-2 w-full bg-zinc-900 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-[85%] rounded-full shadow-[0_0_8px_rgba(247,189,72,0.4)]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/20">
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-body-md text-on-surface">Strings</span>
+<span class="font-code-block text-body-md text-secondary-fixed-dim">70% solved</span>
+</div>
+<div class="h-2 w-full bg-zinc-900 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-[70%] rounded-full shadow-[0_0_8px_rgba(247,189,72,0.4)]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/20">
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-body-md text-on-surface">Math</span>
+<span class="font-code-block text-body-md text-secondary-fixed-dim">92% solved</span>
+</div>
+<div class="h-2 w-full bg-zinc-900 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-[92%] rounded-full shadow-[0_0_8px_rgba(247,189,72,0.4)]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/20">
+<div class="flex justify-between items-center mb-2">
+<span class="font-code-block text-body-md text-on-surface">Graphs</span>
+<span class="font-code-block text-body-md text-secondary-fixed-dim">45% solved</span>
+</div>
+<div class="h-2 w-full bg-zinc-900 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-[45%] rounded-full shadow-[0_0_8px_rgba(247,189,72,0.4)]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Win Rate Bar Chart -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h2 class="font-label-caps text-label-caps text-zinc-500 tracking-widest uppercase">7-Day Win Rate</h2>
+<span class="text-headline-md font-headline-md text-secondary">68.4%</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant/20 h-40 flex items-end justify-around gap-2">
+<div class="w-full bg-zinc-900 rounded-t-sm relative group h-[60%]">
+<div class="absolute bottom-0 w-full bg-secondary transition-all h-[100%] rounded-t-sm group-hover:brightness-110"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-zinc-600">MON</span>
+</div>
+<div class="w-full bg-zinc-900 rounded-t-sm relative group h-[60%]">
+<div class="absolute bottom-0 w-full bg-secondary transition-all h-[40%] rounded-t-sm group-hover:brightness-110"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-zinc-600">TUE</span>
+</div>
+<div class="w-full bg-zinc-900 rounded-t-sm relative group h-[60%]">
+<div class="absolute bottom-0 w-full bg-secondary transition-all h-[85%] rounded-t-sm group-hover:brightness-110"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-zinc-600">WED</span>
+</div>
+<div class="w-full bg-zinc-900 rounded-t-sm relative group h-[60%]">
+<div class="absolute bottom-0 w-full bg-secondary transition-all h-[20%] rounded-t-sm group-hover:brightness-110"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-zinc-600">THU</span>
+</div>
+<div class="w-full bg-zinc-900 rounded-t-sm relative group h-[60%]">
+<div class="absolute bottom-0 w-full bg-secondary transition-all h-[70%] rounded-t-sm group-hover:brightness-110"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-zinc-600">FRI</span>
+</div>
+<div class="w-full bg-zinc-900 rounded-t-sm relative group h-[60%]">
+<div class="absolute bottom-0 w-full bg-secondary transition-all h-[95%] rounded-t-sm group-hover:brightness-110"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-zinc-600">SAT</span>
+</div>
+<div class="w-full bg-zinc-900 rounded-t-sm relative group h-[60%]">
+<div class="absolute bottom-0 w-full bg-secondary transition-all h-[55%] rounded-t-sm group-hover:brightness-110"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-zinc-600">SUN</span>
+</div>
+</div>
+</section>
+<!-- Weakness Section -->
+<section class="space-y-4">
+<h2 class="font-label-caps text-label-caps text-zinc-500 tracking-widest uppercase">Identified Weakness</h2>
+<div class="bg-error-container border border-error/20 p-6 rounded-xl flex items-center gap-6 overflow-hidden relative group">
+<div class="absolute right-0 top-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px] -translate-y-4 translate-x-4" data-icon="warning">warning</span>
+</div>
+<div class="h-16 w-16 rounded-full bg-on-error flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-error-container text-4xl" data-icon="trending_down">trending_down</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-error-container leading-tight">Focus on: Dynamic Programming</h3>
+<p class="font-body-md text-body-md text-on-error-container/70 mt-1">Your win rate on DP problems is 24% lower than your average. Suggesting 3 medium challenges to improve.</p>
+<button class="mt-4 px-6 py-2 bg-on-error-container text-error-container font-label-caps text-label-caps rounded-lg hover:opacity-90 active:scale-95 transition-all">
+            START TRAINING
+          </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 bg-black px-4 pb-2 border-t border-zinc-800 shadow-[0_-4px_20px_rgba(255,215,0,0.05)] z-50">
+<div class="flex flex-col items-center justify-center text-zinc-500 opacity-60 font-mono text-[10px] uppercase font-bold hover:opacity-100 hover:text-yellow-400">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="home">home</span>
+<span>Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 opacity-60 font-mono text-[10px] uppercase font-bold hover:opacity-100 hover:text-yellow-400">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="bolt">bolt</span>
+<span>Battle</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 opacity-60 font-mono text-[10px] uppercase font-bold hover:opacity-100 hover:text-yellow-400">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="code">code</span>
+<span>Problems</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 opacity-60 font-mono text-[10px] uppercase font-bold hover:opacity-100 hover:text-yellow-400">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="leaderboard">leaderboard</span>
+<span>Rank</span>
+</div>
+<!-- Profile Active (Contains Analytics) -->
+<div class="flex flex-col items-center justify-center text-yellow-500 scale-110 transition-transform font-mono text-[10px] uppercase font-bold">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="person" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+<span>Profile</span>
+</div>
+</nav>
+</body></html>

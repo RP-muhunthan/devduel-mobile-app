@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A2A2A;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "primary-container": "#ffd700",
+                        "on-secondary-container": "#392700",
+                        "on-primary-container": "#705e00",
+                        "surface-bright": "#38393a",
+                        "on-primary": "#3a3000",
+                        "secondary-fixed": "#ffdea6",
+                        "surface": "#121414",
+                        "surface-dim": "#121414",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "tertiary": "#fff6d2",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#1e2020",
+                        "outline-variant": "#4d4732",
+                        "tertiary-fixed": "#fae448",
+                        "surface-container-high": "#292a2a",
+                        "on-tertiary-container": "#6b5f00",
+                        "surface-container-lowest": "#0d0e0f",
+                        "secondary": "#f7bd48",
+                        "on-error": "#690005",
+                        "inverse-primary": "#705d00",
+                        "secondary-container": "#ba880f",
+                        "background": "#121414",
+                        "tertiary-container": "#f1db40",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "on-primary-fixed-variant": "#544600",
+                        "on-background": "#e3e2e2",
+                        "outline": "#999077",
+                        "on-tertiary": "#373100",
+                        "primary-fixed": "#ffe16d",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "on-secondary": "#412d00",
+                        "on-surface": "#e3e2e2",
+                        "primary": "#fff6df",
+                        "on-primary-fixed": "#221b00",
+                        "surface-tint": "#e9c400",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-tertiary-fixed": "#201c00",
+                        "on-surface-variant": "#d0c6ab",
+                        "on-secondary-fixed": "#271900",
+                        "surface-variant": "#343535",
+                        "inverse-on-surface": "#2f3131",
+                        "inverse-surface": "#e3e2e2",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#343535"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "section-gap": "32px",
+                        "container-margin": "24px",
+                        "component-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Roboto"],
+                        "body-md": ["Roboto"],
+                        "code-block": ["JetBrains Mono"],
+                        "body-lg": ["Roboto"],
+                        "headline-lg": ["Roboto"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0A0A0A] text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Top Navigation Bar (Manual Context: Specialized Editor View) -->
+<header class="bg-[#0A0A0A] border-b border-[#2A2A2A] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<button class="text-secondary hover:text-primary-container transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-label-caps text-label-caps text-secondary">Valid Anagram</h1>
+<span class="text-[10px] text-outline uppercase tracking-widest font-mono">Difficulty: Easy</span>
+</div>
+</div>
+<div class="flex items-center gap-container-margin">
+<div class="flex items-center bg-[#111111] border border-[#2A2A2A] rounded-lg px-3 py-1.5 gap-2 cursor-pointer hover:bg-[#1A1A1A] transition-colors">
+<span class="material-symbols-outlined text-secondary text-sm">settings_ethernet</span>
+<span class="font-label-caps text-[12px] text-on-surface">Python 3</span>
+<span class="material-symbols-outlined text-outline text-xs">expand_more</span>
+</div>
+<img alt="Profile" class="w-8 h-8 rounded-full border border-secondary/20" data-alt="A professional headshot of a high-tech developer avatar, styled with a cinematic cyberpunk aesthetic. The background is softly blurred with hints of glowing server lights in deep amber and gold tones. The lighting is dramatic and moody, emphasizing a sleek, focused expression. The overall color palette is dominated by dark shadows and vibrant gold highlights to match a premium dark UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM5N34h_1ezRDQArnkfSO1LIMJyCTB-fSzfwYXX9EjkGOuW4oiSpKcyDxjTIjJAPqlFrQ8ok7cE3CQvnmTaMM60lNEXgXeniWVSxf4wQqE65tK6szHYagVyutc16AtyU4dVJTfiLI9KRrFEEWbFGhry7S8N9FY1sfvUzxK9C7h0vyfjJqtWoLTq3WW0_Xsjs-GhKc3CotM7iX5EBIbrEFGEbj616cguwTDSUI4cdsuNZIVWnnd3SS6w7oJ9VAqNcay3dczJVzr1TDE"/>
+</div>
+</header>
+<!-- Main Content Canvas: Code Editor -->
+<main class="flex-1 mt-16 pb-32 flex flex-col w-full relative">
+<!-- Editor Content Area -->
+<div class="flex-1 flex w-full bg-[#0A0A0A] overflow-hidden">
+<!-- Line Numbers -->
+<div class="w-12 bg-[#0A0A0A] border-r border-[#2A2A2A] flex flex-col items-center py-4 select-none">
+<span class="font-code-block text-xs text-outline mb-1">1</span>
+<span class="font-code-block text-xs text-outline mb-1">2</span>
+<span class="font-code-block text-xs text-outline mb-1">3</span>
+<span class="font-code-block text-xs text-outline mb-1">4</span>
+<span class="font-code-block text-xs text-outline mb-1">5</span>
+<span class="font-code-block text-xs text-outline mb-1">6</span>
+<span class="font-code-block text-xs text-outline mb-1">7</span>
+<span class="font-code-block text-xs text-outline mb-1">8</span>
+<span class="font-code-block text-xs text-outline mb-1">9</span>
+<span class="font-code-block text-xs text-outline mb-1">10</span>
+<span class="font-code-block text-xs text-outline mb-1">11</span>
+<span class="font-code-block text-xs text-outline mb-1">12</span>
+</div>
+<!-- Code Surface -->
+<div class="flex-1 p-4 font-code-block text-code-block overflow-x-auto">
+<div class="space-y-1">
+<p><span class="text-secondary">class</span> <span class="text-primary-container">Solution</span>:</p>
+<p class="pl-gutter"><span class="text-secondary">def</span> <span class="text-tertiary-fixed">isAnagram</span>(self, s: <span class="text-secondary-container">str</span>, t: <span class="text-secondary-container">str</span>) -&gt; <span class="text-secondary-container">bool</span>:</p>
+<p class="pl-section-gap text-outline italic"># Implement your logic here</p>
+<p class="pl-section-gap"><span class="text-secondary">if</span> <span class="text-tertiary-fixed">len</span>(s) != <span class="text-tertiary-fixed">len</span>(t):</p>
+<p class="pl-[48px]"><span class="text-secondary">return False</span></p>
+<p> </p>
+<p class="pl-section-gap">count_s, count_t = {}, {}</p>
+<p class="pl-section-gap"><span class="text-secondary">for</span> i <span class="text-secondary">in</span> <span class="text-tertiary-fixed">range</span>(<span class="text-tertiary-fixed">len</span>(s)):</p>
+<p class="pl-[48px]">count_s[s[i]] = <span class="text-primary-container">1</span> + count_s.<span class="text-tertiary-fixed">get</span>(s[i], <span class="text-primary-container">0</span>)</p>
+<p class="pl-[48px]">count_t[t[i]] = <span class="text-primary-container">1</span> + count_t.<span class="text-tertiary-fixed">get</span>(t[i], <span class="text-primary-container">0</span>)</p>
+<p> </p>
+<div class="flex items-center">
+<p class="pl-section-gap"><span class="text-secondary">return</span> count_s == count_t</p>
+<span class="w-2 h-5 bg-secondary-container/40 animate-pulse ml-0.5"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Area -->
+<div class="absolute bottom-24 right-container-margin z-40">
+<button class="bg-primary-container text-on-primary-container flex items-center gap-2 px-6 py-3 rounded-full font-label-caps text-label-caps shadow-[0_4px_20px_rgba(255,215,0,0.2)] active:scale-95 transition-all hover:bg-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                RUN
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Shell: Specialized Keyboard Toolbar -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-[#0A0A0A] border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(255,215,0,0.05)]">
+<!-- Keyboard Assist Row -->
+<div class="flex items-center gap-2 px-4 py-2 overflow-x-auto no-scrollbar bg-[#111111]/50">
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">Tab</button>
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">{</button>
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">}</button>
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">(</button>
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">)</button>
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">[</button>
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">]</button>
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">;</button>
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">:</button>
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">"</button>
+<button class="min-w-[40px] h-10 flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-secondary font-code-bold text-sm active:bg-secondary active:text-black transition-colors">'</button>
+</div>
+<!-- Global Nav Icons (Immutable Content from JSON Logic) -->
+<nav class="flex justify-around items-center px-4 h-16 bg-[#0A0A0A]">
+<div class="flex flex-col items-center justify-center text-gray-600 pt-2 cursor-pointer hover:bg-[#111111] transition-all">
+<span class="material-symbols-outlined" data-icon="swords">swords</span>
+<span class="font-label-caps text-[10px] uppercase mt-1">Battle</span>
+</div>
+<div class="flex flex-col items-center justify-center text-yellow-400 transition-all border-t-2 border-yellow-400 pt-2 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="code" style="font-variation-settings: 'FILL' 1;">code</span>
+<span class="font-label-caps text-[10px] uppercase mt-1">Practice</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-600 pt-2 cursor-pointer hover:bg-[#111111] transition-all">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-label-caps text-[10px] uppercase mt-1">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-600 pt-2 cursor-pointer hover:bg-[#111111] transition-all">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-caps text-[10px] uppercase mt-1">Search</span>
+</div>
+</nav>
+</div>
+</body></html>

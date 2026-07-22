@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-container-lowest": "#0d0e0f",
+                  "secondary-fixed-dim": "#f7bd48",
+                  "inverse-surface": "#e3e2e2",
+                  "primary-fixed-dim": "#e9c400",
+                  "tertiary-fixed-dim": "#dcc82c",
+                  "tertiary-container": "#f1db40",
+                  "surface-variant": "#343535",
+                  "on-error-container": "#ffdad6",
+                  "on-secondary-container": "#392700",
+                  "on-primary-fixed-variant": "#544600",
+                  "on-secondary": "#412d00",
+                  "surface-container": "#1e2020",
+                  "primary": "#fff6df",
+                  "on-primary-container": "#705e00",
+                  "error-container": "#93000a",
+                  "surface-container-highest": "#343535",
+                  "on-tertiary-container": "#6b5f00",
+                  "on-primary-fixed": "#221b00",
+                  "error": "#ffb4ab",
+                  "on-tertiary-fixed": "#201c00",
+                  "surface-dim": "#121414",
+                  "on-surface": "#e3e2e2",
+                  "surface-container-high": "#292a2a",
+                  "secondary-container": "#ba880f",
+                  "primary-fixed": "#ffe16d",
+                  "on-background": "#e3e2e2",
+                  "on-secondary-fixed": "#271900",
+                  "on-primary": "#3a3000",
+                  "on-error": "#690005",
+                  "surface-bright": "#38393a",
+                  "surface": "#121414",
+                  "surface-container-low": "#1a1c1c",
+                  "on-secondary-fixed-variant": "#5d4200",
+                  "tertiary": "#fff6d2",
+                  "secondary-fixed": "#ffdea6",
+                  "primary-container": "#ffd700",
+                  "background": "#121414",
+                  "outline-variant": "#4d4732",
+                  "outline": "#999077",
+                  "inverse-primary": "#705d00",
+                  "on-tertiary-fixed-variant": "#504700",
+                  "tertiary-fixed": "#fae448",
+                  "on-tertiary": "#373100",
+                  "on-surface-variant": "#d0c6ab",
+                  "surface-tint": "#e9c400",
+                  "inverse-on-surface": "#2f3131",
+                  "secondary": "#f7bd48"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "component-gap": "12px",
+                  "section-gap": "32px",
+                  "gutter": "16px",
+                  "unit": "8px",
+                  "container-margin": "24px"
+          },
+          "fontFamily": {
+                  "headline-md": ["Roboto"],
+                  "code-block": ["JetBrains Mono"],
+                  "headline-lg": ["Roboto"],
+                  "body-md": ["Roboto"],
+                  "label-caps": ["JetBrains Mono"],
+                  "body-lg": ["Roboto"]
+          },
+          "fontSize": {
+                  "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                  "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                  "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                  "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0d0e0f;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #343535;
+      border-radius: 10px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-black border-b border-zinc-800">
+<div class="flex items-center gap-4">
+<button class="text-yellow-500 hover:text-yellow-400 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-mono uppercase tracking-widest text-sm text-yellow-500 font-black italic tracking-tighter">EDITORIAL</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-500 hover:text-yellow-400 transition-colors cursor-pointer">settings</span>
+</div>
+</header>
+<main class="pt-20 px-container-margin max-w-4xl mx-auto space-y-section-gap">
+<!-- Title Section -->
+<section class="space-y-unit">
+<h2 class="font-headline-lg text-headline-lg text-primary">Skyline Alignment Protocol</h2>
+<div class="flex gap-gutter">
+<span class="font-label-caps text-label-caps px-3 py-1 bg-surface-container-high text-secondary-fixed-dim border border-outline-variant rounded-full">HARD</span>
+<span class="font-label-caps text-label-caps px-3 py-1 bg-surface-container-high text-on-surface-variant border border-outline-variant rounded-full">DYNAMIC PROGRAMMING</span>
+</div>
+</section>
+<!-- Approach Section -->
+<section class="space-y-component-gap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Approach</h3>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-6 space-y-4">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          The core challenge lies in determining the maximum visible skyline after applying 
+          <span class="text-secondary font-bold">N</span> transformations. To achieve the 
+          <span class="font-code-block text-primary">O(N log N)</span> threshold, we implement a 
+          Sweep-Line algorithm combined with a specialized segment tree.
+        </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          We sort all transition events by their X-coordinates. As the sweep-line moves across the axis, 
+          we maintain an active set of heights in a Max-Priority Queue. For each change in the active set, 
+          we calculate the delta and append the coordinate if the global maximum has shifted.
+        </p>
+</div>
+</section>
+<!-- Complexity Cards - Asymmetric Layout -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container border border-outline-variant rounded-xl p-6 flex items-center justify-between group hover:border-secondary transition-colors">
+<div class="space-y-1">
+<p class="font-label-caps text-label-caps text-on-surface-variant">TIME COMPLEXITY</p>
+<p class="font-headline-md text-headline-md text-secondary">O(N log N)</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors text-4xl">speed</span>
+</div>
+<div class="bg-surface-container border border-outline-variant rounded-xl p-6 flex items-center justify-between group hover:border-secondary transition-colors">
+<div class="space-y-1">
+<p class="font-label-caps text-label-caps text-on-surface-variant">SPACE COMPLEXITY</p>
+<p class="font-headline-md text-headline-md text-secondary">O(N)</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors text-4xl">memory</span>
+</div>
+</section>
+<!-- Code Block Section -->
+<section class="space-y-component-gap relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest">
+<div class="flex items-center justify-between px-6 py-4 bg-surface-container-high border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">code</span>
+<span class="font-label-caps text-label-caps text-on-surface">SOLUTION.JAVA</span>
+</div>
+<button class="flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span> COPY
+        </button>
+</div>
+<!-- Code Content with Syntax Highlighting -->
+<div class="p-6 font-code-block text-code-block overflow-x-auto custom-scrollbar leading-relaxed">
+<pre class="text-on-surface-variant"><span class="text-secondary">import</span> java.util.*;
+
+<span class="text-secondary">public class</span> <span class="text-primary-container">Solution</span> {
+    <span class="text-secondary">public</span> List&lt;Integer&gt; <span class="text-primary-container">solve</span>(<span class="text-secondary">int</span>[][] buildings) {
+        <span class="text-outline italic">// Initialize events for sweep line</span>
+        List&lt;Event&gt; events = <span class="text-secondary">new</span> <span class="text-primary-container">ArrayList</span>&lt;&gt;();
+        <span class="text-secondary">for</span> (<span class="text-secondary">int</span>[] b : buildings) {
+            events.add(<span class="text-secondary">new</span> <span class="text-primary-container">Event</span>(b[0], b[2], <span class="text-secondary">true</span>));
+            events.add(<span class="text-secondary">new</span> <span class="text-primary-container">Event</span>(b[1], b[2], <span class="text-secondary">false</span>));
+        }
+
+        <span class="text-outline italic">// Sort events by X-coordinate</span>
+        <span class="text-primary-container">Collections</span>.sort(events, (a, b) -&gt; a.x - b.x);
+
+        <span class="text-primary-container">TreeMap</span>&lt;Integer, Integer&gt; heights = <span class="text-secondary">new</span> <span class="text-primary-container">TreeMap</span>&lt;&gt;();
+        heights.put(<span class="text-secondary">0</span>, <span class="text-secondary">1</span>);
+        <span class="text-secondary">int</span> prevMax = <span class="text-secondary">0</span>;
+        
+        <span class="text-outline italic">// Processing the logic...</span>
+        <span class="text-secondary">return</span> result;
+    }
+}</pre>
+</div>
+<!-- Locked Overlay -->
+<div class="absolute inset-0 bg-background/60 backdrop-blur-md flex flex-col items-center justify-center text-center p-8 z-10">
+<div class="bg-surface-container-high p-6 rounded-full shadow-[0_0_30px_rgba(255,215,0,0.1)] border border-outline-variant mb-6">
+<span class="material-symbols-outlined text-6xl text-secondary" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">SOLVE THE PROBLEM FIRST</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-8">
+          The editorial and optimal solution are locked to preserve the competitive integrity of the arena.
+        </p>
+<button class="bg-secondary text-on-secondary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:bg-secondary-container transition-all active:scale-95 shadow-lg shadow-secondary/20">
+          GO TO CHALLENGE
+        </button>
+</div>
+</section>
+<!-- Reference Links -->
+<section class="space-y-component-gap">
+<h3 class="font-label-caps text-label-caps text-outline">RESOURCE NODES</h3>
+<div class="space-y-2">
+<a class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-outline-variant hover:border-secondary transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">menu_book</span>
+<span class="font-body-md text-on-surface">Understanding Sweep-Line Algorithms</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-outline-variant hover:border-secondary transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">schema</span>
+<span class="font-body-md text-on-surface">Segment Tree Optimization Guide</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">open_in_new</span>
+</a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 bg-black px-4 pb-2 border-t border-zinc-800 shadow-[0_-4px_20px_rgba(255,215,0,0.05)] z-50">
+<a class="flex flex-col items-center justify-center text-zinc-500 opacity-60 hover:opacity-100 hover:text-yellow-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-mono text-[10px] uppercase font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 opacity-60 hover:opacity-100 hover:text-yellow-400" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-mono text-[10px] uppercase font-bold">Battle</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-500 scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">code</span>
+<span class="font-mono text-[10px] uppercase font-bold">Problems</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 opacity-60 hover:opacity-100 hover:text-yellow-400" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-mono text-[10px] uppercase font-bold">Rank</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 opacity-60 hover:opacity-100 hover:text-yellow-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-mono text-[10px] uppercase font-bold">Profile</span>
+</a>
+</nav>
+</body></html>

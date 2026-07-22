@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffe16d",
+                        "on-tertiary-fixed": "#201c00",
+                        "surface-container-lowest": "#0d0e0f",
+                        "surface-container": "#1e2020",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#544600",
+                        "tertiary": "#fff6d2",
+                        "surface-bright": "#38393a",
+                        "on-secondary-container": "#392700",
+                        "inverse-on-surface": "#2f3131",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "surface-variant": "#343535",
+                        "primary-container": "#ffd700",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#fae448",
+                        "primary": "#fff6df",
+                        "on-primary": "#3a3000",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#e9c400",
+                        "surface-container-high": "#292a2a",
+                        "secondary-container": "#ba880f",
+                        "on-tertiary-container": "#6b5f00",
+                        "surface-container-highest": "#343535",
+                        "on-surface-variant": "#d0c6ab",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-surface": "#e3e2e2",
+                        "secondary": "#f7bd48",
+                        "on-tertiary": "#373100",
+                        "on-secondary": "#412d00",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#705d00",
+                        "surface-dim": "#121414",
+                        "inverse-surface": "#e3e2e2",
+                        "secondary-fixed": "#ffdea6",
+                        "surface-container-low": "#1a1c1c",
+                        "surface": "#121414",
+                        "on-secondary-fixed": "#271900",
+                        "on-primary-fixed": "#221b00",
+                        "background": "#121414",
+                        "outline-variant": "#4d4732",
+                        "outline": "#999077",
+                        "on-primary-container": "#705e00",
+                        "on-background": "#e3e2e2",
+                        "tertiary-container": "#f1db40"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-margin": "24px",
+                        "section-gap": "32px",
+                        "gutter": "16px",
+                        "component-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "code-block": ["JetBrains Mono"],
+                        "body-md": ["Roboto"],
+                        "body-lg": ["Roboto"],
+                        "headline-md": ["Roboto"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Roboto"]
+                    },
+                    "fontSize": {
+                        "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-gold {
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.05);
+        }
+        .active-glow {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-[#0A0A0A] border-b border-[#2A2A2A]">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform p-2 hover:bg-[#1A1A1A] rounded-full text-[#FFD700]">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-mono uppercase tracking-widest font-bold text-[#FFD700]">Account</h1>
+</div>
+<div class="flex items-center">
+<button class="active:scale-95 transition-transform p-2 hover:bg-[#1A1A1A] rounded-full text-[#FFD700]">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-container-margin max-w-2xl mx-auto space-y-section-gap">
+<!-- Profile Overview Section (Contextual) -->
+<section class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 glow-gold">
+<div class="flex items-center gap-gutter">
+<div class="relative">
+<img alt="User Profile" class="w-16 h-16 rounded-full border-2 border-primary-container" data-alt="A professional high-contrast portrait of a software engineer, rendered in a dark hacker-elite aesthetic. The lighting is moody with gold rim lights reflecting off the subject. The background is a deep charcoal with faint digital code patterns. The overall mood is serious, technical, and premium, following a strict black and gold color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe044Gu8fRiRSCcdlTo6761ozIMlpG-aYEHDEtXALrVYc-Pez3siPv6vN0zQ1nRXXFa1PdLrCI9-DPVp_ts1iNI4FLCUXn6Qi_VLSU4L9NhAjns_UOCD8qZBYrkVkdD9v2YvUCnDG_tzXGdWGFxYHajo1091w4GSIHWN9I6crcuGOnAgeCWAF5ZLzwTCUqZuVqp2v8Dui5Qlcoh7n6XsgrifHRHGHPDlENffkzqqpUBwW8iZTj1X9RgmWocd1n8RC6fI0GZy6yoY5g"/>
+<div class="absolute bottom-0 right-0 bg-primary-container p-1 rounded-full border-2 border-[#0A0A0A]">
+<span class="material-symbols-outlined text-[12px] text-on-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Alex "Root" Vector</h2>
+<p class="font-code-block text-code-block text-outline">ELITE RANK • 2,450 ELO</p>
+</div>
+</div>
+</section>
+<!-- Account Settings List -->
+<section class="space-y-component-gap">
+<h3 class="font-label-caps text-label-caps text-outline px-2">Security &amp; Access</h3>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl divide-y divide-[#2A2A2A] overflow-hidden">
+<!-- Change Password -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-[#1A1A1A] transition-colors group active:bg-primary-container/5 text-left">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container" data-icon="lock">lock</span>
+<span class="font-body-lg text-body-lg text-on-surface">Change Password</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Linked Accounts -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-[#1A1A1A] transition-colors group active:bg-primary-container/5 text-left">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container" data-icon="link">link</span>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">Linked Accounts</p>
+<p class="font-body-md text-body-md text-primary-fixed-dim">Google - Connected</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Two-Factor Authentication -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-[#1A1A1A] transition-colors group active:bg-primary-container/5 text-left">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container" data-icon="security">security</span>
+<span class="font-body-lg text-body-lg text-on-surface">Two-Factor Authentication</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-caps text-[10px] text-outline">OFF</span>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+</div>
+</section>
+<!-- Preference Section -->
+<section class="space-y-component-gap">
+<h3 class="font-label-caps text-label-caps text-outline px-2">Data Management</h3>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl divide-y divide-[#2A2A2A] overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 hover:bg-[#1A1A1A] transition-colors group text-left">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline" data-icon="download">download</span>
+<span class="font-body-lg text-body-lg text-on-surface">Export Battle History</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Delete Account Button -->
+<button class="w-full flex items-center gap-4 p-4 hover:bg-error-container/10 transition-colors active:opacity-80 text-left">
+<span class="material-symbols-outlined text-error" data-icon="delete_forever">delete_forever</span>
+<span class="font-body-lg text-body-lg text-error font-bold">Delete Account</span>
+</button>
+</div>
+<p class="px-4 text-[12px] text-outline italic">Deleting your account is permanent and will remove all your elo ratings, battle records, and achievement badges.</p>
+</section>
+</main>
+<!-- BottomNavBar (Suppressed for focused settings page as per "Destination" rule fallback for sub-screens, but JSON requested it as a primary component. Applying based on top-level relevance) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 pb-safe bg-[#0A0A0A] border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(255,215,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="text-[10px] font-mono font-medium uppercase mt-1">Battles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-[10px] font-mono font-medium uppercase mt-1">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="text-[10px] font-mono font-medium uppercase mt-1">Editor</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#FFD700] border-t-2 border-[#FFD700] pt-2 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[10px] font-mono font-medium uppercase mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

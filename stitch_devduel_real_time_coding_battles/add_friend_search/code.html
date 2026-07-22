@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+        /* Tap highlight removal for mobile */
+        .tap-highlight-transparent {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#292a2a",
+                        "inverse-surface": "#e3e2e2",
+                        "on-secondary-container": "#392700",
+                        "on-tertiary": "#373100",
+                        "surface": "#121414",
+                        "on-secondary": "#412d00",
+                        "on-surface-variant": "#d0c6ab",
+                        "on-surface": "#e3e2e2",
+                        "surface-tint": "#e9c400",
+                        "outline": "#999077",
+                        "outline-variant": "#4d4732",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "on-tertiary-fixed": "#201c00",
+                        "secondary-fixed": "#ffdea6",
+                        "surface-container-low": "#1a1c1c",
+                        "on-primary-fixed": "#221b00",
+                        "primary-fixed-dim": "#e9c400",
+                        "surface-dim": "#121414",
+                        "secondary-container": "#ba880f",
+                        "on-primary-fixed-variant": "#544600",
+                        "inverse-primary": "#705d00",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#fff6d2",
+                        "primary": "#fff6df",
+                        "primary-container": "#ffd700",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-variant": "#343535",
+                        "surface-container-lowest": "#0d0e0f",
+                        "surface-container-highest": "#343535",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "on-primary-container": "#705e00",
+                        "background": "#121414",
+                        "on-primary": "#3a3000",
+                        "on-tertiary-container": "#6b5f00",
+                        "on-secondary-fixed": "#271900",
+                        "primary-fixed": "#ffe16d",
+                        "tertiary-fixed": "#fae448",
+                        "on-background": "#e3e2e2",
+                        "surface-container": "#1e2020",
+                        "secondary": "#f7bd48",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "tertiary-container": "#f1db40",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "surface-bright": "#38393a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "component-gap": "12px",
+                        "unit": "8px",
+                        "section-gap": "32px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "code-block": ["JetBrains Mono"],
+                        "headline-md": ["Roboto"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-md": ["Roboto"],
+                        "headline-lg": ["Roboto"],
+                        "body-lg": ["Roboto"]
+                    },
+                    "fontSize": {
+                        "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-24">
+<!-- TopAppBar from JSON -->
+<header class="bg-[#0A0A0A] text-yellow-500 docked full-width top-0 border-b border-[#2A2A2A] flat no shadows z-50 sticky">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-yellow-500">terminal</span>
+<h1 class="text-xl font-black italic tracking-tighter text-yellow-500">DevDuel</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 rounded-full border border-outline-variant overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A clean, professional headshot of a developer in a dark environment with subtle gold ambient lighting hitting the side of their face. The image is minimalist and focused on the person's expression of focused intelligence, maintaining the hacker-elite aesthetic of the platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9qAbMldYWyrLgVpjlPreQbrmcQNt6YE2n3BvBlUtLXJlka04pdw9wdSao9mmx081P8qAzSyLylWxBXAAkTOfFraNErq_Wr_A7pC67PdTv6-YHZrL4lv_bPeeKa3Q3UqobHa4IUt0xyXeEB7G1ltmGGTdH1EKGxEDqRCcctsVfoG_EoarpXBAwitiU3VcAH7U23B1U_ghL160JA2zbYKo-EnjxX0nlAgbu1bDvHkw8gnglmXFadnNol23fprPE8zKzmWNbTTiwdXEn"/>
+</div>
+</div>
+</div>
+</header>
+<main class="px-container-margin py-section-gap max-w-2xl mx-auto">
+<!-- Search Bar Section -->
+<section class="mb-section-gap">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 pl-12 pr-4 font-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all outline-none" placeholder="Search handles, colleges, or level..." type="text" value="byte_wizard"/>
+</div>
+</section>
+<!-- Pending Requests Section -->
+<section class="mb-section-gap">
+<div class="flex items-center justify-between mb-component-gap">
+<h2 class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Pending Requests (2)</h2>
+</div>
+<div class="space-y-gutter">
+<!-- Request Card 1 -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-gutter flex items-center justify-between shadow-[0_4px_20px_rgba(255,215,0,0.05)]">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="JD" class="w-12 h-12 rounded-lg object-cover grayscale hover:grayscale-0 transition-all" data-alt="Close up portrait of a young coder with glasses, lit by the golden glow of a computer screen in a dark room. High contrast lighting with sharp shadows, emphasizing the technical and professional vibe of a high-stakes programming environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM-0btvoTNVJ79wQNDobGiS98BsKk_h9QCOOruSsYzs72lNnJHj9sIIOWZxvwerLbQOZIH95Q8QOG9jhhGSIhs6SCRnu0v8KpG_o3HZkh8I67AOGecVHtYSbyJP42dBeen6BhQa564_-fI55nKIXGzqjkq7TjJeoj2yvUfswj3zuqVTkNfvzvis9A7tOxVyMXsqieCcFhk7k6MQ9I72_2eYsGQUz_MDid6NqERgO7imQmsUvm3_XwroxiAk3lvoifs20iUKyDjZlZv"/>
+<div class="absolute -bottom-1 -right-1 bg-primary-container text-on-primary-container font-label-caps text-[8px] px-1 rounded border border-surface">LVL 42</div>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg text-on-surface">null_pointer_exception</h3>
+<p class="font-body-md text-outline text-sm">MIT • 2 mutual friends</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-container text-on-primary-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined">check</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-outline active:scale-95 transition-transform">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Search Results Section -->
+<section>
+<div class="flex items-center justify-between mb-component-gap">
+<h2 class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Search Results</h2>
+</div>
+<div class="grid grid-cols-1 gap-gutter">
+<!-- Result Card 1 -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-gutter transition-colors hover:bg-[#1A1A1A]">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<img alt="BW" class="w-16 h-16 rounded-xl object-cover" data-alt="A digital avatar representing a high-level developer, stylized with dark futuristic apparel and gold circuit patterns on the fabric. The setting is a void-like black background with sharp, minimal lighting highlighting the sharp features and high-tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb-JRB1DX1qBV6tDnDhE6fS4xtrxpFb2fg8t4satOcrTBPmJCGOJ-wOP4mwBBfg2Nr3Q3cgF-MkR69DzEMfj-59mBIYiKtxI543dblo3LZKXGMrQNe5j5DAteJlodUUM1JIp3xrdpgRxRdhJnGXOco089ikP6XkxXioU-xmcKvjkI4yHATBceTJJWjk-iZAD5mMxvdSycv13bcGrSUF14QyFuQVZTDCYp819zeZNgv8yytBmgtVs3pV4ZkoLbjrP8P-RuTiyJBJWas"/>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-headline-md text-body-lg text-on-surface">byte_wizard</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container-high border border-primary-container/30 text-primary-container font-label-caps text-[10px]">GOLD RANK</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-1">Stanford University</p>
+<div class="flex items-center gap-4 text-outline text-xs font-code-block">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> 1.2k Wins</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">code</span> React/Rust</span>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-gutter w-full py-3 bg-primary-container text-on-primary-container font-label-caps rounded-lg flex items-center justify-center gap-2 active:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+                        ADD FRIEND
+                    </button>
+</div>
+<!-- Result Card 2 -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-gutter transition-colors hover:bg-[#1A1A1A]">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<img alt="KR" class="w-16 h-16 rounded-xl object-cover" data-alt="A cinematic portrait of a developer in a darkened room, illuminated by the intense yellow light of multiple monitors. The style is sharp and high-contrast, with deep blacks and vibrant gold accents, reflecting a high-performance and elite technical environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUJ2Q5DOGi1zKt2S5Vmz8xo56_X4QMWHva1LoQgRSF_6xZ5n3ltRXqsn5eRfcqSK4xboEwD3OUmE3jPUFxhOimQ89BubnHOw9ikXZlo3FOLouUkRiImLPr8a98Fup8Rh_BZ6-mUjSPv3oMTF-f7AgUX5q0W7_ZEcoCbMaGskXfhIoRIpkPXe3hnUK2ILTgtb5fCA8J4tAv1dFuh_bYlFMpG435cpuemCb1v5FSkkM5dry7nBmUdYpV5jM80KwsE6bDb5m_TGEa6Ovj"/>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-headline-md text-body-lg text-on-surface">kernel_root</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant text-outline font-label-caps text-[10px]">SILVER RANK</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-1">ETH Zurich</p>
+<div class="flex items-center gap-4 text-outline text-xs font-code-block">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> 842 Wins</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">code</span> C++/Go</span>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-gutter w-full py-3 bg-primary-container text-on-primary-container font-label-caps rounded-lg flex items-center justify-center gap-2 active:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+                        ADD FRIEND
+                    </button>
+</div>
+<!-- Result Card 3 (Requested State) -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-gutter opacity-80">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<img alt="AL" class="w-16 h-16 rounded-xl object-cover grayscale" data-alt="Minimalist digital art of a developer silhouette against a golden grid background. The lighting is low-key, emphasizing the geometric structure of the background and the professional, tech-focused mood of the character profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwGSeMQRnc-ai5jqlLpWnawDSujavA9NhwcvebKZ-z3j515QgrY3C5Z8_18xw9RpxAC3mTw8Zk5DPXVyX6nSPzj7lk8CY6XH5AXSiGqcXoEg8hnuqa1kJDTu6HCamQmsfAoknq5QvXLLLiV8gfFo7KPeepjq-ZImelZbDzfKxqIkDa1-5_nktYirKBH1MC7af9qG-yGPJG5k4y5hQMabU8Vn9Mtd-NHpp3bT5DBo7od1xas3YRLG9ZlVR7mdudaj6z24xOa_E160uX"/>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-headline-md text-body-lg text-on-surface">async_lara</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container-high border border-primary-container/30 text-primary-container font-label-caps text-[10px]">ELITE RANK</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-1">Oxford University</p>
+<div class="flex items-center gap-4 text-outline text-xs font-code-block">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> 2.5k Wins</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">code</span> Python/TS</span>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-gutter w-full py-3 border border-outline-variant text-outline font-label-caps rounded-lg flex items-center justify-center gap-2 cursor-default">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+                        REQUEST SENT
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar from JSON -->
+<nav class="bg-[#0A0A0A] fixed bottom-0 w-full z-50 border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(255,215,0,0.05)] h-16">
+<div class="flex justify-around items-center w-full h-full px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-[#666666] tap-highlight-transparent active:opacity-80 hover:bg-[#111111] transition-colors" href="#">
+<span class="material-symbols-outlined">swords</span>
+<span class="font-mono text-[10px] font-bold uppercase mt-1">Battle</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#666666] tap-highlight-transparent active:opacity-80 hover:bg-[#111111] transition-colors" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="font-mono text-[10px] font-bold uppercase mt-1">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#666666] tap-highlight-transparent active:opacity-80 hover:bg-[#111111] transition-colors" href="#">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="font-mono text-[10px] font-bold uppercase mt-1">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-500 scale-110 transition-transform tap-highlight-transparent active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-mono text-[10px] font-bold uppercase mt-1">Search</span>
+</a>
+</div>
+</nav>
+</body></html>

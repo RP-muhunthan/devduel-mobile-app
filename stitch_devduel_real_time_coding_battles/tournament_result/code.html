@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#e9c400",
+                    "surface-container": "#1e2020",
+                    "secondary-fixed": "#ffdea6",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-surface": "#e3e2e2",
+                    "tertiary": "#fff6d2",
+                    "surface-container-highest": "#343535",
+                    "surface-container-high": "#292a2a",
+                    "on-secondary-container": "#392700",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "on-surface-variant": "#d0c6ab",
+                    "on-primary": "#3a3000",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-tertiary-container": "#6b5f00",
+                    "on-primary-fixed-variant": "#544600",
+                    "outline": "#999077",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "on-background": "#e3e2e2",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#705e00",
+                    "on-secondary": "#412d00",
+                    "primary-fixed": "#ffe16d",
+                    "primary-container": "#ffd700",
+                    "on-primary-fixed": "#221b00",
+                    "inverse-surface": "#e3e2e2",
+                    "on-tertiary": "#373100",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#ba880f",
+                    "background": "#121414",
+                    "surface-container-lowest": "#0d0e0f",
+                    "tertiary-container": "#f1db40",
+                    "secondary": "#f7bd48",
+                    "surface": "#121414",
+                    "outline-variant": "#4d4732",
+                    "surface-dim": "#121414",
+                    "error-container": "#93000a",
+                    "surface-bright": "#38393a",
+                    "tertiary-fixed": "#fae448",
+                    "primary": "#fff6df",
+                    "surface-variant": "#343535",
+                    "surface-container-low": "#1a1c1c",
+                    "on-secondary-fixed": "#271900",
+                    "inverse-primary": "#705d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "section-gap": "32px",
+                    "component-gap": "12px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Roboto"],
+                    "body-md": ["Roboto"],
+                    "body-lg": ["Roboto"],
+                    "label-caps": ["JetBrains Mono"],
+                    "code-block": ["JetBrains Mono"],
+                    "headline-md": ["Roboto"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .gold-glow {
+            box-shadow: 0px 4px 20px rgba(233, 196, 0, 0.15);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            gap: 16px;
+        }
+        .bracket-connector {
+            position: relative;
+        }
+        .bracket-connector::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            width: 8px;
+            height: 2px;
+            background-color: #2A2A2A;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0A0A0A] text-on-surface font-body-md min-h-screen pb-24">
+<!-- Top Navigation Anchor -->
+<header class="bg-[#0A0A0A] border-b border-[#2A2A2A] flex justify-between items-center w-full px-6 h-16 sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="terminal">terminal</span>
+<span class="font-mono tracking-widest text-xl font-black text-[#FFD700]">DEV_DUEL</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 rounded-full border border-[#FFD700] p-0.5 overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover rounded-full" data-alt="A high-detail close-up portrait of a digital programmer avatar, rendered in a sleek cyberpunk aesthetic. The lighting is dominated by a sharp gold rim light that contrasts against a deep black background. The overall style is professional, polished, and minimalist, fitting the high-stakes competitive programming environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATRZJYAK6kWwjM3i1uEJaUYdY8But6IKprdJGdb53ssDyayIgzZf_4dh3rAF2NgNohJNYU-s5FmWkW9Li7b9VJvzDAlgR1d9qDX__ITqiKMim1i76Hx21cBMk4a0Hhic8y-9y_t0vBLD_XZ_34Ax-iUSmyEEoOxq7VblelAjpAeQDtFnpeHedOpVcJxHbonPkqmOJ4Yc2s9CDh6Zn85GTpovYWVQOtE_qFPfvVyV4pp0gIoM_SylqcpoAHtLhUAFlaw2sWoldyIrL2"/>
+</div>
+</div>
+</header>
+<main class="px-container-margin py-section-gap max-w-5xl mx-auto">
+<!-- Victory Hero Section -->
+<section class="flex flex-col items-center text-center mb-section-gap">
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-primary-container/20 blur-3xl rounded-full"></div>
+<div class="relative z-10 p-8">
+<span class="material-symbols-outlined text-[120px] text-[#FFD700] drop-shadow-lg" data-icon="emoji_events" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<!-- Floating Gold Particles (Simulated with div spans) -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+<div class="absolute top-1/4 left-1/4 w-1 h-1 bg-[#FFD700] rounded-full opacity-60"></div>
+<div class="absolute top-2/3 right-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-40"></div>
+<div class="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-[#FFD700] rounded-full opacity-50"></div>
+</div>
+</div>
+<h1 class="font-headline-lg text-[#FFD700] uppercase mb-2">Tournament Champion</h1>
+<p class="font-label-caps text-neutral-500 uppercase tracking-[0.2em] mb-gutter">Binary Blitz: Season 04 Finalist</p>
+</section>
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-section-gap">
+<!-- XP Earned Card -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 gold-glow flex flex-col justify-between">
+<span class="font-label-caps text-[#FFD700] mb-4">Total XP Earned</span>
+<div>
+<span class="font-headline-lg text-[#FFD700]">+2,450</span>
+<p class="font-body-md text-neutral-500 mt-1">Level 42 → 43 Reached</p>
+</div>
+</div>
+<!-- Rank Card -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 flex flex-col justify-between">
+<span class="font-label-caps text-neutral-500 mb-4">Global Standing</span>
+<div>
+<span class="font-headline-lg text-on-surface">#12</span>
+<p class="font-body-md text-success text-green-500 mt-1">↑ 4 Positions Up</p>
+</div>
+</div>
+<!-- Download Certificate Card (CTA) -->
+<div class="bg-primary-container rounded-xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer hover:bg-surface-tint transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[#0A0A0A] text-4xl mb-2" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-label-caps text-[#0A0A0A] font-bold">Download Certificate</span>
+<p class="text-[10px] text-[#0A0A0A]/70 uppercase mt-2 font-mono">Verified by Dev_Duel Security</p>
+</div>
+</div>
+<!-- Visual Recap: Final Bracket -->
+<section class="mb-section-gap">
+<h3 class="font-label-caps text-neutral-500 mb-gutter uppercase">Final Bracket Recap</h3>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-gutter overflow-x-auto">
+<div class="flex items-center justify-between min-w-[600px] gap-8">
+<!-- Quarter Finals -->
+<div class="flex flex-col gap-4 flex-1">
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] p-3 rounded-lg flex items-center justify-between">
+<span class="font-code-block text-xs text-on-surface">user_0x4F</span>
+<span class="font-label-caps text-[10px] text-green-500">142ms</span>
+</div>
+<div class="bg-[#1A1A1A] border border-[#2A2A2A] p-3 rounded-lg flex items-center justify-between opacity-40">
+<span class="font-code-block text-xs text-neutral-500">null_ptr</span>
+<span class="font-label-caps text-[10px] text-neutral-500">DNF</span>
+</div>
+</div>
+<!-- Semi Finals -->
+<div class="flex flex-col gap-8 flex-1">
+<div class="bg-[#1A1A1A] border border-[#FFD700]/30 p-3 rounded-lg flex items-center justify-between relative">
+<span class="font-code-block text-xs text-on-surface">user_0x4F</span>
+<span class="font-label-caps text-[10px] text-green-500">89ms</span>
+<div class="absolute -right-8 top-1/2 w-8 h-[2px] bg-[#2A2A2A]"></div>
+</div>
+</div>
+<!-- The Final -->
+<div class="flex flex-col flex-1">
+<div class="bg-primary-container/10 border border-[#FFD700] p-6 rounded-xl flex flex-col items-center gold-glow">
+<span class="material-symbols-outlined text-[#FFD700] mb-2" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-headline-md text-[#FFD700]">Champion</span>
+<span class="font-code-block text-on-surface mt-1">user_0x4F</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Highlights Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl overflow-hidden flex">
+<div class="w-1/3 h-full">
+<img alt="Code snippet thumbnail" class="w-full h-full object-cover grayscale brightness-50" data-alt="A macro photograph of high-resolution computer source code displayed on a monitor. The code is styled with a syntax-highlighting theme that uses dark backgrounds and vibrant gold, green, and red accents. The image is shot with a shallow depth of field, creating a professional and technical atmosphere within the Dev_Duel ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApXwA2Gy0v9ylY0CY3f5eKWyS73T47q6upQ6D_IudNekl8zDLKt895-oBOtClS2ap2kZ1tAkSgNg94n6jqVPbtL5x95Tg-3kl_AugyEEVo2LBXaspdYTKGnQhKghS9HT7MRpaW31o1zGshMTqa_QxvfI7G9YJLjWkcTtWw8zCGxezyMPdZLjzCXoMVbRWMNe5uD18b3BiZqPa1Cidz5C8jnYFMluuBvj2nWvL_81quAQkWn7ZQvqVnV68VuZ8F8VBbiR_fOJ8A6dqq"/>
+</div>
+<div class="p-4 flex-1">
+<span class="font-label-caps text-neutral-500 text-[10px] block mb-2 uppercase">Winning Submission</span>
+<p class="font-body-md text-on-surface mb-4">Optimized Dijkstra Implementation</p>
+<button class="font-label-caps text-[#FFD700] text-xs flex items-center gap-1 group">
+                        VIEW CODE <span class="material-symbols-outlined text-xs group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-4 flex flex-col justify-center">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-lg bg-[#1A1A1A] flex items-center justify-center text-[#FFD700] border border-[#2A2A2A]">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+</div>
+<div>
+<span class="font-label-caps text-neutral-500 text-[10px] uppercase">Best Response Time</span>
+<p class="font-headline-md text-on-surface">42.8 Seconds</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Share & Return Actions -->
+<div class="mt-section-gap flex flex-col sm:flex-row gap-gutter">
+<button class="flex-1 bg-primary-container text-[#0A0A0A] font-label-caps font-bold py-4 rounded transition-all hover:bg-surface-tint active:scale-95 uppercase">
+                Return to Arena
+            </button>
+<button class="flex-1 border border-[#2A2A2A] text-on-surface font-label-caps font-bold py-4 rounded transition-all hover:bg-[#1A1A1A] active:scale-95 uppercase flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span> Share Success
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe bg-[#0A0A0A] border-t border-[#2A2A2A] h-16">
+<a class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight mt-1">Battles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight mt-1">Rank</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#FFD700] py-2 hover:bg-neutral-900/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="emoji_events" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight mt-1">Tourney</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

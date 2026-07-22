@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#e9c400",
+                    "surface-container": "#1e2020",
+                    "secondary-fixed": "#ffdea6",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-surface": "#e3e2e2",
+                    "tertiary": "#fff6d2",
+                    "surface-container-highest": "#343535",
+                    "surface-container-high": "#292a2a",
+                    "on-secondary-container": "#392700",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "on-surface-variant": "#d0c6ab",
+                    "on-primary": "#3a3000",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-tertiary-container": "#6b5f00",
+                    "on-primary-fixed-variant": "#544600",
+                    "outline": "#999077",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "on-background": "#e3e2e2",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#705e00",
+                    "on-secondary": "#412d00",
+                    "primary-fixed": "#ffe16d",
+                    "primary-container": "#ffd700",
+                    "on-primary-fixed": "#221b00",
+                    "inverse-surface": "#e3e2e2",
+                    "on-tertiary": "#373100",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#ba880f",
+                    "background": "#121414",
+                    "surface-container-lowest": "#0d0e0f",
+                    "tertiary-container": "#f1db40",
+                    "secondary": "#f7bd48",
+                    "surface": "#121414",
+                    "outline-variant": "#4d4732",
+                    "surface-dim": "#121414",
+                    "error-container": "#93000a",
+                    "surface-bright": "#38393a",
+                    "tertiary-fixed": "#fae448",
+                    "primary": "#fff6df",
+                    "surface-variant": "#343535",
+                    "surface-container-low": "#1a1c1c",
+                    "on-secondary-fixed": "#271900",
+                    "inverse-primary": "#705d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "section-gap": "32px",
+                    "component-gap": "12px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Roboto"],
+                    "body-md": ["Roboto"],
+                    "body-lg": ["Roboto"],
+                    "label-caps": ["JetBrains Mono"],
+                    "code-block": ["JetBrains Mono"],
+                    "headline-md": ["Roboto"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { background-color: #0A0A0A; }
+        .gold-glow { box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.15); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#0A0A0A] border-b border-[#2A2A2A] flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="terminal">terminal</span>
+<h1 class="font-mono tracking-widest text-xl font-black text-[#FFD700]">DEV_DUEL</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6">
+<a class="font-mono tracking-tighter uppercase text-sm font-bold text-neutral-500 hover:text-[#FFD700] transition-colors" href="#">Battles</a>
+<a class="font-mono tracking-tighter uppercase text-sm font-bold text-neutral-500 hover:text-[#FFD700] transition-colors" href="#">Rank</a>
+<a class="font-mono tracking-tighter uppercase text-sm font-bold text-[#FFD700] transition-colors" href="#">Tourney</a>
+</div>
+<div class="w-8 h-8 rounded-full border border-[#2A2A2A] bg-surface-container overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional close-up avatar of a tech-focused individual in a dimly lit, high-tech environment. The lighting features sharp gold and neon yellow highlights reflecting off a glass surface in the background. The aesthetic is clean, minimalist, and elite, fitting a high-stakes competitive programming platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5tEMx1ypUKAkka0bHBwLCaonNXDxZQpF9fvSCLpeHGy22f_wGA2YWXVsQIX4xQo8x_1sInEaXFN-hqwh5DniJEX2crVqVGHvpv-s--QsOH_WqyhO-iL7PTbzFMYe_IwiXYA_Kv8-tdgnY4BCCJqst3uEndlaxcpSWEg6u6XupD5FwAMdWDVsfGiBuob1LSoodSFZGul14FAZN6K0apAuD96mqVNBnO5C9Npy8IxzIlRGaC5hdFbSG_BoYfQS1exjsc12QiYjZnY5S"/>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-24 px-6 max-w-7xl mx-auto space-y-section-gap">
+<!-- Section 2: Active Tournaments (Prioritized for Action) -->
+<section>
+<div class="flex items-center gap-2 mb-component-gap">
+<span class="material-symbols-outlined text-primary-container" data-icon="bolt">bolt</span>
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight text-on-surface">Live Operations</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Active Tournament Card -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 flex flex-col md:flex-row gap-6 relative overflow-hidden group transition-all hover:border-primary-container/50">
+<div class="absolute top-0 right-0 p-4">
+<span class="flex items-center gap-1 px-3 py-1 bg-error-container text-on-error-container font-label-caps text-label-caps rounded-full">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                            LIVE NOW
+                        </span>
+</div>
+<div class="flex-shrink-0 w-full md:w-40 h-40 rounded-lg overflow-hidden border border-[#2A2A2A]">
+<img alt="Cyber Siege" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A cinematic, high-contrast digital image of a futuristic server room bathed in golden light and deep shadows. Complex geometric patterns and data streams are projected onto metallic surfaces. The atmosphere is intense and technical, representing a high-stakes hacking or coding tournament environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDChRGXF3Buq9-Djx8WgbimkNP4WcV1_gvNGoM1mRdB2xsfOt2htUrsOyO8hGi7LgFch0Yv4RyizWj1fXCzqWtcTsfiPyNL1wbzGgXbJhrToslLVr-53Q5N1ONCLVFlTIf-cAIkIcuO0SACBdaYHJsaprckRUA_Oj_vmsO0blcR2VJg6HyW-kWXAXZe_vsSKk4RIs8QQvv5jU-f1__i-1uy2fcxvK8E9k7Hph66yHx7WruddmI10t1cpfYw8r8v_UZS-xdQ-yTXxa4X"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary-container">Binary Breach: Round 3</h3>
+<p class="font-body-md text-on-surface-variant mt-1">Status: Elimination Bracket</p>
+</div>
+<div class="mt-4 p-3 bg-surface-container-low rounded-lg border border-[#2A2A2A] flex justify-between items-center">
+<div>
+<p class="font-label-caps text-label-caps text-neutral-500">NEXT MATCH</p>
+<p class="font-code-block text-code-block text-on-surface">TODAY @ 21:00 UTC</p>
+</div>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded font-label-caps text-label-caps font-bold hover:scale-105 active:scale-95 transition-all">ENTER ARENA</button>
+</div>
+</div>
+</div>
+<!-- Bento Grid Style Info Card -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-4 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-primary-container mb-2 text-3xl" data-icon="workspace_premium">workspace_premium</span>
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Your Seed</p>
+<p class="font-headline-md text-headline-md text-on-surface">#14</p>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-4 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-primary-container mb-2 text-3xl" data-icon="groups">groups</span>
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Remaining</p>
+<p class="font-headline-md text-headline-md text-on-surface">64 / 512</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: Upcoming Tournaments -->
+<section>
+<div class="flex justify-between items-end mb-component-gap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" data-icon="calendar_month">calendar_month</span>
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight text-on-surface">Upcoming Circuits</h2>
+</div>
+<a class="font-label-caps text-label-caps text-[#FFD700] hover:underline" href="#">View All Schedule</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Upcoming Card 1 -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl overflow-hidden flex flex-col hover:border-primary-container transition-colors group">
+<div class="h-48 relative overflow-hidden">
+<img alt="Terminal Tactics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Extreme close-up of a high-performance mechanical keyboard with custom keycaps illuminated by a golden ambient light. The scene is dark, focusing on the textures of the hardware and the soft bokeh of golden glowing indicators in the background, creating a premium elite hacker aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt3MWVD6t2UpcYhMC9ZCBD0M9_Ai0Ka9OsQRaZtx-QZOhbHDFWA6YPQHAz4XJF7Izlx6YxFdxfFAWfpLLWK-pa-kQ99wKBuauG57ZvZ61pptciL9nWWHISOQLhkOW2wJSTuYuwwzVp7ERHQUovN7Jdyof4NjLR7h1feytK5_X8d10WpJsYIJgTdayn_QtLsWmMDhTLSlY7VqKFKCGz8xhFB7SfcNAxTv5iRnAH2ZRsVtPVNLOqV5G6GgGgeBFVJBnnS0wP6A5v-29D"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#111111] to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary-container text-on-primary-container px-2 py-0.5 rounded text-[10px] font-bold font-mono">ELITE SERIES</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Terminal Tactics V</h3>
+<p class="font-body-md text-neutral-500">October 24, 2024 • 18:00 UTC</p>
+</div>
+<div class="flex justify-between border-y border-[#2A2A2A] py-3">
+<div>
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Prize Pool</p>
+<p class="font-code-block text-on-surface text-[#FFD700]">$2,500</p>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Participants</p>
+<p class="font-code-block text-on-surface">1,024 Slots</p>
+</div>
+</div>
+<button class="w-full py-4 bg-[#FFD700] text-[#0A0A0A] font-label-caps text-label-caps font-black uppercase tracking-widest hover:bg-surface-tint active:scale-95 transition-all">Register Now</button>
+</div>
+</div>
+<!-- Upcoming Card 2 -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl overflow-hidden flex flex-col hover:border-primary-container transition-colors group">
+<div class="h-48 relative overflow-hidden">
+<img alt="Algorithm Arena" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Abstract digital visualization of complex code structures spiraling into a golden vortex against a void-black background. Glowing particles and sharp lines represent data flow and algorithmic complexity. The visual style is aggressive, high-contrast, and extremely modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzgZDgy2x7D3GR9tUMmCU-gkpuiwPcYvvwkOYJMD3UJQ5Bwh-Q1asijKBmnek8L31jy-FAdyq3ves6vZ96KCoUPLWADWywZ8xvjfScJ3gA22G211SeHbItUekWHh584D1-SMdijZ6hwKduaXF9vwQqzexObxsYIrkd9DxpkzhFunf-7uH6l6eHJmmdbH-9dhIVvqOUlIR3XDxU6E9ydDPz4LZV1EOtANyt4XKbF-sd5Ru8HGCRkG9r2rUdzeC7jRlI9Rz1YYAn1itT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#111111] to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary-container text-on-primary-container px-2 py-0.5 rounded text-[10px] font-bold font-mono">OPEN QUALIFIER</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Algorithm Arena '24</h3>
+<p class="font-body-md text-neutral-500">November 02, 2024 • 14:00 UTC</p>
+</div>
+<div class="flex justify-between border-y border-[#2A2A2A] py-3">
+<div>
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Prize Pool</p>
+<p class="font-code-block text-on-surface text-[#FFD700]">$500</p>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Participants</p>
+<p class="font-code-block text-on-surface">Uncapped</p>
+</div>
+</div>
+<button class="w-full py-4 bg-transparent border border-[#FFD700] text-[#FFD700] font-label-caps text-label-caps font-black uppercase tracking-widest hover:bg-[#FFD700]/10 active:scale-95 transition-all">Join Waiting List</button>
+</div>
+</div>
+<!-- Upcoming Card 3 -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl overflow-hidden flex flex-col hover:border-primary-container transition-colors group">
+<div class="h-48 relative overflow-hidden">
+<img alt="Kernel Kombat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist architectural shot of a futuristic dark hallway with vertical golden light strips illuminating the path. The perspective draws the eye to a bright focal point. The materials are sleek, dark obsidian and polished gold, symbolizing the path to professional mastery in a coding tournament." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2uZnJQZ3JYzWKZDT5Mq1mOKICnvbRz4bSNsRZCv36JqgpKSxSN7eY0yJZuBbYACbF2gUGsmDU6KdoXls1fPMkRq3Pv5kD7XQ562vNutc2ccBhkAxB4BbP-51cxmXDczDkCrYzUVxGuZwy0hZXHZXHCbxqoHhY9Ox7KiLZrM1_Moxy7qa_XPQXdAJwxXB2L9b8H1fyeKg31GXx4cOwC-HDJQSJ3fIVv_gW42I9nexj5Myk4uuoKT00Me2mVUkqaCZbMPPqRYg4Xe-D"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#111111] to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary-container text-on-primary-container px-2 py-0.5 rounded text-[10px] font-bold font-mono">LEGENDARY HUB</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Kernel Kombat: Root</h3>
+<p class="font-body-md text-neutral-500">December 15, 2024 • 20:00 UTC</p>
+</div>
+<div class="flex justify-between border-y border-[#2A2A2A] py-3">
+<div>
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Prize Pool</p>
+<p class="font-code-block text-on-surface text-[#FFD700]">$10,000</p>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Participants</p>
+<p class="font-code-block text-on-surface">Invite Only</p>
+</div>
+</div>
+<button class="w-full py-4 bg-neutral-800 text-neutral-500 font-label-caps text-label-caps font-black uppercase tracking-widest cursor-not-allowed">Locked</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Past Tournaments -->
+<section>
+<div class="flex items-center gap-2 mb-component-gap">
+<span class="material-symbols-outlined text-neutral-500" data-icon="history">history</span>
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight text-on-surface">Archived Engagements</h2>
+</div>
+<div class="space-y-4">
+<!-- History Row 1 -->
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 flex items-center justify-between hover:bg-surface-container-low transition-colors rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded flex items-center justify-center border border-[#2A2A2A]">
+<span class="material-symbols-outlined text-primary-container" data-icon="terminal">terminal</span>
+</div>
+<div>
+<h4 class="font-body-lg font-bold text-on-surface">Global Scripting Cup</h4>
+<p class="font-label-caps text-[10px] text-neutral-500 uppercase tracking-widest">Ended Aug 12, 2024</p>
+</div>
+</div>
+<div class="flex gap-8 items-center">
+<div class="text-right hidden sm:block">
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Participants</p>
+<p class="font-code-block text-on-surface">2,048</p>
+</div>
+<div class="text-right min-w-[80px]">
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Final Rank</p>
+<p class="font-code-block text-[#FFD700] font-bold">TOP 5%</p>
+</div>
+<span class="material-symbols-outlined text-neutral-500" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- History Row 2 -->
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 flex items-center justify-between hover:bg-surface-container-low transition-colors rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded flex items-center justify-center border border-[#2A2A2A]">
+<span class="material-symbols-outlined text-primary-container" data-icon="code">code</span>
+</div>
+<div>
+<h4 class="font-body-lg font-bold text-on-surface">Recursive Rumble</h4>
+<p class="font-label-caps text-[10px] text-neutral-500 uppercase tracking-widest">Ended July 05, 2024</p>
+</div>
+</div>
+<div class="flex gap-8 items-center">
+<div class="text-right hidden sm:block">
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Participants</p>
+<p class="font-code-block text-on-surface">512</p>
+</div>
+<div class="text-right min-w-[80px]">
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Final Rank</p>
+<p class="font-code-block text-neutral-300 font-bold">#42</p>
+</div>
+<span class="material-symbols-outlined text-neutral-500" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- History Row 3 -->
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 flex items-center justify-between hover:bg-surface-container-low transition-colors rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded flex items-center justify-center border border-[#2A2A2A]">
+<span class="material-symbols-outlined text-primary-container" data-icon="memory">memory</span>
+</div>
+<div>
+<h4 class="font-body-lg font-bold text-on-surface">Stack Overflow Showdown</h4>
+<p class="font-label-caps text-[10px] text-neutral-500 uppercase tracking-widest">Ended June 19, 2024</p>
+</div>
+</div>
+<div class="flex gap-8 items-center">
+<div class="text-right hidden sm:block">
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Participants</p>
+<p class="font-code-block text-on-surface">1,024</p>
+</div>
+<div class="text-right min-w-[80px]">
+<p class="font-label-caps text-label-caps text-neutral-500 uppercase">Final Rank</p>
+<p class="font-code-block text-on-error font-bold">QUALIFIED</p>
+</div>
+<span class="material-symbols-outlined text-neutral-500" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe bg-[#0A0A0A] border-t border-[#2A2A2A] h-16 md:hidden">
+<a class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Battles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Rank</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#FFD700] py-2 hover:bg-neutral-900/50 active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Tourney</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 py-2 hover:bg-neutral-900/50 active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-mono text-[10px] uppercase font-medium tracking-tight">Profile</span>
+</a>
+</nav>
+</body></html>

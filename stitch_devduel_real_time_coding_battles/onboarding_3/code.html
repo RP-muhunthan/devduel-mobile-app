@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "outline-variant": "#4d4732",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "on-secondary-container": "#392700",
+                    "surface-tint": "#e9c400",
+                    "outline": "#999077",
+                    "on-primary-fixed": "#221b00",
+                    "on-tertiary-fixed": "#201c00",
+                    "secondary-fixed": "#ffdea6",
+                    "secondary-container": "#ba880f",
+                    "surface-variant": "#343535",
+                    "tertiary": "#fff6d2",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#f7bd48",
+                    "surface-dim": "#121414",
+                    "surface-bright": "#38393a",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "on-tertiary-container": "#6b5f00",
+                    "primary": "#fff6df",
+                    "primary-fixed": "#ffe16d",
+                    "on-primary": "#3a3000",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "on-secondary": "#412d00",
+                    "on-surface": "#e3e2e2",
+                    "primary-fixed-dim": "#e9c400",
+                    "inverse-primary": "#705d00",
+                    "on-secondary-fixed": "#271900",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e3e2e2",
+                    "on-background": "#e3e2e2",
+                    "surface-container-low": "#1a1c1c",
+                    "surface": "#121414",
+                    "on-surface-variant": "#d0c6ab",
+                    "on-tertiary": "#373100",
+                    "on-primary-fixed-variant": "#544600",
+                    "on-primary-container": "#705e00",
+                    "inverse-on-surface": "#2f3131",
+                    "surface-container-high": "#292a2a",
+                    "background": "#121414",
+                    "surface-container-lowest": "#0d0e0f",
+                    "primary-container": "#ffd700",
+                    "surface-container-highest": "#343535",
+                    "error": "#ffb4ab",
+                    "surface-container": "#1e2020",
+                    "tertiary-container": "#f1db40",
+                    "tertiary-fixed": "#fae448"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "32px",
+                    "container-margin": "24px",
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "component-gap": "12px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Roboto"],
+                    "headline-lg": ["Roboto"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-md": ["Roboto"],
+                    "body-lg": ["Roboto"],
+                    "code-block": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- Header (Suppressed as per Transactional/Onboarding logic, but using TopAppBar tokens for Brand consistency) -->
+<header class="flex justify-between items-center px-6 py-4 w-full bg-[#0A0A0A] border-b border-zinc-800">
+<div class="text-xl font-black italic tracking-tighter text-yellow-500 uppercase">DevDuel</div>
+<button class="text-zinc-500 font-label-caps text-label-caps uppercase tracking-widest">Skip</button>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-container-margin py-section-gap">
+<!-- Illustration Section -->
+<div class="w-full max-w-md aspect-square mb-section-gap relative flex items-center justify-center">
+<!-- Background Glow -->
+<div class="absolute inset-0 bg-secondary/5 rounded-full blur-[80px]"></div>
+<!-- Hero Illustration -->
+<div class="relative z-10 w-full h-full bg-surface-container-low rounded-xl border border-outline-variant/30 overflow-hidden flex items-center justify-center">
+<img alt="College Leaderboard Podium" class="w-full h-full object-cover opacity-80" data-alt="A futuristic digital illustration of a triple-tiered leaderboard podium in a high-tech dark arena. The podium glows with intense golden neon lights against a deep obsidian background, representing elite competitive programming ranks. Floating holographic data screens display code snippets and college logos in vibrant amber and gold tones. The lighting is cinematic and high-contrast, emphasizing a premium 'hacker elite' aesthetic with sharp edges and technical mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzE4MP5nLjXN-qzfucH7s98frOM5wuxCM2iGBeRhaUnI1iRS65F25A6ImyAelaqnv3yxw27b3DGFOPPEqilIxYcgN5twOHfpGtoChCevZDqJFODqHJMnO2HSGdWQ5oicambq356oCLFSrBP7jjUyHMqrLrqwUHZAuHEOdNmXiTC_hwAg4_T9AZm-v8tQJU_8ld5mfUiH9EUmhpo8ov9Ya5GFNS417_zpOHZvzAyVVJZNwWf05C4vlAgUY3St5vrmdK6UaIWBVkiE7V"/>
+<!-- Overlay Podium Detail -->
+<div class="absolute bottom-0 left-0 right-0 p-gutter bg-gradient-to-t from-surface-container-lowest to-transparent">
+<div class="flex items-end justify-center gap-4">
+<div class="w-12 h-16 bg-zinc-800 border-t-2 border-zinc-600 rounded-t-lg flex items-center justify-center">
+<span class="font-code-block text-zinc-500">2</span>
+</div>
+<div class="w-16 h-24 bg-secondary-container border-t-2 border-secondary rounded-t-lg flex items-center justify-center shadow-[0_0_20px_rgba(247,189,72,0.2)]">
+<span class="font-code-block text-on-secondary-container font-bold text-xl">1</span>
+</div>
+<div class="w-12 h-12 bg-zinc-800 border-t-2 border-zinc-600 rounded-t-lg flex items-center justify-center">
+<span class="font-code-block text-zinc-500">3</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Section -->
+<div class="w-full max-w-md text-left">
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-unit">
+                Dominate Your College
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                Compete with your classmates and rank #1 in your college leaderboard. Prove your skills and claim the top spot.
+            </p>
+</div>
+<!-- Spacer -->
+<div class="flex-grow"></div>
+<!-- Bottom Actions Section -->
+<div class="w-full max-w-md mt-section-gap flex flex-col items-center gap-section-gap">
+<!-- Progress Dots -->
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full border border-outline-variant bg-transparent"></div>
+<div class="w-2.5 h-2.5 rounded-full border border-outline-variant bg-transparent"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(247,189,72,0.5)]"></div>
+</div>
+<!-- CTA Button -->
+<button class="w-full h-[48px] bg-secondary hover:bg-secondary-fixed-dim active:scale-[0.98] transition-all rounded-lg flex items-center justify-center gap-2 group">
+<span class="font-label-caps text-label-caps text-on-secondary uppercase tracking-widest font-black">Get Started</span>
+<span class="material-symbols-outlined text-on-secondary" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Navigation Shell (Suppressed for Onboarding context as per 'Destination Rule' and 'UX Goal') -->
+</body></html>

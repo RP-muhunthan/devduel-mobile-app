@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: #2A2A2A;
+            height: 4px;
+            border-radius: 2px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -6px;
+            background-color: #FFD700;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffe16d",
+                        "on-tertiary-fixed": "#201c00",
+                        "surface-container-lowest": "#0d0e0f",
+                        "surface-container": "#1e2020",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#544600",
+                        "tertiary": "#fff6d2",
+                        "surface-bright": "#38393a",
+                        "on-secondary-container": "#392700",
+                        "inverse-on-surface": "#2f3131",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "surface-variant": "#343535",
+                        "primary-container": "#ffd700",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#fae448",
+                        "primary": "#fff6df",
+                        "on-primary": "#3a3000",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#e9c400",
+                        "surface-container-high": "#292a2a",
+                        "secondary-container": "#ba880f",
+                        "on-tertiary-container": "#6b5f00",
+                        "surface-container-highest": "#343535",
+                        "on-surface-variant": "#d0c6ab",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-surface": "#e3e2e2",
+                        "secondary": "#f7bd48",
+                        "on-tertiary": "#373100",
+                        "on-secondary": "#412d00",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#705d00",
+                        "surface-dim": "#121414",
+                        "inverse-surface": "#e3e2e2",
+                        "secondary-fixed": "#ffdea6",
+                        "surface-container-low": "#1a1c1c",
+                        "surface": "#121414",
+                        "on-secondary-fixed": "#271900",
+                        "on-primary-fixed": "#221b00",
+                        "background": "#121414",
+                        "outline-variant": "#4d4732",
+                        "outline": "#999077",
+                        "on-primary-container": "#705e00",
+                        "on-background": "#e3e2e2",
+                        "tertiary-container": "#f1db40"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-margin": "24px",
+                        "section-gap": "32px",
+                        "gutter": "16px",
+                        "component-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "code-block": ["JetBrains Mono"],
+                        "body-md": ["Roboto"],
+                        "body-lg": ["Roboto"],
+                        "headline-md": ["Roboto"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Roboto"]
+                    },
+                    "fontSize": {
+                        "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0A0A0A] font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-[#0A0A0A] border-b border-[#2A2A2A]">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform p-2">
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-mono uppercase tracking-widest font-bold text-[#FFD700]">Appearance</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="active:scale-95 transition-transform p-2">
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-24 px-container-margin max-w-2xl mx-auto space-y-section-gap">
+<!-- Theme Selection -->
+<section class="space-y-component-gap">
+<h2 class="font-label-caps text-label-caps text-outline uppercase">Theme</h2>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-1 flex">
+<button class="flex-1 py-3 px-4 rounded-lg flex items-center justify-center gap-2 bg-[#1A1A1A] text-[#FFD700] transition-colors border border-[#2A2A2A]">
+<span class="material-symbols-outlined" data-icon="dark_mode" style="font-variation-settings: 'FILL' 1;">dark_mode</span>
+<span class="font-label-caps text-label-caps">Dark</span>
+</button>
+<button class="flex-1 py-3 px-4 rounded-lg flex items-center justify-center gap-2 text-gray-500 hover:bg-[#1A1A1A] transition-colors">
+<span class="material-symbols-outlined" data-icon="light_mode">light_mode</span>
+<span class="font-label-caps text-label-caps">Light</span>
+</button>
+</div>
+</section>
+<!-- Font Size Slider -->
+<section class="space-y-component-gap">
+<div class="flex justify-between items-end">
+<h2 class="font-label-caps text-label-caps text-outline uppercase">Editor Font Size</h2>
+<span class="font-code-block text-code-block text-[#FFD700]">14px</span>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6">
+<div class="flex items-center gap-4">
+<span class="font-code-block text-[12px] text-gray-500">A</span>
+<input class="w-full h-1 bg-[#2A2A2A] rounded-lg appearance-none cursor-pointer" max="24" min="10" type="range" value="14"/>
+<span class="font-code-block text-[24px] text-gray-500 leading-none">A</span>
+</div>
+<div class="mt-6 p-4 bg-[#0A0A0A] border border-[#2A2A2A] rounded-lg">
+<p class="font-code-block text-code-block text-[#d0c6ab]">
+<span class="text-blue-400">def</span> <span class="text-yellow-300">calculate_rank</span>(points):<br/>
+                          <span class="text-purple-400">return</span> sum(points) / len(points)
+                    </p>
+</div>
+</div>
+</section>
+<!-- Code Editor Theme -->
+<section class="space-y-component-gap">
+<h2 class="font-label-caps text-label-caps text-outline uppercase">Editor Color Scheme</h2>
+<div class="grid grid-cols-1 gap-4">
+<!-- Option: Dracula (Selected) -->
+<button class="relative bg-[#111111] border-2 border-[#FFD700] rounded-xl p-4 flex items-center justify-between text-left group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-[#282a36] flex flex-col gap-1 p-2 border border-[#2A2A2A]">
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-[#ff79c6]"></div>
+<div class="w-2 h-2 rounded-full bg-[#bd93f9]"></div>
+</div>
+<div class="w-full h-1 bg-[#50fa7b] rounded"></div>
+<div class="w-2/3 h-1 bg-[#f1fa8c] rounded"></div>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">Dracula</p>
+<p class="font-body-md text-body-md text-gray-500">Classic high-contrast dark theme</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#FFD700]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Option: Monokai -->
+<button class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-4 flex items-center justify-between text-left hover:bg-[#1A1A1A] transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-[#272822] flex flex-col gap-1 p-2 border border-[#2A2A2A]">
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-[#f92672]"></div>
+<div class="w-2 h-2 rounded-full bg-[#ae81ff]"></div>
+</div>
+<div class="w-full h-1 bg-[#a6e22e] rounded"></div>
+<div class="w-2/3 h-1 bg-[#66d9ef] rounded"></div>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">Monokai</p>
+<p class="font-body-md text-body-md text-gray-500">Vivid neon highlights on warm dark</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-700" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+</button>
+<!-- Option: GitHub Dark -->
+<button class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-4 flex items-center justify-between text-left hover:bg-[#1A1A1A] transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-[#0d1117] flex flex-col gap-1 p-2 border border-[#2A2A2A]">
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-[#ff7b72]"></div>
+<div class="w-2 h-2 rounded-full bg-[#d2a8ff]"></div>
+</div>
+<div class="w-full h-1 bg-[#7ee787] rounded"></div>
+<div class="w-2/3 h-1 bg-[#a5d6ff] rounded"></div>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">GitHub Dark</p>
+<p class="font-body-md text-body-md text-gray-500">Official dimmed enterprise look</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-700" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+</button>
+</div>
+</section>
+<!-- Visual Accent Image -->
+<div class="rounded-xl overflow-hidden h-32 border border-[#2A2A2A] relative group">
+<img alt="Cyberpunk workspace" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="A cinematic, low-angle shot of a high-tech developer workstation in a dark room. The scene features glowing gold ambient lighting reflecting off matte black hardware surfaces and mechanical keyboards. Multiple monitors display complex code in a golden syntax highlighting style. The mood is professional, high-stakes, and elite, following a strict black and gold aesthetic typical of a hacker-elite workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzaaBNbBf9rJ0H_tg3Z_ikhlIA_d6oQiiDKtiEFskal1p8Rjs7kFd5i4VDJ6wfbhJLUF-dalp6zaZnjTiYlVJyOL1muecvuNAQyynPr4fORG_fiLEoBf4xev9fGR8IHcaQE85SJPMxJQ_X7CKbge0Ov-5biTpex_JOQMj-bQMlcnT5J7ee1X21c9hqA72RTqTnQCXlxqzZ2KdhC8KA2DT4YDSLMVnHjZ6K7Fd_c6ME5tsPCYHfYozNp7hRM-6QzsUeSOJLTHWhyegZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<p class="font-label-caps text-[10px] text-[#FFD700] uppercase tracking-tighter">System Aesthetic: Optimized</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 pb-safe bg-[#0A0A0A] border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(255,215,0,0.05)]">
+<button class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Battles</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Leaderboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Editor</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#FFD700] border-t-2 border-[#FFD700] pt-2 active:opacity-80">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-mono text-[10px] uppercase font-medium mt-1">Settings</span>
+</button>
+</nav>
+</body></html>

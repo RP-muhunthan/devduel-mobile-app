@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "primary-container": "#ffd700",
+                    "on-secondary-container": "#392700",
+                    "on-primary-container": "#705e00",
+                    "surface-bright": "#38393a",
+                    "on-primary": "#3a3000",
+                    "secondary-fixed": "#ffdea6",
+                    "surface": "#121414",
+                    "surface-dim": "#121414",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1a1c1c",
+                    "tertiary-fixed-dim": "#dcc82c",
+                    "tertiary": "#fff6d2",
+                    "on-error-container": "#ffdad6",
+                    "surface-container": "#1e2020",
+                    "outline-variant": "#4d4732",
+                    "tertiary-fixed": "#fae448",
+                    "surface-container-high": "#292a2a",
+                    "on-tertiary-container": "#6b5f00",
+                    "surface-container-lowest": "#0d0e0f",
+                    "secondary": "#f7bd48",
+                    "on-error": "#690005",
+                    "inverse-primary": "#705d00",
+                    "secondary-container": "#ba880f",
+                    "background": "#121414",
+                    "tertiary-container": "#f1db40",
+                    "on-tertiary-fixed-variant": "#504700",
+                    "on-primary-fixed-variant": "#544600",
+                    "on-background": "#e3e2e2",
+                    "outline": "#999077",
+                    "on-tertiary": "#373100",
+                    "primary-fixed": "#ffe16d",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "on-secondary": "#412d00",
+                    "on-surface": "#e3e2e2",
+                    "primary": "#fff6df",
+                    "on-primary-fixed": "#221b00",
+                    "surface-tint": "#e9c400",
+                    "primary-fixed-dim": "#e9c400",
+                    "on-tertiary-fixed": "#201c00",
+                    "on-surface-variant": "#d0c6ab",
+                    "on-secondary-fixed": "#271900",
+                    "surface-variant": "#343535",
+                    "inverse-on-surface": "#2f3131",
+                    "inverse-surface": "#e3e2e2",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#343535"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "unit": "8px",
+                    "section-gap": "32px",
+                    "container-margin": "24px",
+                    "component-gap": "12px"
+            },
+            "fontFamily": {
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-md": ["Roboto"],
+                    "body-md": ["Roboto"],
+                    "code-block": ["JetBrains Mono"],
+                    "body-lg": ["Roboto"],
+                    "headline-lg": ["Roboto"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .accent-glow {
+        box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.15);
+      }
+      .code-syntax-keyword { color: #f7bd48; }
+      .code-syntax-string { color: #dcc82c; }
+      .code-syntax-comment { color: #5d4200; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0A0A0A] text-on-background min-h-screen font-body-md flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#0A0A0A] border-b border-[#2A2A2A] flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-yellow-400" data-icon="terminal">terminal</span>
+<span class="text-xl font-black text-yellow-400 tracking-widest font-mono uppercase tracking-tighter">DevDuel</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border border-[#2A2A2A] overflow-hidden">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a young developer in a tech-focused setting. The lighting is moody with gold and black tones, emphasizing a sharp, focused gaze. The background is a blurred high-tech computer lab with dark surfaces and amber status lights, maintaining a high-contrast minimalist aesthetic consistent with the brand's hacker-elite identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTnsNm43U6T2vpRUBtpK7P64iJMWgpFW61vPfdXtBzex0hQbXP3rgGKhaDZA97gS2ZdWq3liEDY-ZcdAAWSMmUuCqVcr8Yd9da8P7URLExQi3qX0levBWlcFy3VFt15NN6I0fQDGeIP3wGPjtvD3VUtp_Jz7FLO8QYa9F0VulhoUz3rTONgQOIr422elSq5_k3UcJkR5e2K20-2r4z-5GANdCexG5TVrr_-jBoOTrmkvs_c_Cv798Wr-kb1kBUfyWGWp8DeuqspHyZ"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center px-container-margin py-section-gap overflow-y-auto pb-24">
+<!-- Result Header -->
+<div class="w-full max-w-2xl text-center mb-12">
+<div class="inline-block px-4 py-1 bg-primary-container/10 border border-primary-container text-primary-container font-label-caps mb-4 rounded-full">
+                COMPLETED • RANKED BATTLE
+            </div>
+<h1 class="font-mono text-6xl md:text-8xl font-black text-yellow-400 tracking-tighter uppercase mb-2 drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]">VICTORY</h1>
+<p class="font-label-caps text-on-surface-variant">YOU DOMINATED THE TERMINAL</p>
+</div>
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter w-full max-w-4xl mb-section-gap">
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 flex flex-col items-center justify-center text-center">
+<span class="font-label-caps text-on-surface-variant mb-2">XP GAINED</span>
+<div class="text-4xl font-mono font-bold text-yellow-400">+150</div>
+<div class="w-full bg-[#1A1A1A] h-1.5 rounded-full mt-4 overflow-hidden">
+<div class="bg-yellow-400 h-full w-3/4"></div>
+</div>
+<span class="text-[10px] font-mono mt-2 text-on-surface-variant">LEVEL 42 (850/1000)</span>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 flex flex-col items-center justify-center text-center accent-glow">
+<span class="font-label-caps text-on-surface-variant mb-2">ELO CHANGE</span>
+<div class="text-4xl font-mono font-bold text-yellow-400">+25</div>
+<div class="flex items-center gap-1 mt-4 text-on-surface">
+<span class="material-symbols-outlined text-yellow-400 text-sm" data-icon="trophy">trophy</span>
+<span class="font-mono font-bold">1,845</span>
+</div>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 flex flex-col items-center justify-center text-center">
+<span class="font-label-caps text-on-surface-variant mb-2">RANK POSITION</span>
+<div class="text-4xl font-mono font-bold text-on-surface">#12</div>
+<div class="text-[10px] font-mono mt-4 text-on-surface-variant">ELITE DIVISION</div>
+</div>
+</div>
+<!-- Comparison Section -->
+<div class="w-full max-w-4xl space-y-gutter">
+<h2 class="font-label-caps text-on-surface-variant">MATCH REPLAY COMPARISON</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- You -->
+<div class="bg-[#111111] border-2 border-yellow-400 rounded-xl overflow-hidden">
+<div class="bg-[#1A1A1A] px-4 py-3 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="font-mono text-yellow-400 font-bold">YOU</span>
+<span class="px-2 py-0.5 bg-yellow-400 text-black text-[10px] font-bold rounded">WINNER</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span>
+<span class="font-mono text-sm">04:12</span>
+</div>
+</div>
+<div class="p-4 font-code-block text-on-surface overflow-x-auto bg-[#0D0E0F]">
+<pre><code><span class="code-syntax-keyword">def</span> <span class="text-tertiary">binary_search</span>(arr, x):
+    low, high = <span class="code-syntax-string">0</span>, <span class="text-on-secondary-container">len</span>(arr) - <span class="code-syntax-string">1</span>
+    <span class="code-syntax-keyword">while</span> low &lt;= high:
+        mid = (high + low) // <span class="code-syntax-string">2</span>
+        <span class="code-syntax-keyword">if</span> arr[mid] &lt; x:
+            low = mid + <span class="code-syntax-string">1</span>
+        <span class="code-syntax-keyword">elif</span> arr[mid] &gt; x:
+            high = mid - <span class="code-syntax-string">1</span>
+        <span class="code-syntax-keyword">else</span>:
+            <span class="code-syntax-keyword">return</span> mid
+    <span class="code-syntax-keyword">return</span> -<span class="code-syntax-string">1</span></code></pre>
+</div>
+</div>
+<!-- Opponent -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl overflow-hidden opacity-80">
+<div class="bg-[#1A1A1A] px-4 py-3 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="font-mono text-on-surface-variant font-bold">OX_HACKER_99</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span>
+<span class="font-mono text-sm">06:45</span>
+</div>
+</div>
+<div class="p-4 font-code-block text-on-surface-variant overflow-x-auto bg-[#0D0E0F]">
+<pre><code><span class="code-syntax-keyword">def</span> <span class="text-tertiary">search</span>(data, target):
+    <span class="code-syntax-keyword">for</span> i, v <span class="code-syntax-keyword">in</span> <span class="text-on-secondary-container">enumerate</span>(data):
+        <span class="code-syntax-keyword">if</span> v == target:
+            <span class="code-syntax-keyword">return</span> i
+    <span class="code-syntax-keyword">return</span> -<span class="code-syntax-string">1</span>
+<span class="code-syntax-comment"># Inefficient O(N) approach</span>
+<span class="code-syntax-comment"># Failed test case #4: Timeout</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full max-w-4xl flex flex-col md:flex-row gap-4 mt-section-gap">
+<button class="flex-1 h-14 bg-yellow-400 text-black font-mono font-bold text-lg uppercase tracking-wider flex items-center justify-center gap-2 rounded transition-transform active:scale-95 hover:bg-yellow-300">
+<span class="material-symbols-outlined" data-icon="swords">swords</span>
+                Back to Arena
+            </button>
+<button class="flex-1 h-14 border border-yellow-400 text-yellow-400 font-mono font-bold text-lg uppercase tracking-wider flex items-center justify-center gap-2 rounded transition-transform active:scale-95 hover:bg-yellow-400/10">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+                Share Result
+            </button>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop based on Shell Rules, showing for mobile consistency) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-16 bg-[#0A0A0A] border-t border-[#2A2A2A] md:hidden shadow-[0_-4px_20px_rgba(255,215,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-yellow-400 transition-all border-t-2 border-yellow-400 pt-2 flex-1 h-full">
+<span class="material-symbols-outlined" data-icon="swords">swords</span>
+<span class="text-[10px] font-mono font-bold uppercase mt-1">Battle</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-600 pt-2 flex-1 h-full hover:bg-[#111111] transition-all active:bg-[#1A1A1A]">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="text-[10px] font-mono font-bold uppercase mt-1">Practice</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-600 pt-2 flex-1 h-full hover:bg-[#111111] transition-all active:bg-[#1A1A1A]">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="text-[10px] font-mono font-bold uppercase mt-1">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-600 pt-2 flex-1 h-full hover:bg-[#111111] transition-all active:bg-[#1A1A1A]">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[10px] font-mono font-bold uppercase mt-1">Search</span>
+</div>
+</nav>
+<!-- Visual Polish: Accent Background Decor -->
+<div class="fixed top-0 right-0 w-1/2 h-1/2 bg-yellow-400/5 blur-[120px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-0 left-0 w-1/3 h-1/3 bg-yellow-400/5 blur-[100px] pointer-events-none -z-10"></div>
+</body></html>

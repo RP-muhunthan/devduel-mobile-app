@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tournament Details - DEV_DUEL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#e9c400",
+                        "surface-container": "#1e2020",
+                        "secondary-fixed": "#ffdea6",
+                        "inverse-on-surface": "#2f3131",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#201c00",
+                        "on-surface": "#e3e2e2",
+                        "tertiary": "#fff6d2",
+                        "surface-container-highest": "#343535",
+                        "surface-container-high": "#292a2a",
+                        "on-secondary-container": "#392700",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "on-surface-variant": "#d0c6ab",
+                        "on-primary": "#3a3000",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-tertiary-container": "#6b5f00",
+                        "on-primary-fixed-variant": "#544600",
+                        "outline": "#999077",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "on-background": "#e3e2e2",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#705e00",
+                        "on-secondary": "#412d00",
+                        "primary-fixed": "#ffe16d",
+                        "primary-container": "#ffd700",
+                        "on-primary-fixed": "#221b00",
+                        "inverse-surface": "#e3e2e2",
+                        "on-tertiary": "#373100",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#ba880f",
+                        "background": "#121414",
+                        "surface-container-lowest": "#0d0e0f",
+                        "tertiary-container": "#f1db40",
+                        "secondary": "#f7bd48",
+                        "surface": "#121414",
+                        "outline-variant": "#4d4732",
+                        "surface-dim": "#121414",
+                        "error-container": "#93000a",
+                        "surface-bright": "#38393a",
+                        "tertiary-fixed": "#fae448",
+                        "primary": "#fff6df",
+                        "surface-variant": "#343535",
+                        "surface-container-low": "#1a1c1c",
+                        "on-secondary-fixed": "#271900",
+                        "inverse-primary": "#705d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "section-gap": "32px",
+                        "component-gap": "12px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Roboto"],
+                        "body-md": ["Roboto"],
+                        "body-lg": ["Roboto"],
+                        "label-caps": ["JetBrains Mono"],
+                        "code-block": ["JetBrains Mono"],
+                        "headline-md": ["Roboto"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e3e2e2;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#0A0A0A] border-b border-[#2A2A2A] fixed top-0 left-0 w-full z-50 flex justify-between items-center w-full px-6 h-16">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#FFD700]">arrow_back</span>
+<div class="font-mono tracking-tighter uppercase text-sm font-bold text-[#FFD700]">
+<span class="text-xl font-black tracking-widest text-[#FFD700]">DEV_DUEL</span>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#FFD700]/30">
+<img alt="User profile" data-alt="A close-up high-resolution avatar of a futuristic software engineer with holographic interface reflections in their eyes. The lighting is cinematic and moody with gold and deep black tones, emphasizing a professional yet elite hacker aesthetic. The background is a blurred server room with amber status lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChX8Jn0AJuGGdRY9fT2xQB0ogeCAz9Z1iJo1VS6oJDg0t0nwVnn3KjE8R_iRY6-eadCMd8c0QdT5-XvVillMc2shsFH6Z0IEZ3FzBDTytmwqnBh1Sjw-Resbg9kFMw1RjIwC7WCh9BWclYPvpDStZcCrd9M3w0RQGRgDFT4pxYJjGv0iluSYkWKOEF35w1Nj8TXonQz2-AP8q-U4-qTOMp7qQVyjERPyVcWU9MM-ygvshT60vpKsElIuagUzX9bngQIqmK-N4OfGNL"/>
+</div>
+</div>
+</header>
+<main class="mt-16 px-6">
+<!-- Hero Banner Section -->
+<section class="py-gutter">
+<div class="relative w-full h-64 rounded-xl overflow-hidden border border-[#2A2A2A]">
+<img class="w-full h-full object-cover opacity-60" data-alt="A high-intensity cinematic banner for a coding tournament. Digital circuitry patterns glow in vibrant gold against a deep matte black background. Intricate lines of code flow like data streams across the composition. The atmosphere is professional, tech-forward, and high-stakes, matching an elite esports arena aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCwncZiNDuLWfgug30bAnLhhtrLceegxUF-VfcDbvfplNbCDTTvE2vXYZ-SZBGURC-xiJviEqtYiRv2P4SiYCdj-GJ_seUE_4t2auBCJ6L0GU9Tit1fzmtfFVAGpu8xdqVbj3GXDcJg0NuPRpmWn7ZVPo2FJLVjlq919yAdA0JvTEtFkzukRKnOxECY6w84QKB0UqUf8tGDawD9cxu7EhKKqcc4_bwocL_hJzvECfO16dAjGpsV5RmdO6rZR_CJQfuguC8_ktaFo1K"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="bg-[#FFD700] text-[#0A0A0A] font-label-caps text-label-caps px-3 py-1 rounded-full mb-3 inline-block">LIVE QUALIFIERS</span>
+<h1 class="font-headline-lg text-headline-lg text-[#FFD700] uppercase tracking-tighter">BINARY_BLITZ 2024</h1>
+</div>
+</div>
+</section>
+<!-- Quick Info Grid (Bento Style) -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-gutter mb-section-gap">
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-[#FFD700]">calendar_today</span>
+<p class="font-label-caps text-label-caps text-neutral-500">DATE</p>
+<p class="font-headline-md text-body-lg font-bold">OCT 24, 2024</p>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-[#FFD700]">schedule</span>
+<p class="font-label-caps text-label-caps text-neutral-500">START TIME</p>
+<p class="font-headline-md text-body-lg font-bold">18:00 UTC</p>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-[#FFD700]">groups</span>
+<p class="font-label-caps text-label-caps text-neutral-500">CAPACITY</p>
+<p class="font-headline-md text-body-lg font-bold">1024 SLOTS</p>
+</div>
+<div class="bg-[#111111] border border-[#2A2A2A] p-4 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-[#FFD700]">timer</span>
+<p class="font-label-caps text-label-caps text-neutral-500">DURATION</p>
+<p class="font-headline-md text-body-lg font-bold">120 MINS</p>
+</div>
+</section>
+<!-- Rewards & Rules Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-section-gap">
+<!-- Prizes Card -->
+<section class="lg:col-span-1">
+<h2 class="font-label-caps text-label-caps text-[#FFD700] mb-4">REWARDS_POOL</h2>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6 relative overflow-hidden">
+<div class="absolute -right-8 -top-8 opacity-10">
+<span class="material-symbols-outlined text-[120px] text-[#FFD700]" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div class="flex flex-col gap-6 relative z-10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center border border-[#2A2A2A]">
+<span class="material-symbols-outlined text-[#FFD700]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div>
+<p class="font-body-md text-neutral-400">Total XP</p>
+<p class="font-headline-md text-headline-md text-[#FFD700]">15,000 XP</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center border border-[#2A2A2A]">
+<span class="material-symbols-outlined text-[#FFD700]">card_membership</span>
+</div>
+<div>
+<p class="font-body-md text-neutral-400">Recognition</p>
+<p class="font-headline-md text-headline-md">Digital Certificate</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center border border-[#2A2A2A]">
+<span class="material-symbols-outlined text-[#FFD700]">workspace_premium</span>
+</div>
+<div>
+<p class="font-body-md text-neutral-400">Global Rank</p>
+<p class="font-headline-md text-headline-md">+250 Rank Points</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Rules Card -->
+<section class="lg:col-span-2">
+<h2 class="font-label-caps text-label-caps text-[#FFD700] mb-4">RULES_AND_PROTOCOL</h2>
+<div class="bg-[#111111] border border-[#2A2A2A] rounded-xl p-6">
+<ul class="flex flex-col gap-4">
+<li class="flex gap-4">
+<span class="font-mono text-[#FFD700] pt-1">01</span>
+<div>
+<p class="font-body-lg font-bold mb-1">Standard Environment</p>
+<p class="font-body-md text-neutral-500">Only standard libraries are allowed. No external API calls or pre-compiled binaries.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="font-mono text-[#FFD700] pt-1">02</span>
+<div>
+<p class="font-body-lg font-bold mb-1">Time Complexity</p>
+<p class="font-body-md text-neutral-500">Solutions must pass within the allocated 2.0s per test case execution window.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="font-mono text-[#FFD700] pt-1">03</span>
+<div>
+<p class="font-body-lg font-bold mb-1">Anti-Cheat Protocol</p>
+<p class="font-body-md text-neutral-500">AI assistance or plagiarism will result in immediate disqualification and account ban.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="font-mono text-[#FFD700] pt-1">04</span>
+<div>
+<p class="font-body-lg font-bold mb-1">Scoring Metric</p>
+<p class="font-body-md text-neutral-500">Rankings are determined by test cases passed, then by submission timestamp.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Registration Bar -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-[#0A0A0A] border-t border-[#2A2A2A] p-6 flex items-center justify-between">
+<div class="hidden md:block">
+<p class="font-label-caps text-[10px] text-neutral-500 uppercase">Registration Closes In</p>
+<p class="font-mono text-[#FFD700] text-body-lg font-bold">14:22:05</p>
+</div>
+<button class="bg-[#FFD700] text-[#0A0A0A] w-full md:w-auto md:px-12 py-4 font-label-caps text-label-caps font-black uppercase tracking-widest rounded-xl hover:bg-[#e9c400] active:scale-95 transition-all shadow-[0_0_20px_rgba(255,215,0,0.15)]">
+            Register Now
+        </button>
+</div>
+<!-- BottomNavBar (Hidden on this transactional detail view per 'Destination Rule' suppression logic if context requires, but included for shell consistency if it's considered top level) -->
+<!-- The prompt implies this is a "Detail view", so I will suppress the standard BottomNavBar to focus on the 'Register' action. -->
+</body></html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffe16d",
+                        "on-tertiary-fixed": "#201c00",
+                        "surface-container-lowest": "#0d0e0f",
+                        "surface-container": "#1e2020",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#544600",
+                        "tertiary": "#fff6d2",
+                        "surface-bright": "#38393a",
+                        "on-secondary-container": "#392700",
+                        "inverse-on-surface": "#2f3131",
+                        "on-tertiary-fixed-variant": "#504700",
+                        "surface-variant": "#343535",
+                        "primary-container": "#ffd700",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#fae448",
+                        "primary": "#fff6df",
+                        "on-primary": "#3a3000",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#e9c400",
+                        "surface-container-high": "#292a2a",
+                        "secondary-container": "#ba880f",
+                        "on-tertiary-container": "#6b5f00",
+                        "surface-container-highest": "#343535",
+                        "on-surface-variant": "#d0c6ab",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "tertiary-fixed-dim": "#dcc82c",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-surface": "#e3e2e2",
+                        "secondary": "#f7bd48",
+                        "on-tertiary": "#373100",
+                        "on-secondary": "#412d00",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#705d00",
+                        "surface-dim": "#121414",
+                        "inverse-surface": "#e3e2e2",
+                        "secondary-fixed": "#ffdea6",
+                        "surface-container-low": "#1a1c1c",
+                        "surface": "#121414",
+                        "on-secondary-fixed": "#271900",
+                        "on-primary-fixed": "#221b00",
+                        "background": "#121414",
+                        "outline-variant": "#4d4732",
+                        "outline": "#999077",
+                        "on-primary-container": "#705e00",
+                        "on-background": "#e3e2e2",
+                        "tertiary-container": "#f1db40"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-margin": "24px",
+                        "section-gap": "32px",
+                        "gutter": "16px",
+                        "component-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "code-block": ["JetBrains Mono"],
+                        "body-md": ["Roboto"],
+                        "body-lg": ["Roboto"],
+                        "headline-md": ["Roboto"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Roboto"]
+                    },
+                    "fontSize": {
+                        "code-block": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .syntax-keyword { color: #ffd700; } /* Gold */
+        .syntax-string { color: #82e0aa; } /* Green */
+        .syntax-function { color: #5dade2; } /* Blue/Light Blue */
+        .syntax-comment { color: #5d6d7e; } /* Muted Gray */
+        .line-number { color: #2A2A2A; text-align: right; user-select: none; }
+        .cursor-blink { border-left: 2px solid #ffd700; animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { border-color: transparent; } }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0A0A0A] text-on-background font-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-[#0A0A0A] border-b border-[#2A2A2A]">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform p-2">
+<span class="material-symbols-outlined text-[#FFD700]">arrow_back</span>
+</button>
+<h1 class="font-mono uppercase tracking-widest font-bold text-[#FFD700]">DEV_DUEL</h1>
+</div>
+<div class="flex items-center gap-3">
+<!-- Language Selector -->
+<div class="bg-[#111111] border border-[#2A2A2A] rounded px-3 py-1.5 flex items-center gap-2 active:bg-[#1A1A1A] transition-colors">
+<span class="font-label-caps text-label-caps text-[#FFD700]">PYTHON 3.10</span>
+<span class="material-symbols-outlined text-xs text-[#FFD700]">expand_more</span>
+</div>
+<button class="active:scale-95 transition-transform p-2">
+<span class="material-symbols-outlined text-[#FFD700]">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Editor Canvas -->
+<main class="flex-grow pt-16 pb-20 flex flex-col overflow-hidden">
+<!-- Editor Header Info -->
+<div class="bg-[#111111] px-container-margin py-2 border-b border-[#2A2A2A] flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-[#FFD700]">code</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">CHALLENGE_042.PY</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-caps text-[10px] text-gray-500">AUTOSAVED</span>
+<span class="w-2 h-2 rounded-full bg-[#FFD700]"></span>
+</div>
+</div>
+<!-- Code Area -->
+<div class="flex-grow flex font-code-block text-code-block overflow-auto bg-[#0A0A0A]">
+<!-- Line Numbers -->
+<div class="w-12 pt-4 bg-[#0A0A0A] border-r border-[#2A2A2A] flex flex-col items-center">
+<span class="line-number block">1</span>
+<span class="line-number block">2</span>
+<span class="line-number block">3</span>
+<span class="line-number block">4</span>
+<span class="line-number block">5</span>
+<span class="line-number block">6</span>
+<span class="line-number block">7</span>
+<span class="line-number block">8</span>
+<span class="line-number block">9</span>
+<span class="line-number block">10</span>
+<span class="line-number block">11</span>
+<span class="line-number block">12</span>
+<span class="line-number block">13</span>
+<span class="line-number block">14</span>
+<span class="line-number block">15</span>
+<span class="line-number block">16</span>
+<span class="line-number block">17</span>
+<span class="line-number block">18</span>
+<span class="line-number block">19</span>
+<span class="line-number block">20</span>
+</div>
+<!-- Syntax Content -->
+<div class="flex-grow pt-4 px-4 whitespace-pre">
+<span class="syntax-comment"># Optimized Fibonacci Sequence</span>
+<span class="syntax-keyword">def</span> <span class="syntax-function">solve_duel</span>(n: int) -&gt; int:
+    <span class="syntax-keyword">if</span> n &lt;= 1:
+        <span class="syntax-keyword">return</span> n
+    
+    a, b = 0, 1
+    <span class="syntax-keyword">for</span> _ <span class="syntax-keyword">in</span> <span class="syntax-function">range</span>(2, n + 1):
+        a, b = b, a + b
+        
+    <span class="syntax-keyword">print</span>(<span class="syntax-string">"Sequence iteration complete"</span>)
+    <span class="syntax-keyword">return</span> b
+
+<span class="syntax-comment"># Execute Battle Phase</span>
+<span class="syntax-keyword">if</span> __name__ == <span class="syntax-string">"__main__"</span>:
+    result = <span class="syntax-function">solve_duel</span>(10)
+    <span class="syntax-keyword">print</span>(<span class="syntax-string">f"Duel result: {result}"</span>)<span class="cursor-blink"></span>
+</div>
+</div>
+</main>
+<!-- Custom Keyboard Toolbar -->
+<div class="fixed bottom-16 left-0 w-full h-12 bg-[#111111] border-t border-[#2A2A2A] flex items-center px-2 overflow-x-auto no-scrollbar gap-1 z-40">
+<button class="min-w-[40px] h-9 bg-[#1A1A1A] text-[#FFD700] rounded border border-[#2A2A2A] flex items-center justify-center font-mono font-bold active:bg-primary-container active:text-on-primary-container transition-colors">{</button>
+<button class="min-w-[40px] h-9 bg-[#1A1A1A] text-[#FFD700] rounded border border-[#2A2A2A] flex items-center justify-center font-mono font-bold active:bg-primary-container active:text-on-primary-container transition-colors">}</button>
+<button class="min-w-[40px] h-9 bg-[#1A1A1A] text-[#FFD700] rounded border border-[#2A2A2A] flex items-center justify-center font-mono font-bold active:bg-primary-container active:text-on-primary-container transition-colors">(</button>
+<button class="min-w-[40px] h-9 bg-[#1A1A1A] text-[#FFD700] rounded border border-[#2A2A2A] flex items-center justify-center font-mono font-bold active:bg-primary-container active:text-on-primary-container transition-colors">)</button>
+<button class="min-w-[40px] h-9 bg-[#1A1A1A] text-[#FFD700] rounded border border-[#2A2A2A] flex items-center justify-center font-mono font-bold active:bg-primary-container active:text-on-primary-container transition-colors">;</button>
+<button class="min-w-[40px] h-9 bg-[#1A1A1A] text-[#FFD700] rounded border border-[#2A2A2A] flex items-center justify-center font-mono font-bold active:bg-primary-container active:text-on-primary-container transition-colors">Tab</button>
+<div class="h-6 w-[1px] bg-[#2A2A2A] mx-1"></div>
+<button class="min-w-[40px] h-9 bg-[#1A1A1A] text-[#FFD700] rounded border border-[#2A2A2A] flex items-center justify-center active:bg-primary-container active:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+</button>
+<button class="min-w-[40px] h-9 bg-[#1A1A1A] text-[#FFD700] rounded border border-[#2A2A2A] flex items-center justify-center active:bg-primary-container active:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="flex-grow h-9 bg-primary-container text-on-primary-container rounded font-label-caps text-xs font-bold active:opacity-80 transition-opacity">RUN CODE</button>
+</div>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 pb-safe bg-[#0A0A0A] border-t border-[#2A2A2A] shadow-[0_-4px_20px_rgba(255,215,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="text-[10px] font-mono font-medium uppercase">Battles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-[10px] font-mono font-medium uppercase">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#FFD700] border-t-2 border-[#FFD700] pt-2 active:opacity-80" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="text-[10px] font-mono font-medium uppercase">Editor</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-600 pt-2 hover:text-[#FFD700] transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-mono font-medium uppercase">Settings</span>
+</a>
+</nav>
+<!-- Background Decoration -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1]" style="background-image: radial-gradient(#FFD700 1px, transparent 1px); background-size: 32px 32px;"></div>
+</body></html>
