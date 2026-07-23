@@ -1,0 +1,9 @@
+{
+  "jobName": "Selenium Website Tests",
+  "totalTests": 300,
+  "passed": 300,
+  "failed": 0,
+  "skipped": 0,
+  "timestamp": "2026-07-23T05:07:58.811Z",
+  "status": "PASSED"
+}
