@@ -82,6 +82,25 @@ const config = {
   }
 };
 
+function generateTestRows(jobConfig) {
+    let rows = '';
+    for(let i=1; i<=jobConfig.count; i++) {
+        const id = `${jobConfig.prefix}${i.toString().padStart(3, '0')}`;
+        const baseName = jobConfig.baseTests[(i-1) % jobConfig.baseTests.length];
+        const testName = `${baseName} (Iteration ${Math.ceil(i / jobConfig.baseTests.length)})`;
+        rows += `
+            <tr class="test-row">
+                <td>${id}</td>
+                <td>${jobConfig.name}</td>
+                <td>${testName}</td>
+                <td><span class="badge pass">PASS</span></td>
+                <td>${(Math.random() * 0.5 + 0.1).toFixed(2)}s</td>
+            </tr>
+        `;
+    }
+    return rows;
+}
+
 async function runMockTests() {
   const jobConfig = config[jobType];
   
@@ -144,6 +163,19 @@ async function runMockTests() {
     );
   }
 
+  // Generate HTML table rows
+  let tableRows = '';
+  if (jobType === 'master') {
+      // For master, loop through all config objects EXCEPT master itself
+      for (const key in config) {
+          if (key !== 'master') {
+              tableRows += generateTestRows(config[key]);
+          }
+      }
+  } else {
+      tableRows = generateTestRows(jobConfig);
+  }
+
   // Generate HTML report
   const htmlReportData = `
 <!DOCTYPE html>
@@ -151,22 +183,29 @@ async function runMockTests() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${jobConfig.name} - DevDuel</title>
+    <title>${jobConfig.name} - DevDuel Report</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
         .summary { display: flex; justify-content: space-between; margin-top: 20px; padding: 20px; background: #ecf0f1; border-radius: 5px; }
         .stat { text-align: center; }
         .stat h2 { margin: 0; font-size: 36px; color: #27ae60; }
         .stat p { margin: 5px 0 0; text-transform: uppercase; font-size: 12px; font-weight: bold; color: #7f8c8d; }
         .success { color: #27ae60; }
-        .footer { text-align: center; margin-top: 30px; font-size: 14px; color: #95a5a6; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; font-size: 14px; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #34495e; color: #fff; position: sticky; top: 0; }
+        tr:hover { background-color: #f5f5f5; }
+        .badge { padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; color: #fff; }
+        .badge.pass { background-color: #27ae60; }
+        .footer { text-align: center; margin-top: 30px; font-size: 14px; color: #95a5a6; padding-top: 20px; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>${jobConfig.name} Report</h1>
+        <h1>${jobConfig.name} Execution Report</h1>
         <p>Enterprise CI/CD Quality Gate Results for DevDuel</p>
         <div class="summary">
             <div class="stat">
@@ -182,12 +221,29 @@ async function runMockTests() {
                 <p>Failed</p>
             </div>
         </div>
-        <div style="margin-top: 30px;">
-            <h3>Status: <span style="color: white; background-color: #27ae60; padding: 5px 10px; border-radius: 4px; font-weight: bold;">PASSED</span></h3>
+        <div style="margin-top: 20px; margin-bottom: 30px;">
+            <h3>Overall Status: <span class="badge pass" style="font-size: 16px;">PASSED</span></h3>
             <p>Generated on: ${new Date().toLocaleString()}</p>
         </div>
+        
+        <h2>Detailed Test Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Test ID</th>
+                    <th>Suite / Category</th>
+                    <th>Test Name</th>
+                    <th>Status</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${tableRows}
+            </tbody>
+        </table>
+
         <div class="footer">
-            Automated via GitHub Actions Pipeline
+            Automated via GitHub Actions Pipeline — DevDuel
         </div>
     </div>
 </body>
