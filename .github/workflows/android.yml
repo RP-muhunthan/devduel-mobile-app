@@ -1,0 +1,173 @@
+name: DevDuel Enterprise CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+# Ensure GITHUB_TOKEN has permissions to deploy to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  selenium:
+    name: Selenium — Website Tests (300)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Selenium Website Tests
+        run: npm run test:selenium
+      - name: Upload Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Selenium-Website-Tests-300
+          path: reports/selenium-report.*
+          retention-days: 14
+
+  appium:
+    name: Appium — Android Tests (300)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Appium Android Tests
+        run: npm run test:appium
+      - name: Upload Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Appium-Android-Tests-300
+          path: reports/appium-report.*
+          retention-days: 14
+
+  validation:
+    name: Validation Tests (300)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Validation Tests
+        run: npm run test:validation
+      - name: Upload Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Validation-Tests-300
+          path: reports/validation-report.*
+          retention-days: 14
+
+  deployment_status:
+    name: Deployment Status (300)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Dependencies
+        run: npm install
+      - name: Check Deployment Status
+        run: npm run status:deployment
+      - name: Upload Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Deployment-Status-300
+          path: reports/deployment-report.*
+          retention-days: 14
+
+  load_testing:
+    name: Load Testing — Performance (300)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Load Testing
+        run: npm run test:load
+      - name: Upload Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Load-Testing-Performance-300
+          path: reports/load-test-report.*
+          retention-days: 14
+
+  compile_report:
+    name: Compile Master Report
+    needs: [selenium, appium, validation, deployment_status, load_testing]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Dependencies
+        run: npm install
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: reports/
+          merge-multiple: true
+      - name: Generate Master Report
+        run: npm run generate:report
+      - name: Upload Master Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Master-Report-300
+          path: reports/
+          retention-days: 14
+
+  deploy_pages:
+    name: Deploy Reports to GitHub Pages
+    needs: compile_report
+    runs-on: ubuntu-latest
+    if: always()
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Download Master Report
+        uses: actions/download-artifact@v4
+        with:
+          name: Master-Report-300
+          path: reports/
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: reports/
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

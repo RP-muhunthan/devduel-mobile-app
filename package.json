@@ -1,0 +1,15 @@
+{
+  "name": "devduel-ci",
+  "version": "1.0.0",
+  "description": "Enterprise CI/CD mock testing scripts for DevDuel",
+  "scripts": {
+    "test:selenium": "node scripts/ci-runner.js selenium",
+    "test:appium": "node scripts/ci-runner.js appium",
+    "test:validation": "node scripts/ci-runner.js validation",
+    "status:deployment": "node scripts/ci-runner.js deployment",
+    "test:load": "node scripts/ci-runner.js load",
+    "generate:report": "node scripts/ci-runner.js master"
+  },
+  "author": "DevDuel Team",
+  "license": "ISC"
+}
